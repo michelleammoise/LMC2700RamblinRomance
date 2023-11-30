@@ -1,6 +1,7 @@
 // initialize vars
 let sceneCount;
 let startBtn;
+let neuBtn;
 
 // load assets
 function preload() {
@@ -23,6 +24,19 @@ function setup() {
         startBtn.remove();
         sceneCount = 2;
     })
+
+    neuBtn = createButton("Non-binary");
+    neuBtn.mousePressed(() => {
+        // remove buttons
+        neuBtn.remove();
+        boyBtn.remove();
+        girlBtn.remove();
+        sceneCount = 3;
+    });
+
+    boyBtn = createButton("Boy");
+
+    girlBtn = createButton("Girl");
 }
 
 // draw scenes
@@ -61,9 +75,25 @@ function titleScreen() {
 }
 
 function information() {
-    background(culcStairs);
+    background(0); // black background
+    fill(255); // text color
+    textAlign(CENTER);
+    textFont('Courier New', 20);
+    text("Select character", width/2, 50);
+
+    // boyBtn = createButton("Boy");
+    boyBtn.position(650, 550);
+
+    // girlBtn = createButton("Girl");
+    girlBtn.position(700, 550);
+
+    // neuBtn = createButton("Non-binary");
+    neuBtn.position(750, 550);
 }
 
+function startScene() {
+    background(culcStairs);
+}
 // ^ insert all scenes above this comment ^ //
 
 
@@ -74,6 +104,9 @@ function storyTime(sceneCount) {
             break;
         case 2:
             information();
+            break;
+        case 3:
+            startScene();
             break;
         default:
             break;
