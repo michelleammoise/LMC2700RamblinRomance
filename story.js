@@ -25,7 +25,12 @@ function setup() {
         sceneCount = 2;
     })
 
+    buttonSetup();
+}
+
+function buttonSetup() {
     neuBtn = createButton("Non-binary");
+    neuBtn.hide();
     neuBtn.mousePressed(() => {
         // remove buttons
         neuBtn.remove();
@@ -35,8 +40,10 @@ function setup() {
     });
 
     boyBtn = createButton("Boy");
+    boyBtn.hide();
 
     girlBtn = createButton("Girl");
+    girlBtn.hide();
 }
 
 // draw scenes
@@ -83,12 +90,13 @@ function information() {
 
     // boyBtn = createButton("Boy");
     boyBtn.position(650, 550);
-
+    boyBtn.show();
     // girlBtn = createButton("Girl");
     girlBtn.position(700, 550);
-
+    girlBtn.show();
     // neuBtn = createButton("Non-binary");
     neuBtn.position(750, 550);
+    neuBtn.show();
 }
 
 function startScene() {
