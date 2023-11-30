@@ -1,4 +1,4 @@
-// initialize vars
+// initialize variables
 let sceneCount;
 let startBtn;
 let neuBtn;
@@ -16,8 +16,12 @@ function setup() {
 	getAudioContext().suspend();
 	rectMode(CENTER);
 	createCanvas(screen.width, screen.height);
-    sceneCount = 1;
+    sceneCount = 3;
 
+    buttonSetup();
+}
+
+function buttonSetup() {
     startBtn = createButton("Start Button");
     startBtn.position(canvas.width / 2, canvas.height / 2);
     startBtn.mousePressed(() => {
@@ -25,10 +29,6 @@ function setup() {
         sceneCount = 2;
     })
 
-    buttonSetup();
-}
-
-function buttonSetup() {
     neuBtn = createButton("Non-binary");
     neuBtn.hide();
     neuBtn.mousePressed(() => {
@@ -44,6 +44,7 @@ function buttonSetup() {
 
     girlBtn = createButton("Girl");
     girlBtn.hide();
+
 }
 
 // draw scenes
@@ -86,9 +87,10 @@ function information() {
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
-    text("Select character", width/2, 50);
+    text("Select character", width / 2, 50);
 
     // boyBtn = createButton("Boy");
+
     boyBtn.position(650, 550);
     boyBtn.show();
     // girlBtn = createButton("Girl");
@@ -101,6 +103,7 @@ function information() {
 
 function startScene() {
     background(culcStairs);
+    textBox(0);
 }
 // ^ insert all scenes above this comment ^ //
 
@@ -122,7 +125,17 @@ function storyTime(sceneCount) {
 }
 
 function textBox(chara) {
-
+    rectMode(CORNER);
+    fill('orange'); // everything after this will be filled
+    stroke(178, 58, 30); // color to draw lines and borders around shapes
+    strokeWeight(3);
+    // x, y, width, height, (opt radii)
+    rect(20, height / 1.5, width - 40, height / 3.25);
+    if (chara == 0) {
+        fill('blue');
+        stroke(178, 59, 30);
+        rect(40, height / 1.45, width - 80, height / 3.75);
+    }
 }
 
 function optButtons() {
