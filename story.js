@@ -7,16 +7,16 @@ let neuBtn;
 function preload() {
     fancy = loadFont("font3.otf")
 
-    schoolPhoto = loadImage("./assets/georgiatechphoto.jpg");
+    schoolPhoto = loadImage("./assets/techTower.jpeg");
     culcStairs = loadImage("./assets/culcStairs.png");
 }
 
 // setup
 function setup() {
-	getAudioContext().suspend();
-	rectMode(CENTER);
-	createCanvas(screen.width, screen.height);
-    sceneCount = 3;
+    getAudioContext().suspend();
+    rectMode(CENTER);
+    createCanvas(800, 600);
+    sceneCount = 1;
 
     buttonSetup();
 }
@@ -53,32 +53,32 @@ function draw() {
     // 	userStartAudio();
     storyTime(sceneCount);
     textAlign(LEFT);
-	textSize(15);
+    textSize(15);
 }
 
 // functions for scenes below //
 function titleScreen() {
     // for title text
     fill(252, 174, 200);
-	stroke(120, 34, 62);
-	strokeWeight(4);
-	textFont('Courier New', 50);
-	background(schoolPhoto);
-	textAlign(CENTER);
-	text("Ramblin' Romance", width / 2, 200);
-	noStroke();
+    stroke(120, 34, 62);
+    strokeWeight(4);
+    textFont('Courier New', 50);
+    background(schoolPhoto);
+    textAlign(CENTER);
+    text("Ramblin' Romance", width / 2, 200);
+    noStroke();
 
 
     /*
     // for start "button" design
     fill(252, 174, 200);
-	stroke(255);
-	square(width / 2, height / 2, 100, 5);
-	textFont('Courier New', 20);
-	textAlign(CENTER, CENTER);
-	fill(0);
-	text("START", width / 2, height / 2);
-	noStroke();
+    stroke(255);
+    square(width / 2, height / 2, 100, 5);
+    textFont('Courier New', 20);
+    textAlign(CENTER, CENTER);
+    fill(0);
+    text("START", width / 2, height / 2);
+    noStroke();
     */
 }
 
@@ -109,7 +109,7 @@ function startScene() {
 
 
 function storyTime(sceneCount) {
-    switch(sceneCount) {
+    switch (sceneCount) {
         case 1:
             titleScreen();
             break;
