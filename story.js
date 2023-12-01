@@ -132,9 +132,17 @@ function textBox(chara) {
     // x, y, width, height, (opt radii)
     rect(20, height / 1.5, width - 40, height / 3.25);
     if (chara == 0) {
-        fill('blue');
+        fill('pink');
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
+
+        fill(0);
+        textSize(20);
+        noStroke();
+        textAlign(CENTER, CENTER);
+        text("You: ", width / 15, height / 1.35);
+        stroke(253, 187, 199);
+        // nextButton
     }
 }
 
