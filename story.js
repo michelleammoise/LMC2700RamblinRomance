@@ -1,32 +1,43 @@
+// initialize vars
 // initialize variables
 let sceneCount;
 let startBtn;
+let nextBtn;
 let neuBtn;
+let boyBtn;
+let girlBtn;
 
 // load assets
 function preload() {
     fancy = loadFont("font3.otf")
 
-    schoolPhoto = loadImage("./assets/techTower.jpeg");
-    culcStairs = loadImage("./assets/culcStairs.png");
+    schoolPhoto = loadImage("./techTower.jpeg");
+    culcStairs = loadImage("./culcStairs.png");
 }
 
 // setup
 function setup() {
     getAudioContext().suspend();
     rectMode(CENTER);
-    createCanvas(800, 600);
+    createCanvas(1000, 600);
     sceneCount = 1;
 
     buttonSetup();
 }
 
 function buttonSetup() {
-    startBtn = createButton("Start Button");
-    startBtn.position(canvas.width / 2, canvas.height / 2);
+    startBtn = createButton("START");
+    startBtn.position(width/2, height/2);
     startBtn.mousePressed(() => {
         startBtn.remove();
         sceneCount = 2;
+    })
+
+    nextBtn = createButton("Next");
+    nextBtn.hide();
+    nextBtn.mousePressed(() => {
+        nextBtn.remove();
+        sceneCount = 3;
     })
 
     neuBtn = createButton("Non-binary");
@@ -36,14 +47,28 @@ function buttonSetup() {
         neuBtn.remove();
         boyBtn.remove();
         girlBtn.remove();
-        sceneCount = 3;
+        sceneCount = 4;
     });
 
     boyBtn = createButton("Boy");
     boyBtn.hide();
+    boyBtn.mousePressed(() => {
+        // remove buttons
+        neuBtn.remove();
+        boyBtn.remove();
+        girlBtn.remove();
+        sceneCount = 4;
+    });
 
     girlBtn = createButton("Girl");
     girlBtn.hide();
+    girlBtn.mousePressed(() => {
+        // remove buttons
+        neuBtn.remove();
+        boyBtn.remove();
+        girlBtn.remove();
+        sceneCount = 4;
+    });
 
 }
 
@@ -51,7 +76,7 @@ function buttonSetup() {
 function draw() {
     angleMode(DEGREES);
     // 	userStartAudio();
-    storyTime(sceneCount);
+    playGame(sceneCount);
     textAlign(LEFT);
     textSize(15);
 }
@@ -83,21 +108,50 @@ function titleScreen() {
 }
 
 function information() {
+    background(0); //black background
+    fill(255); // text color
+    textAlign(LEFT);
+    textFont('Courier New', 20);
+    text("Buzz:");
+    text("Well, well, well, look who wandered into the realm of intellectual misfortune.", 10, 50);
+    text("Spoiler alert: it's you. Congratulations on your life choices.", 10, 100);
+    text("Buckle up, my friend, for you're about to witness a GT love story so tragic,", 10, 150);
+    text("Cupid himself would probably cry.", 10, 200);
+
+    text("Your Mission (if you choose to accept it):", 10, 300);
+    text("1. Get a date for the Chi Phi Frat party this Friday.", 10, 350);
+    text("2. Pick a student to pursue.", 10, 400);
+    text("3. Each day you will be given a choice, your decision affects your stats.", 10, 450);
+    text("4. The day of the party, your choices will determine your love fate.", 10, 500);
+
+    nextBtn.position(10, 550);
+    nextBtn.show();
+}
+
+function chooseChar() {
     background(0); // black background
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("Select character", width / 2, 50);
+    text("hi", 400, 100);
+
+    boyChar = loadImage("./2dboy.png");
+    girlChar = loadImage("./2dgirl.png");
+    neuChar = loadImage("./2djordan.png");
+
+    //boyChar.position(200, 300);
+    //girlChar.position(400, 300);
+   // neuChar.position(600, 300);
 
     // boyBtn = createButton("Boy");
-
-    boyBtn.position(650, 550);
+    boyBtn.position(200, 350);
     boyBtn.show();
     // girlBtn = createButton("Girl");
-    girlBtn.position(700, 550);
+    girlBtn.position(400, 350);
     girlBtn.show();
     // neuBtn = createButton("Non-binary");
-    neuBtn.position(750, 550);
+    neuBtn.position(600, 350);
     neuBtn.show();
 }
 
@@ -108,7 +162,7 @@ function startScene() {
 // ^ insert all scenes above this comment ^ //
 
 
-function storyTime(sceneCount) {
+function playGame(sceneCount) {
     switch (sceneCount) {
         case 1:
             titleScreen();
@@ -117,6 +171,9 @@ function storyTime(sceneCount) {
             information();
             break;
         case 3:
+            chooseChar();
+            break;
+        case 4:
             startScene();
             break;
         default:
