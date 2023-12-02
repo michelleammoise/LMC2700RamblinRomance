@@ -13,6 +13,9 @@ let olivia11;
 let olivia12;
 let olivia13;
 
+
+let chadScene;
+
 // load assets
 function preload() {
     fancy = loadFont("font3.otf")
@@ -32,6 +35,7 @@ function setup() {
     createCanvas(1000, 600);
     sceneCount = 1;
     oliviaScene = 0;
+    chadScene = 1;
 
     buttonSetup();
 }
@@ -68,7 +72,7 @@ function buttonSetup() {
         neuBtn.remove();
         boyBtn.remove();
         girlBtn.remove();
-        sceneCount = 4;
+        sceneCount = 6; // chad route
     });
 
     girlBtn = createButton("Girl");
@@ -201,6 +205,9 @@ function playGame(sceneCount) {
         case 5:
             oliviaRoute();
             break;
+        case 6:
+            chadRoute();
+            break;
         default:
             break;
     }
@@ -237,6 +244,40 @@ function oliviaRoute() {
     textBox(1);
 }
 
+function chadRoute() {
+    startBtn.hide();
+    let x = 0;
+    switch(chadScene) {
+        case 0:
+            // exposition for chad
+            x = width / 1.75;
+            background(0);
+            fill(255);
+            textAlign(CENTER);
+            textFont('Courier New', 20);
+            text("You chose to romance Chad Smith!", width / 1.75, 50);
+            text("Chad Smith is a third year business major at Georgia Tech.", x, 100);
+            text("When he’s not hanging out with his brothers at Delta Sigma, you can", x, 125);
+            text("find him participating in the Entrepreneurial Ventures Alliance,", x, 150);
+            text("working out at the CRC, or sitting in your LMC class,", x, 175);
+            text("just waiting for you to talk to him!", x, 200);
+            boyChar.resize(74.05, 200);
+            image(boyChar, x - 80, 300);
+            break;
+        case 1:
+            x = 100;
+            background(culcStairs);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            text("", x, 445);
+            break;
+        default:
+    }
+}
+
+
 function textBox(chara) {
     rectMode(CORNER);
     fill('orange'); // everything after this will be filled
@@ -268,6 +309,20 @@ function textBox(chara) {
         noStroke();
         textAlign(CENTER, CENTER);
         text("You: ", width / 15, height / 1.35);
+        stroke(253, 187, 199);
+        // nextButton
+    }
+
+    if (chara == 2) { // chad textbox
+        fill('grey');
+        stroke(178, 59, 30);
+        rect(40, height / 1.45, width - 80, height / 3.75);
+
+        fill(0);
+        textSize(20);
+        noStroke();
+        textAlign(CENTER, CENTER);
+        text("Chad: ", width / 15, height / 1.35);
         stroke(253, 187, 199);
         // nextButton
     }
