@@ -11,8 +11,8 @@ let girlBtn;
 function preload() {
     fancy = loadFont("font3.otf")
 
-    schoolPhoto = loadImage("./techTower.jpeg");
-    culcStairs = loadImage("./culcStairs.png");
+    schoolPhoto = loadImage("./assets/techTower.jpeg");
+    culcStairs = loadImage("./assets/culcStairs.png");
 }
 
 // setup
@@ -136,9 +136,9 @@ function chooseChar() {
     text("Select character", width / 2, 50);
     text("hi", 400, 100);
 
-    boyChar = loadImage("./2dboy.png");
-    girlChar = loadImage("./2dgirl.png");
-    neuChar = loadImage("./2djordan.png");
+    boyChar = loadImage("./assets/2dboy.png");
+    girlChar = loadImage("./assets/2dgirl.png");
+    neuChar = loadImage("./assets/2djordan.png");
 
     //boyChar.position(200, 300);
     //girlChar.position(400, 300);
