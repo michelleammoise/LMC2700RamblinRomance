@@ -13,6 +13,10 @@ function preload() {
 
     schoolPhoto = loadImage("./assets/techTower.jpeg");
     culcStairs = loadImage("./assets/culcStairs.png");
+
+    boyChar = loadImage("./assets/3dboy.png");
+    girlChar = loadImage("./assets/3dgirl.png");
+    neuChar = loadImage("./assets/3djordan.png");
 }
 
 // setup
@@ -136,22 +140,22 @@ function chooseChar() {
     text("Select character", width / 2, 50);
     text("hi", 400, 100);
 
-    boyChar = loadImage("./assets/2dboy.png");
-    girlChar = loadImage("./assets/2dgirl.png");
-    neuChar = loadImage("./assets/2djordan.png");
+    boyChar.resize(74.05, 200);
+    girlChar.resize(74.05, 200);
+    neuChar.resize(74.05, 200);
 
-    //boyChar.position(200, 300);
-    //girlChar.position(400, 300);
-   // neuChar.position(600, 300);
+    image(boyChar, 275, 150);
+    image(girlChar, 475, 150);
+    image(neuChar, 675, 150);
 
     // boyBtn = createButton("Boy");
-    boyBtn.position(200, 350);
+    boyBtn.position(300, 450);
     boyBtn.show();
     // girlBtn = createButton("Girl");
-    girlBtn.position(400, 350);
+    girlBtn.position(500, 450);
     girlBtn.show();
     // neuBtn = createButton("Non-binary");
-    neuBtn.position(600, 350);
+    neuBtn.position(700, 450);
     neuBtn.show();
 }
 
