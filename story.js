@@ -8,10 +8,15 @@ let boyBtn;
 let girlBtn;
 
 let oliviaScene;
+let oliiaText;
 // olivia buttons
 let olivia11;
 let olivia12;
 let olivia13;
+
+let olivia21;
+let olivia22;
+let olivia23;
 
 // load assets
 function preload() {
@@ -83,15 +88,17 @@ function buttonSetup() {
 
     olivia11 = createButton("Approach Her After Class and Ask for Instagram");
     olivia11.hide()
-    // olivia11.mousePressed(() => {
-    //     // remove buttons
-    //     olivia11.remove();
-
-    // });
     olivia12 = createButton("Join the Aero-Philosophy Symposium Meeting and Get to Know Her");
     olivia12.hide()
     olivia13 = createButton("Invite Her to a Nerdy Worms Club Event and Request Her Instagram");
     olivia13.hide()
+
+    olivia21 = createButton("Collaborate on a Calculus Assignment");
+    olivia21.hide()
+    olivia22 = createButton("Attend the Hangar Session Together");
+    olivia22.hide()
+    olivia23 = createButton("Ask Her Out for Coffee");
+    olivia23.hide()
 }
 
 // draw scenes
@@ -179,7 +186,7 @@ function chooseChar() {
 
 function startScene() {
     background(culcStairs);
-    textBox(0);
+    textBox(0, "stairs");
 }
 // ^ insert all scenes above this comment ^ //
 
@@ -212,17 +219,21 @@ function oliviaRoute() {
     switch (oliviaScene) {
         case 0:
             background(schoolPhoto);
-            textBox(1);
+            textBox(1, "After a friendly conversation about the calculus class or another shared interest, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"");
 
 
-            olivia11.position(200, 350);
+            olivia11.position(200, 200);
             olivia11.show();
-            // girlBtn = createButton("Girl");
-            olivia12.position(400, 350);
+            olivia11.size(100, 100);
+
+            olivia12.position(400, 200);
             olivia12.show();
-            // neuBtn = createButton("Non-binary");
-            olivia13.position(600, 350);
+            olivia12.size(100, 100);
+
+            olivia13.position(600, 200);
             olivia13.show();
+            olivia13.size(100, 100);
+
 
             olivia11.mousePressed(() => {
                 // remove buttons
@@ -231,13 +242,29 @@ function oliviaRoute() {
                 olivia13.remove();
                 oliviaScene = 1;
             });
+            olivia12.mousePressed(() => {
+                // remove buttons
+                olivia11.remove();
+                olivia12.remove();
+                olivia13.remove();
+                oliviaScene = 1;
+            });
+            olivia13.mousePressed(() => {
+                // remove buttons
+                olivia11.remove();
+                olivia12.remove();
+                olivia13.remove();
+                oliviaScene = 1;
+            });
+            break;
         case 1:
-            textBox(1);
+            textBox(1, "ahaha");
+            break;
     }
-    textBox(1);
+    // textBox(1, "whhat is this bro");
 }
 
-function textBox(chara) {
+function textBox(chara, textString) {
     rectMode(CORNER);
     fill('orange'); // everything after this will be filled
     stroke(178, 58, 30); // color to draw lines and borders around shapes
@@ -252,8 +279,8 @@ function textBox(chara) {
         fill(0);
         textSize(20);
         noStroke();
-        textAlign(CENTER, CENTER);
-        text("You: ", width / 15, height / 1.35);
+        // textAlign(CENTER, CENTER);
+        text(textString, width / 15, height / 1.35, width - 100, height - 40);
         stroke(253, 187, 199);
         // nextButton
     }
@@ -266,8 +293,8 @@ function textBox(chara) {
         fill(0);
         textSize(20);
         noStroke();
-        textAlign(CENTER, CENTER);
-        text("You: ", width / 15, height / 1.35);
+        // textAlign(CENTER, CENTER);
+        text(textString, width / 15, height / 1.35, width - 100, height - 40);
         stroke(253, 187, 199);
         // nextButton
     }
