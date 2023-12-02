@@ -7,6 +7,12 @@ let neuBtn;
 let boyBtn;
 let girlBtn;
 
+let oliviaScene;
+// olivia buttons
+let olivia11;
+let olivia12;
+let olivia13;
+
 // load assets
 function preload() {
     fancy = loadFont("font3.otf")
@@ -25,13 +31,14 @@ function setup() {
     rectMode(CENTER);
     createCanvas(1000, 600);
     sceneCount = 1;
+    oliviaScene = 0;
 
     buttonSetup();
 }
 
 function buttonSetup() {
     startBtn = createButton("START");
-    startBtn.position(width/2, height/2);
+    startBtn.position(width / 2, height / 2);
     startBtn.mousePressed(() => {
         startBtn.remove();
         sceneCount = 2;
@@ -71,9 +78,20 @@ function buttonSetup() {
         neuBtn.remove();
         boyBtn.remove();
         girlBtn.remove();
-        sceneCount = 4;
+        sceneCount = 5;
     });
 
+    olivia11 = createButton("Approach Her After Class and Ask for Instagram");
+    olivia11.hide()
+    // olivia11.mousePressed(() => {
+    //     // remove buttons
+    //     olivia11.remove();
+
+    // });
+    olivia12 = createButton("Join the Aero-Philosophy Symposium Meeting and Get to Know Her");
+    olivia12.hide()
+    olivia13 = createButton("Invite Her to a Nerdy Worms Club Event and Request Her Instagram");
+    olivia13.hide()
 }
 
 // draw scenes
@@ -180,9 +198,43 @@ function playGame(sceneCount) {
         case 4:
             startScene();
             break;
+        case 5:
+            oliviaRoute();
+            break;
         default:
             break;
     }
+}
+
+function oliviaRoute() {
+    // choice 1
+    // oliviaScene = 0;
+    switch (oliviaScene) {
+        case 0:
+            background(schoolPhoto);
+            textBox(1);
+
+
+            olivia11.position(200, 350);
+            olivia11.show();
+            // girlBtn = createButton("Girl");
+            olivia12.position(400, 350);
+            olivia12.show();
+            // neuBtn = createButton("Non-binary");
+            olivia13.position(600, 350);
+            olivia13.show();
+
+            olivia11.mousePressed(() => {
+                // remove buttons
+                olivia11.remove();
+                olivia12.remove();
+                olivia13.remove();
+                oliviaScene = 1;
+            });
+        case 1:
+            textBox(1);
+    }
+    textBox(1);
 }
 
 function textBox(chara) {
@@ -194,6 +246,20 @@ function textBox(chara) {
     rect(20, height / 1.5, width - 40, height / 3.25);
     if (chara == 0) {
         fill('pink');
+        stroke(178, 59, 30);
+        rect(40, height / 1.45, width - 80, height / 3.75);
+
+        fill(0);
+        textSize(20);
+        noStroke();
+        textAlign(CENTER, CENTER);
+        text("You: ", width / 15, height / 1.35);
+        stroke(253, 187, 199);
+        // nextButton
+    }
+
+    if (chara == 1) {
+        fill('blue');
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
