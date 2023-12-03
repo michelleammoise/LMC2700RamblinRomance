@@ -54,11 +54,15 @@ function preload() {
     schoolPhoto = loadImage("./assets/techTower.jpeg");
     culcStairs = loadImage("./assets/culcStairs.png");
     stuCenter = loadImage("./assets/jlstucen.jpeg");
+    culcsteps = loadImage("./assets/culcsteps.png");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
     neuChar = loadImage("./assets/3djordan.png");
 
+    neuchar2 = loadImage("./assets/2djordan2.png");
+    boychar2 = loadImage("./assets/2dboy2.png");
+    girlchar2 = loadImage("./assets/2dgirl2.png");
 }
 
 // setup
@@ -81,6 +85,7 @@ function buttonSetup() {
         startBtn.remove();
         sceneCount = 2;
     })
+    startBtn.style('background-color: pink');
 
     nextBtn = createButton("Next");
     nextBtn.hide();
@@ -245,7 +250,7 @@ function information() {
     text("3. Each day you will be given a choice, your decision affects your stats.", 10, 450);
     text("4. The day of the party, your choices will determine your love fate.", 10, 500);
 
-    nextBtn.position(10, 550);
+    nextBtn.position(30, 550);
     nextBtn.show();
 }
 
@@ -257,22 +262,22 @@ function chooseChar() {
     text("Select character", width / 2, 50);
     text("hi", 400, 100);
 
-    boyChar.resize(74.05, 200);
-    girlChar.resize(74.05, 200);
-    neuChar.resize(74.05, 200);
+    boychar2.resize(200, 200);
+    girlchar2.resize(200, 200);
+    neuchar2.resize(200, 200);
 
-    image(boyChar, 275, 150);
-    image(girlChar, 475, 150);
-    image(neuChar, 675, 150);
+    image(boychar2, 200, 150);
+    image(girlchar2, 400, 150);
+    image(neuchar2, 600, 150);
 
     // boyBtn = createButton("Boy");
-    boyBtn.position(300, 450);
+    boyBtn.position(285, 450);
     boyBtn.show();
     // girlBtn = createButton("Girl");
-    girlBtn.position(500, 450);
+    girlBtn.position(485, 450);
     girlBtn.show();
     // neuBtn = createButton("Non-binary");
-    neuBtn.position(700, 450);
+    neuBtn.position(685, 450);
     neuBtn.show();
 }
 
@@ -737,17 +742,18 @@ function neuRoute() {
     //neuScene = 0;
     switch (neuScene) {
         case 0:
-            background(culcStairs);
-            textBox(1, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain.");
-            nextBtn2.position(20, 550);
+            background(culcsteps);
+            textBox(3, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain.");
+            nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.remove();
                 neuScene = 1;
-            })
+            });
+            break;
         case 1:
-            background(culcStairs);
-            textBox(1, "After a friendly conversation about the Neuroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
+            background(culcsteps);
+            textBox(3, "After a friendly conversation about the nueroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
 
             neu11.position(200, 200);
             neu11.show();
@@ -785,8 +791,8 @@ function neuRoute() {
             });
             break;
         case 2:
-            background(culcStairs);
-            textBox(1, "ahaha");
+            background(culcsteps);
+            textBox(3, "ahaha");
 
             neu21.position(200, 200);
             neu21.show();
@@ -824,8 +830,8 @@ function neuRoute() {
             });
             break;
         case 3:
-            background(culcStairs);
-            textBox(1, "idk anymore");
+            background(culcsteps);
+            textBox(3, "idk anymore");
 
             neu31.position(200, 200);
             neu31.show();
@@ -864,7 +870,7 @@ function neuRoute() {
             break;
         case 4:
             background(schoolPhoto);
-            textBox(1, "ahaha");
+            textBox(3, "ahaha");
         default:
             break;
     }
@@ -917,6 +923,18 @@ function textBox(chara, textString) {
         text(textString, width / 15, height / 1.35, width - 100, height - 40);
         stroke(253, 187, 199);
         // nextButton
+    }
+
+    if (chara == 3) {
+        fill(211, 169, 249);
+        stroke(178, 59, 30);
+        rect(40, height / 1.45, width - 80, height / 3.75);
+
+        fill(0);
+        textSize(20);
+        noStroke();
+        text(textString, width / 15, height / 1.35, width - 100, height - 40);
+        stroke(253, 187, 199);
     }
 }
 
