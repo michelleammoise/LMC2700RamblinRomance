@@ -25,10 +25,24 @@ let chad21;
 let chad22;
 let chad23;
 
+let chad31;
+let chad32;
+let chad33;
+
 let chad111;
 let chad112;
 let chad121;
 let chad122;
+
+
+
+
+
+
+let chad311;
+let chad312;
+let chad313;
+
 
 let olivia21;
 let olivia22;
@@ -190,6 +204,20 @@ function chadButtons() {
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
 
+
+
+
+
+
+
+
+
+    chad311 = createButton("\"I can really see ourselves being closer in the future\".");
+    chad311.hide();
+    chad312 = createButton("Agree and smile");
+    chad312.hide();
+    chad313 = createButton("Tell him your honest thoughts about business majors");
+    chad313.hide();
 }
 
 // draw scenes
@@ -437,6 +465,34 @@ function chadRoute() {
                 chadScene = 21;
             });
             break;
+        case 3:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Day 3, Wednesday: You and Chad decided to have lunch together at [PLACE]. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 30;
+            });
+            break;
+        case 4:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Day 4, Thursday: You and Chad spend time studying together in your dorm. You stated that it's a more personal and relaxed setting. "
+            + "You can order some food, play some background music, and focus on your studies while also getting to spend quality time together. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                // if bad, go to "4100", else go to "4200" for good ending
+                chadScene = 4200;
+            });
+            break;
         case 21:
             background(1); // change background to dorm?
             textBox(0); // probably make 0 be narrator
@@ -593,7 +649,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2,"I thought you looked familiar. You're [name], right? I didn't know you were "
+            textBox(2,"Chad: I thought you looked familiar. You're [name], right? I didn't know you were "
             + "interested in this stuff?");
 
             chad121.show();
@@ -617,7 +673,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2,"No way, really?! We should honestly share ideas. Can we talk about it on IG? "
+            textBox(2,"Chad: No way, really?! We should honestly share ideas. Can we talk about it on IG? "
             + "It'd be cool if we can connect outside meetings, and we can keep each other in the loop "
             + "for future meetings. ");
             okChad.show();
@@ -649,7 +705,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2, "I think I saw you, too. I guess you're not here for the club, then? "
+            textBox(2, "Chad: I think I saw you, too. I guess you're not here for the club, then? "
             + "That's cool, I'll just listen to the meeting.");
             // increase smarts, decrease charisma
             okChad.show();
@@ -704,7 +760,130 @@ function chadRoute() {
             });
             break;
         
-    
+        case 30:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: Good to see you again! I honestly had fun yesterday. I didn't expect us "
+            + "to have this much in common. It's hard being a business major. I've been swamped with work lately, "
+            + "but it was worth spending time with you. ");
+            chad311.show();
+            chad311.position(x, opt1y);
+            chad311.mousePressed(() => {
+                chad311.hide();
+                chad312.hide();
+                chad313.hide();
+                chadScene = 310;
+            });
+
+            chad312.show();
+            chad312.position(x, opt2y);
+            chad312.mousePressed(() => {
+                chad311.hide();
+                chad312.hide();
+                chad313.hide();
+                chadScene = 320;
+            });
+
+            chad313.show();
+            chad313.position(x, opt3y);
+            chad313.mousePressed(() => {
+                chad311.hide();
+                chad312.hide();
+                chad313.hide();
+                chadScene = 330;
+            });
+            break;
+        case 310:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: You're right.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 311;
+            });
+            break;
+        case 311:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Both of you blush. You guys spend of the rest of the hour talking about everything "
+            + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
+            + "work together. You agree. "); // may want to expand conversation
+            // increase charisma and attractiveness
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 4;
+            });
+            break;
+        case 320:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "He blushes. You guys spend of the rest of the hour talking about everything "
+            + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
+            + "work together. You agree. ");
+            // increase attractiveness
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 4; // also may want to expand story
+            });
+            break;
+        case 330:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You tell him how he shouldn't be complaining as a business major, since it's "
+            + "one of the easiest majors out there. You also state how your major is harder and yet "
+            + "you can still handle it. ");
+            // increase smartness, deduct charisma
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 331;
+            });
+            break;
+        case 331:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "He didn't ask for all that. Let's say he was not amused. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 332;
+            });
+            break;
+        case 332:
+            background(1); // change background to dining hall/food place
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You apologize and offer to help him study tomorrow for his upcoming test. "
+            + "He reluctantly agrees.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 4;
+            });
+            break;
         default:
     }
 }
