@@ -53,10 +53,12 @@ function preload() {
 
     schoolPhoto = loadImage("./assets/techTower.jpeg");
     culcStairs = loadImage("./assets/culcStairs.png");
+    stuCenter = loadImage("./assets/jlstucen.jpeg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
     neuChar = loadImage("./assets/3djordan.png");
+
 }
 
 // setup
@@ -189,7 +191,6 @@ function chadButtons() {
     chad22.hide();
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
-
 }
 
 // draw scenes
@@ -390,7 +391,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0,"Day 1, Monday: As you leave your LMC class, " 
+            textBox(0,"Day 1, Monday: As you leave your LMC class, "
             + "you see Chad Smith walking in your direction. "
             + "You guys have talked a bit in the past, but "
             + "are still unfamiliar with each other. What "
@@ -444,22 +445,32 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(1, "Not much. Got a lame business assignment, but I might go to a club event or gym later.");
-            
+
             chad21.show();
             chad21.position(x, opt1y);
             chad21.mousePressed(() => {
-
+                chad21.hide();
+                chad22.hide();
+                chad23.hide();
+                chadScene = 211;
             });
 
             chad22.show();
             chad22.position(x, opt2y);
             chad22.mousePressed(() => {
-
+                chad21.hide();
+                chad22.hide();
+                chad23.hide();
+                chadScene = 212;
             });
 
             chad23.show();
             chad23.position(x, opt3y);
             chad23.mousePressed(() => {
+                chad21.hide();
+                chad22.hide();
+                chad23.hide();
+                chadScene = 213;
 
             });
             break;
@@ -522,7 +533,7 @@ function chadRoute() {
             + "That night, you found Chad's Instagram account on your feed "
             + "and followed him.");
             // increase smartness, decrease charisma
-            
+
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -687,7 +698,7 @@ function chadRoute() {
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 1301;
-            }) 
+            })
             break;
         case 1301:
             background(culcStairs);
@@ -703,8 +714,21 @@ function chadRoute() {
                 chadScene = 2;
             });
             break;
-        
-    
+        case 211: // offer to help on homework
+            background(stuCenter);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "does this work?");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 0;
+            });
+            break;
+        // case 212: // attend club event
+        // case 213: // invite to gym
         default:
     }
 }
@@ -723,8 +747,8 @@ function neuRoute() {
             })
         case 1:
             background(culcStairs);
-            textBox(1, "After a friendly conversation about the nueroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
-            
+            textBox(1, "After a friendly conversation about the Neuroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
+
             neu11.position(200, 200);
             neu11.show();
             neu11.size(100, 100);
