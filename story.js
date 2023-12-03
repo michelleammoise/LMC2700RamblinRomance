@@ -28,6 +28,19 @@ let olivia21;
 let olivia22;
 let olivia23;
 
+// non-binary
+let neuScene;
+let neu11;
+let neu12;
+let neu13;
+let neu21;
+let neu22;
+let neu23;
+let neu31;
+let neu32;
+let neu33;
+let nextBtn2;
+
 // load assets
 function preload() {
     fancy = loadFont("font3.otf")
@@ -48,6 +61,7 @@ function setup() {
     sceneCount = 1;
     oliviaScene = 0;
     chadScene = 1;
+    neuScene = 0;
 
     buttonSetup();
 }
@@ -67,6 +81,9 @@ function buttonSetup() {
         sceneCount = 3;
     })
 
+    nextBtn2 = createButton("Next");
+    nextBtn2.hide();
+
     neuBtn = createButton("Non-binary");
     neuBtn.hide();
     neuBtn.mousePressed(() => {
@@ -74,7 +91,7 @@ function buttonSetup() {
         neuBtn.remove();
         boyBtn.remove();
         girlBtn.remove();
-        sceneCount = 4;
+        sceneCount = 7;
     });
 
     boyBtn = createButton("Boy");
@@ -112,6 +129,27 @@ function buttonSetup() {
     olivia22.hide()
     olivia23 = createButton("Ask Her Out for Coffee");
     olivia23.hide()
+
+    neu11 = createButton("Approach Them After Class and Ask for Instagram");
+    neu11.hide()
+    neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
+    neu12.hide()
+    neu13 = createButton("Join them at a Brainwaves Event and Request Them Instagram");
+    neu13.hide()
+
+    neu21 = createButton("Collaborate on a Neuroscience Assignment");
+    neu21.hide()
+    neu22 = createButton("Invite Them to a Science Seminar");
+    neu22.hide()
+    neu23 = createButton("Attend a Consciousness Discussion With Them");
+    neu23.hide()
+
+    neu31 = createButton("Participate in a Nueroscience workshop");
+    neu31.hide()
+    neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
+    neu32.hide()
+    neu33 = createButton("Ask for Help Understanding a Nueroscience Related Concept");
+    neu33.hide()
 }
 
 function chadButtons() {
@@ -242,6 +280,9 @@ function playGame(sceneCount) {
             break;
         case 6:
             chadRoute();
+            break;
+        case 7:
+            neuRoute();
             break;
         default:
             break;
@@ -499,6 +540,142 @@ function chadRoute() {
     }
 }
 
+function neuRoute() {
+    //neuScene = 0;
+    switch (neuScene) {
+        case 0:
+            background(culcStairs);
+            textBox(1, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain.");
+            nextBtn2.position(20, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.remove();
+                neuScene = 1;
+            })
+        case 1:
+            background(culcStairs);
+            textBox(1, "After a friendly conversation about the nueroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
+            
+            neu11.position(200, 200);
+            neu11.show();
+            neu11.size(100, 100);
+
+            neu12.position(400, 200);
+            neu12.show();
+            neu12.size(100, 100);
+
+            neu13.position(600, 200);
+            neu13.show();
+            neu13.size(100, 100);
+
+
+            neu11.mousePressed(() => {
+                // remove buttons
+                neu11.remove();
+                neu12.remove();
+                neu13.remove();
+                neuScene = 2;
+            });
+            neu12.mousePressed(() => {
+                // remove buttons
+                neu11.remove();
+                neu12.remove();
+                neu13.remove();
+                neuScene = 2;
+            });
+            neu13.mousePressed(() => {
+                // remove buttons
+                neu11.remove();
+                neu12.remove();
+                neu13.remove();
+                neuScene = 2;
+            });
+            break;
+        case 2:
+            background(culcStairs);
+            textBox(1, "ahaha");
+
+            neu21.position(200, 200);
+            neu21.show();
+            neu21.size(100, 100);
+
+            neu22.position(400, 200);
+            neu22.show();
+            neu22.size(100, 100);
+
+            neu23.position(600, 200);
+            neu23.show();
+            neu23.size(100, 100);
+
+
+            neu21.mousePressed(() => {
+                // remove buttons
+                neu21.remove();
+                neu22.remove();
+                neu23.remove();
+                neuScene = 3;
+            });
+            neu22.mousePressed(() => {
+                // remove buttons
+                neu21.remove();
+                neu22.remove();
+                neu23.remove();
+                neuScene = 3;
+            });
+            neu23.mousePressed(() => {
+                // remove buttons
+                neu21.remove();
+                neu22.remove();
+                neu23.remove();
+                neuScene = 3;
+            });
+            break;
+        case 3:
+            background(culcStairs);
+            textBox(1, "idk anymore");
+
+            neu31.position(200, 200);
+            neu31.show();
+            neu31.size(100, 100);
+
+            neu32.position(400, 200);
+            neu32.show();
+            neu32.size(100, 100);
+
+            neu33.position(600, 200);
+            neu33.show();
+            neu33.size(100, 100);
+
+
+            neu31.mousePressed(() => {
+                // remove buttons
+                neu31.remove();
+                neu32.remove();
+                neu33.remove();
+                neuScene = 4;
+            });
+            neu32.mousePressed(() => {
+                // remove buttons
+                neu31.remove();
+                neu32.remove();
+                neu33.remove();
+                neuScene = 4;
+            });
+            neu33.mousePressed(() => {
+                // remove buttons
+                neu31.remove();
+                neu32.remove();
+                neu33.remove();
+                neuScene = 4;
+            });
+            break;
+        case 4:
+            background(schoolPhoto);
+            textBox(1, "ahaha");
+        default:
+            break;
+    }
+}
 
 function textBox(chara, textString) {
     rectMode(CORNER);
