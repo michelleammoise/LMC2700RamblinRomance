@@ -293,11 +293,11 @@ function jordanButtons() {
     neu23 = createButton("Attend a Consciousness Discussion With Them");
     neu23.hide();
 
-    neu31 = createButton("Participate in a Nueroscience workshop");
+    neu31 = createButton("Participate in a Neuroscience workshop");
     neu31.hide();
     neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
     neu32.hide();
-    neu33 = createButton("Ask for Help Understanding a Nueroscience Related Concept");
+    neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
     neu33.hide();
 
     neu41 = createButton("Approach them now");
@@ -853,7 +853,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2, "Chad: I thought you looked familiar. You're [name], right? I didn't know you were "
+            textBox(2, "Chad: I thought you looked familiar. You're " + playerName + ", right? I didn't know you were "
                 + "interested in this stuff?");
 
             chad121.show();
