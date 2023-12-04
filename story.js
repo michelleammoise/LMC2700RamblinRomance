@@ -1,5 +1,6 @@
 // initialize vars
 // initialize variables
+
 let sceneCount;
 let startBtn;
 let nextBtn;
@@ -33,10 +34,6 @@ let chad111;
 let chad112;
 let chad121;
 let chad122;
-
-
-
-
 
 
 let chad311;
@@ -172,11 +169,11 @@ function buttonSetup() {
     neu23 = createButton("Attend a Consciousness Discussion With Them");
     neu23.hide()
 
-    neu31 = createButton("Participate in a Nueroscience workshop");
+    neu31 = createButton("Participate in a Neuroscience workshop");
     neu31.hide()
     neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
     neu32.hide()
-    neu33 = createButton("Ask for Help Understanding a Nueroscience Related Concept");
+    neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
     neu33.hide()
 }
 
@@ -287,7 +284,7 @@ function chooseChar() {
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("Select character", width / 2, 50);
-    text("hi", 400, 100);
+    text("Hi" + width / 2, 50);
 
     boychar2.resize(200, 200);
     girlchar2.resize(200, 200);
@@ -391,7 +388,7 @@ function oliviaRoute() {
             textBox(1, "ahaha");
             break;
     }
-    // textBox(1, "whhat is this bro");
+    // textBox(1, "what is this bro");
 }
 
 function chadRoute() {
