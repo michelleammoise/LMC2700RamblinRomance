@@ -1,5 +1,6 @@
 // initialize vars
 // initialize variables
+
 let sceneCount;
 let startBtn;
 let nextBtn;
@@ -55,6 +56,18 @@ let neu31;
 let neu32;
 let neu33;
 let nextBtn2;
+let neu41;
+let neu42;
+let neu43;
+let neu51;
+let neu52;
+let neu53;
+let neu61;
+let neu62;
+let neu63;
+let neu71;
+let neu72;
+let neu73;
 
 // load assets
 function preload() {
@@ -137,6 +150,7 @@ function buttonSetup() {
     });
 
     chadButtons();
+    jordanButtons();
 
     olivia11 = createButton("Approach Her After Class and Ask for Instagram");
     olivia11.hide()
@@ -152,28 +166,59 @@ function buttonSetup() {
     olivia23 = createButton("Ask Her Out for Coffee");
     olivia23.hide()
 
-    neu11 = createButton("Approach Them After Class and Ask for Instagram");
-    neu11.hide()
-    neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
-    neu12.hide()
-    neu13 = createButton("Join them at a Brainwaves Event and Request Them Instagram");
-    neu13.hide()
-
-    neu21 = createButton("Collaborate on a Neuroscience Assignment");
-    neu21.hide()
-    neu22 = createButton("Invite Them to a Science Seminar");
-    neu22.hide()
-    neu23 = createButton("Attend a Consciousness Discussion With Them");
-    neu23.hide()
-
-    neu31 = createButton("Participate in a Nueroscience workshop");
-    neu31.hide()
-    neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
-    neu32.hide()
-    neu33 = createButton("Ask for Help Understanding a Nueroscience Related Concept");
-    neu33.hide()
 }
 
+function jordanButtons() {
+    //jordanButtons();
+    neu11 = createButton("Get Political");
+    neu11.hide();
+    neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
+    neu12.hide();
+    neu13 = createButton("Request Their Instagram Directly");
+    neu13.hide();
+
+    neu21 = createButton("Collaborate on a Neuroscience Assignment");
+    neu21.hide();
+    neu22 = createButton("Invite Them to a Science Seminar");
+    neu22.hide();
+    neu23 = createButton("Attend a Consciousness Discussion With Them");
+    neu23.hide();
+
+    neu31 = createButton("Participate in a Nueroscience workshop");
+    neu31.hide();
+    neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
+    neu32.hide();
+    neu33 = createButton("Ask for Help Understanding a Nueroscience Related Concept");
+    neu33.hide();
+
+    neu41 = createButton("Approach them now");
+    neu41.hide();
+    neu42 = createButton("Meet them at a club meeting later today");
+    neu42.hide();
+    neu43 = createButton("Look at them cutely");
+    neu43.hide();
+
+    neu51 = createButton("How did you feel about the reading today?");
+    neu51.hide();
+    neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
+    neu52.hide();
+    neu53 = createButton("What are you up to today?");
+    neu53.hide();
+
+    neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
+    neu61.hide();
+    neu62 = createButton(" ");
+    neu62.hide();
+    neu63 = createButton(" ");
+    neu63.hide();
+
+    neu71 = createButton("Offer to help them with their research");
+    neu71.hide();
+    neu72 = createButton("Attend the Brainwaves event togethor!");
+    neu72.hide();
+    neu73 = createButton(" ");
+    neu73.hide();
+}
 function chadButtons() {
     okChad = createButton("Ok");
     okChad.hide();
@@ -189,7 +234,7 @@ function chadButtons() {
 
     chad111 = createButton("How did you feel about chapter 14 of the reading today?");
     chad112 = createButton("Hi! I heard you're interested in startups. "
-    + "I have some cool ideas I'd wanna share.");
+        + "I have some cool ideas I'd wanna share.");
     chad111.hide();
     chad112.hide();
 
@@ -201,11 +246,32 @@ function chadButtons() {
     // day 2 buttons
     chad21 = createButton("Offer to help on his homework");
     chad21.hide();
-    chad22 = createButton("Attend the Entrepreneurial Alliance club event together");
+    chad22 = createButton("Attend the Innovative Yellow Jackets club event together");
     chad22.hide();
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
 
+    chad211 = createButton("Pick up pencil and papers for him");
+    chad212 = createButton("Let him pick up his own stuff");
+    chad211.hide();
+    chad212.hide();
+
+    chad2130 = createButton("Volunteer to participate in the event");
+    chad2140 = createButton("Let someone else go for it");
+    chad2130.hide();
+    chad2140.hide();
+
+    chad215 = createButton("Wing it");
+    chad215.hide();
+    chad216 = createButton("Ask Chad for help");
+    chad216.hide();
+
+    chad217 = createButton("Help spot Chad at the benchpress");
+    chad218 = createButton("Ask Chad to spot you at the benchpress");
+    chad217.hide();
+    chad218.hide();
+
+    //day 3 buttons
     chad311 = createButton("\"I can really see ourselves being closer in the future\".");
     chad311.hide();
     chad312 = createButton("Agree and smile");
@@ -276,7 +342,7 @@ function chooseChar() {
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("Select character", width / 2, 50);
-    text("hi", 400, 100);
+    text("Hi" + width / 2, 50);
 
     boychar2.resize(200, 200);
     girlchar2.resize(200, 200);
@@ -380,7 +446,7 @@ function oliviaRoute() {
             textBox(1, "ahaha");
             break;
     }
-    // textBox(1, "whhat is this bro");
+    // textBox(1, "what is this bro");
 }
 
 function chadRoute() {
@@ -389,7 +455,7 @@ function chadRoute() {
     let opt1y = 100;
     let opt2y = 150;
     let opt3y = 200;
-    switch(chadScene) {
+    switch (chadScene) {
         case 0:
             // exposition for chad
             x = width / 1.75;
@@ -417,11 +483,11 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0,"Day 1, Monday: As you leave your LMC class, "
-            + "you see Chad Smith walking in your direction. "
-            + "You guys have talked a bit in the past, but "
-            + "are still unfamiliar with each other. What "
-            + "do you do?");
+            textBox(0, "Day 1, Monday: As you leave your LMC class, "
+                + "you see Chad Smith walking in your direction. "
+                + "You guys have talked a bit in the past, but "
+                + "are still unfamiliar with each other. What "
+                + "do you do?");
 
             chad11.show();
             chad11.position(x, opt1y);
@@ -457,7 +523,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Day 2, Tuesday: You wake up in your dorm. You don't have classes until much later, "
-            + "so you don't have much to do this morning. You open Instagram text and Chad how he's doing. ");
+                + "so you don't have much to do this morning. You open Instagram text and Chad how he's doing. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -484,7 +550,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Day 4, Thursday: You and Chad spend time studying together in your dorm. You stated that it's a more personal and relaxed setting. "
-            + "You can order some food, play some background music, and focus on your studies while also getting to spend quality time together. ");
+                + "You can order some food, play some background music, and focus on your studies while also getting to spend quality time together. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -546,7 +612,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(2, "Chad: Hey! You're [name], right? I'm Chad. "
-            + "You sounded really smart in lecture today. What's up?");
+                + "You sounded really smart in lecture today. What's up?");
             chad111.show();
             chad111.position(x, opt1y);
             chad111.mousePressed(() => {
@@ -569,8 +635,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(2, "Chad: Oh, it was cool, I guess. I didn't actually pay attention. "
-            + "Anyways, I have to go. We should talk about other stuff in the future, "
-            + "though. I'll see you around.");
+                + "Anyways, I have to go. We should talk about other stuff in the future, "
+                + "though. I'll see you around.");
             okChad.show();
             okChad.mousePressed(() => {
                 chadScene = 1112;
@@ -583,9 +649,9 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "He walks away. It seems Chad isn't a fan of academics. "
-            + "You spend the rest of the day finishing your classes as usual. "
-            + "That night, you found Chad's Instagram account on your feed "
-            + "and followed him.");
+                + "You spend the rest of the day finishing your classes as usual. "
+                + "That night, you found Chad's Instagram account on your feed "
+                + "and followed him.");
             // increase smartness, decrease charisma
 
             okChad.show();
@@ -600,7 +666,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(2, "Chad: I'd be down to talk! I gotta go to class, but "
-            + "you should totally text me later. Can I send you my IG handle?");
+                + "you should totally text me later. Can I send you my IG handle?");
             // increase charisma/attractiveness
 
             okChad.show();
@@ -615,8 +681,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont("Courier New", 20);
             textBox(0, "You received Chad's Instagram account! "
-            + "Later that day, you guys texted for hours about everything from "
-            + "business, hobbies, and funny stories.");
+                + "Later that day, you guys texted for hours about everything from "
+                + "business, hobbies, and funny stories.");
 
             okChad.show();
             okChad.mousePressed(() => {
@@ -630,7 +696,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Chad has always been outspoken about being part of the Entrepreneurial Alliance Club. "
-            + "You decide to wait until a club meeting today to talk to Chad, knowing he will be there.");
+                + "You decide to wait until a club meeting today to talk to Chad, knowing he will be there.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -643,8 +709,8 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0,"You arrive just in time for the club meeting. Unsurprisingly, Chad is already "
-            + "sitting down. You sit next to him.");
+            textBox(0, "You arrive just in time for the club meeting. Unsurprisingly, Chad is already "
+                + "sitting down. You sit next to him.");
 
             okChad.show();
             okChad.mousePressed(() => {
@@ -658,8 +724,8 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2,"Chad: I thought you looked familiar. You're [name], right? I didn't know you were "
-            + "interested in this stuff?");
+            textBox(2, "Chad: I thought you looked familiar. You're [name], right? I didn't know you were "
+                + "interested in this stuff?");
 
             chad121.show();
             chad121.position(x, opt1y);
@@ -682,9 +748,9 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2,"Chad: No way, really?! We should honestly share ideas. Can we talk about it on IG? "
-            + "It'd be cool if we can connect outside meetings, and we can keep each other in the loop "
-            + "for future meetings. ");
+            textBox(2, "Chad: No way, really?! We should honestly share ideas. Can we talk about it on IG? "
+                + "It'd be cool if we can connect outside meetings, and we can keep each other in the loop "
+                + "for future meetings. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -698,8 +764,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You guys share Instagram accounts. For the rest of the meeting, you both are "
-            + "actively involved in the conversation. Afterwards, you continue texting Chad through "
-            + "the evening.");
+                + "actively involved in the conversation. Afterwards, you continue texting Chad through "
+                + "the evening.");
 
             // increase smartness and charisma
             okChad.show();
@@ -715,7 +781,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(2, "Chad: I think I saw you, too. I guess you're not here for the club, then? "
-            + "That's cool, I'll just listen to the meeting.");
+                + "That's cool, I'll just listen to the meeting.");
             // increase smarts, decrease charisma
             okChad.show();
             okChad.mousePressed(() => {
@@ -730,8 +796,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "For the rest of the meeting, Chad doesn't pay much attention to you, "
-            + "feeling a little uncomfortable that you came just for him. But you try to make "
-            + "small talk, and he eventually agrees to share his Instagram account. ");
+                + "feeling a little uncomfortable that you came just for him. But you try to make "
+                + "small talk, and he eventually agrees to share his Instagram account. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -745,8 +811,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You turn your head to the side, smile, and glance over to his eyes. "
-            + "Chad grins, uncomfortably, as he walks past you. He doesn't know you enough "
-            + "to reciprocate those feelings. ");
+                + "Chad grins, uncomfortably, as he walks past you. He doesn't know you enough "
+                + "to reciprocate those feelings. ");
             // increase attractiveness, decrease charisma
             okChad.show();
             okChad.mousePressed(() => {
@@ -761,7 +827,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Later that day, you find Chad's Instagram account and follow him, "
-            + "hoping to provide a better impression next time.");
+                + "hoping to provide a better impression next time.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -774,16 +840,190 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "does this work?");
+            textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n" + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n" + "You decide to ask him about his interests.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
-                chadScene = 0;
+                chadScene = 2111;
             });
             break;
-        // case 212: // attend club event
-        // case 213: // invite to gym
-        
+        case 2111: //hw help
+            background(stuCenter);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "It seems like he dropped his pencil in between you two. Should I let him pick it up or should I pick it up for him?");
+            chad211.show();
+            chad211.position(x, opt1y);
+            chad211.mousePressed(() => {
+                chad211.hide();
+                chad212.hide();
+                chadScene = 2112;
+            });
+            chad212.show();
+            chad212.position(x, opt2y);
+            chad212.mousePressed(() => {
+                chad211.hide();
+                chad212.hide();
+                chadScene = 2113;
+            });
+            break;
+        case 2112: //hw help
+            background(stuCenter);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "He see you hesistate but picks up his pencil first. You guys continue to study together.\nAlthough you wished to get to know him better, you guys still enjoyed each others' presence.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 2113: //hw help
+            background(stuCenter);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "The two of you coincidentally pick up the pencil at the same time. You guys make eye contact and blush. You would have thought they were working on chemistry the way they were bonding. You guys finish studying and said your goodbyes. You guys agreed to meet up again soon.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break
+        case 212: // attend club event
+            background(stuCenter);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Innovative Yellow Jackets happens to be hosting an event with a famous model teaching students confidence and how to model." + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
+            chad2130.show();
+            chad2130.position(x, opt1y);
+            chad2130.mousePressed(() => {
+                chad2130.hide();
+                chad2140.hide();
+                chadScene = 2121;
+            });
+            chad2140.show();
+            chad2140.position(x, opt2y);
+            chad2140.mousePressed(() => {
+                chad2130.hide();
+                chad2140.hide();
+                chadScene = 2122;
+            });
+            break;
+        case 2121: // attend club event
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "The second that the guest speaker calls on you, your mind goes blank. You forgot how to copy the sequence of the runaway walk. \nShould you wing it or ask Chad for help?");
+            chad215.show();
+            chad215.position(x, opt1y);
+            chad215.mousePressed(() => {
+                chad215.hide();
+                chad216.hide();
+                chadScene = 2123;
+            });
+            chad216.show();
+            chad216.position(x, opt2y);
+            chad216.mousePressed(() => {
+                chad215.hide();
+                chad216.hide();
+                chadScene = 2124;
+            });
+            break;
+        case 2122: // attend club event
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You see Chad raise his hand. He gets called on and he does the walk perfectly. You guys continue to enjoy the event together. You guys agreed to meet up again soon.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 2123:
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You wing it and do the walk. You trip and fall. Chad helps you up and you guys laugh it off and continue to enjoy the event together. You guys agreed to meet up again soon.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 2124: // attend club event
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You ask Chad for help. He whispers the sequence to you and you do the walk perfectly, which caught his attention. You guys agreed to meet up again soon after all the fun.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 213: // invite to gym
+            background(crc);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "After going back to your dorm, Chad meets you at the gym. While doing the bench press, you notice Chad struggling to lift the bar. Should you help him or let him struggle?");
+            chad217.show();
+            chad217.position(x, opt1y);
+            chad217.mousePressed(() => {
+                chad217.hide();
+                chad218.hide();
+                chadScene = 2113;
+            });
+            chad218.show();
+            chad218.position(x, opt2y);
+            chad218.mousePressed(() => {
+                chad217.hide();
+                chad218.hide();
+                chadScene = 2114;
+            });
+            break;
+        case 2113: // invite to gym
+            background(crc);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You help him lift the bar. He thanks you and blushes. You guys end up having a productive workout together. You guys agreed to workout again soon.");
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 2114: // invite to gym
+            background(crc);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "He almost drops the bar on himself. He gets up and says he's fine. The rest of the workout went well and you guys agreed to workout again soon.");
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
         case 30:
             background(1); // change background to dining hall/food place
             textBox(0);
@@ -791,8 +1031,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(2, "Chad: Good to see you again! I honestly had fun yesterday. I didn't expect us "
-            + "to have this much in common. It's hard being a business major. I've been swamped with work lately, "
-            + "but it was worth spending time with you. ");
+                + "to have this much in common. It's hard being a business major. I've been swamped with work lately, "
+                + "but it was worth spending time with you. ");
             chad311.show();
             chad311.position(x, opt1y);
             chad311.mousePressed(() => {
@@ -840,8 +1080,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Both of you blush. You guys spend of the rest of the hour talking about everything "
-            + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
-            + "work together. You agree. "); // may want to expand conversation
+                + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
+                + "work together. You agree. "); // may want to expand conversation
             // increase charisma and attractiveness
             okChad.show();
             okChad.mousePressed(() => {
@@ -856,8 +1096,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "He blushes. You guys spend of the rest of the hour talking about everything "
-            + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
-            + "work together. You agree. ");
+                + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
+                + "work together. You agree. ");
             // increase attractiveness
             okChad.show();
             okChad.mousePressed(() => {
@@ -872,8 +1112,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You tell him how he shouldn't be complaining as a business major, since it's "
-            + "one of the easiest majors out there. You also state how your major is harder and yet "
-            + "you can still handle it. ");
+                + "one of the easiest majors out there. You also state how your major is harder and yet "
+                + "you can still handle it. ");
             // increase smartness, deduct charisma
             okChad.show();
             okChad.mousePressed(() => {
@@ -901,7 +1141,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You apologize and offer to help him study tomorrow for his upcoming test. "
-            + "He reluctantly agrees.");
+                + "He reluctantly agrees.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1036,7 +1276,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "However, The dorm room feels awkward, with an evident distance between you and Chad. "
-            + "Study materials are scattered, and the atmosphere is strained.");
+                + "Study materials are scattered, and the atmosphere is strained.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1141,8 +1381,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "As you leave Chad's dorm, disappointment lingers, and there's an awkwardness that hangs in the air. "
-            + "It becomes clear that your suggestion didn't align with Chad's comfort zone, and the potential connection "
-            + "you thought was forming takes a hit.");
+                + "It becomes clear that your suggestion didn't align with Chad's comfort zone, and the potential connection "
+                + "you thought was forming takes a hit.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1158,17 +1398,93 @@ function neuRoute() {
     switch (neuScene) {
         case 0:
             background(culcsteps);
-            textBox(3, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain.");
+            textBox(3, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain. " +
+                "They are also an active member of the Brainwaves Society!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
-                nextBtn2.remove();
+                nextBtn2.hide();
                 neuScene = 1;
             });
             break;
         case 1:
+            background(stuCenter);
+            textBox(3, "Day 1: Monday. As you leave your LMC class, you see Jordan Song walking in your direction. " +
+                "You guys have talked a little bit in the past but do not know each other that well. What do you do next?");
+
+            neu41.position(200, 200);
+            neu41.show();
+            neu41.size(100, 100);
+
+            neu42.position(400, 200);
+            neu42.show();
+            neu42.size(100, 100);
+
+            neu43.position(600, 200);
+            neu43.show();
+            neu43.size(100, 100);
+
+            neu41.mousePressed(() => {
+                // remove buttons
+                neu41.remove();
+                neu42.remove();
+                neu43.remove();
+                neuScene = 2;
+            });
+            neu42.mousePressed(() => {
+                // remove buttons
+                neu41.remove();
+                neu42.remove();
+                neu43.remove();
+                neuScene = 3;
+            });
+            neu43.mousePressed(() => {
+                // remove buttons
+                neu41.remove();
+                neu42.remove();
+                neu43.remove();
+                neuScene = 4;
+            });
+            break;
+        case 2:
+            background(stuCenter);
+            textBox(3, "You walk upto them, but at the last minute you lose your nerve and turn back around. " +
+                "Hopefully you can speak with them in the neuroscience lecture class you both are in.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 11;
+            });
+            break;
+        case 3:
+            background(stuCenter);
+            textBox(3, "Jordan has always been outspoken about neuroscience. You decide to wait until " +
+                "the lecture class, which you both are in, later today to talk to them.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 11;
+            });
+            break;
+        case 4:
+            background(stuCenter);
+            textBox(3, "You turn your head to the side, smile, and glance up to their eyes. Jordan smiles, uncomfortably, " +
+                "as they walk by. They do not know how to reciprocate those feelings. Hopefully you can speak with them " +
+                "in the neuroscience lecture class you are both in.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 11;
+            });
+            break;
+        case 11:
             background(culcsteps);
-            textBox(3, "After a friendly conversation about the nueroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
+            textBox(3, "Later that day: you approach them at after the neuroscience lecture, " +
+                "express your interest in neuroscience. After an interesting conversation you wish to keep the " +
+                "conversation going.");
 
             neu11.position(200, 200);
             neu11.show();
@@ -1182,32 +1498,198 @@ function neuRoute() {
             neu13.show();
             neu13.size(100, 100);
 
-
             neu11.mousePressed(() => {
                 // remove buttons
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 2;
+                neuScene = 12;
             });
             neu12.mousePressed(() => {
                 // remove buttons
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 2;
+                neuScene = 13;
             });
             neu13.mousePressed(() => {
                 // remove buttons
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 2;
+                neuScene = 14;
             });
             break;
-        case 2:
+        case 12:
             background(culcsteps);
-            textBox(3, "ahaha");
+            textBox(3, "Quick question, why? You still got their Instagram somehow.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 21;
+            });
+            break;
+        case 13:
+            background(culcsteps);
+            textBox(3, "After joining the Brainwaves Society, and after attending your first meeting later the same day " +
+                " you approach Jordan and ask them for their instagram. Just so you can keep up Brainwave activies of course. ;)");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 21;
+            });
+            break;
+        case 14:
+            background(culcsteps);
+            textBox(3, "Props to you for being bold, let's keep these good vibes going.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 21;
+            });
+            break;
+        case 21:
+            background(stuCenter);
+            textBox(3, "Day 2: Tuesday. Now that you've left an impression and Jordan knows you a little better, you " +
+                "decide to make the first move once again and direct message them on Instagram.");
+
+            neu51.position(200, 200);
+            neu51.show();
+            neu51.size(100, 100);
+
+            neu52.position(400, 200);
+            neu52.show();
+            neu52.size(100, 100);
+
+            neu53.position(600, 200);
+            neu53.show();
+            neu53.size(100, 100);
+
+            neu51.mousePressed(() => {
+                // remove buttons
+                neu51.remove();
+                neu52.remove();
+                neu53.remove();
+                neuScene = 22;
+            });
+            neu52.mousePressed(() => {
+                // remove buttons
+                neu51.remove();
+                neu52.remove();
+                neu53.remove();
+                neuScene = 23;
+            });
+            neu53.mousePressed(() => {
+                // remove buttons
+                neu51.remove();
+                neu52.remove();
+                neu53.remove();
+                neuScene = 24;
+            });
+            break;
+        case 22:
+            background(stuCenter);
+            textBox(3, "They respond: It was really interesting! I've been wanting to talk to someone about it!")
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 25;
+            });
+            break;
+        case 23:
+            background(stuCenter);
+            textBox(3, "They respond: Yeah I love reading and talking about new research that's published. Send me the article!")
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 25;
+            });
+            break;
+        case 24:
+            background(stuCenter);
+            textBox(3, "They do not respond.")
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 25;
+            });
+            break;
+        case 25:
+            background(stuCenter);
+            textBox(3, "You just can't wait to see them though. How should you respond to continue the connection IRL?")
+            neu31.position(200, 200);
+            neu31.show();
+            neu31.size(100, 100);
+
+            neu32.position(400, 200);
+            neu32.show();
+            neu32.size(100, 100);
+
+            neu33.position(600, 200);
+            neu33.show();
+            neu33.size(100, 100);
+
+            neu31.mousePressed(() => {
+                // remove buttons
+                neu31.remove();
+                neu32.remove();
+                neu33.remove();
+                neuScene = 26;
+            });
+            neu32.mousePressed(() => {
+                // remove buttons
+                neu31.remove();
+                neu32.remove();
+                neu33.remove();
+                neuScene = 27;
+            });
+            neu33.mousePressed(() => {
+                // remove buttons
+                neu31.remove();
+                neu32.remove();
+                neu33.remove();
+                neuScene = 28;
+            });
+            break;
+        case 26:
+            background(culcStairs);
+            textBox(3, "On Wednesday you had a wonderful time at the Brainwaves Workshop. Participating together was a hands-on and enjoyable way to deepen your connection while delving into neuroscience.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 33;
+            });
+            break;
+        case 27:
+            background(culcStairs);
+            textBox(3, "On Wednesday you had a wonderful time volunteering at Northside Hospital. Joining forces with Jordan, combining your passion for the subject with community service, was just what your relationship needed.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 33;
+            });
+            break;
+        case 28:
+            background(culcStairs);
+            textBox(3, "On Wednesday you had a wonderful time talking about your shared passion of the brain. Your academic bond has been strengthened and Jordan's expertise in the topic was able to shine.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 33;
+            });
+            break;
+        case 33:
+            background(culcsteps);
+            textBox(3, "Day 3: Thursday. A day has passed and you had a wonderful time with Jordan yesterday. You have one last day to continue your bond and connection with Jordan. What should you suggest doing today?");
 
             neu21.position(200, 200);
             neu21.show();
@@ -1221,71 +1703,72 @@ function neuRoute() {
             neu23.show();
             neu23.size(100, 100);
 
-
             neu21.mousePressed(() => {
                 // remove buttons
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
-                neuScene = 3;
+                neuScene = 34;
             });
             neu22.mousePressed(() => {
                 // remove buttons
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
-                neuScene = 3;
+                neuScene = 35;
             });
             neu23.mousePressed(() => {
                 // remove buttons
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
-                neuScene = 3;
+                neuScene = 36;
             });
             break;
-        case 3:
+        case 34:
             background(culcsteps);
-            textBox(3, "idk anymore");
-
-            neu31.position(200, 200);
-            neu31.show();
-            neu31.size(100, 100);
-
-            neu32.position(400, 200);
-            neu32.show();
-            neu32.size(100, 100);
-
-            neu33.position(600, 200);
-            neu33.show();
-            neu33.size(100, 100);
-
-
-            neu31.mousePressed(() => {
-                // remove buttons
-                neu31.remove();
-                neu32.remove();
-                neu33.remove();
-                neuScene = 4;
-            });
-            neu32.mousePressed(() => {
-                // remove buttons
-                neu31.remove();
-                neu32.remove();
-                neu33.remove();
-                neuScene = 4;
-            });
-            neu33.mousePressed(() => {
-                // remove buttons
-                neu31.remove();
-                neu32.remove();
-                neu33.remove();
-                neuScene = 4;
+            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research.")
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 44;
             });
             break;
-        case 4:
+        case 35:
+            background(culcsteps);
+            textBox(3, "The lecture, unfortunately, was not that interesting. Even Jordan, the science aficionado, had trouble staying awake. However, " +
+                "they leaned on your shoulder for most of it so take it as a win.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 44;
+            });
+            break;
+        case 36:
+            background(culcsteps);
+            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 44;
+            });
+            break;
+        case 43: // Good Ending
             background(schoolPhoto);
-            textBox(3, "ahaha");
+            textBox(3, "Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship, if you could " +
+                "only see Cupid now.");
+            break;
+        case 44: // Neutral Ending
+            background(schoolPhoto);
+            textBox(3, "Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
+        case 45: // Bad Ending
+            background(schoolPhoto);
+            textBox(3, "Thank god you didn't go to the Chi Phi party at all. Jordan told everyone about your awful romantic skills, you have become " +
+                "the laughing stock of GT. Cupid is weaping.");
+            break;
         default:
             break;
     }
