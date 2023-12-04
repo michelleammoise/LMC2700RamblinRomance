@@ -386,55 +386,55 @@ function showStats() {
 }
 
 function jordanButtons() {
-    //jordanButtons();
-    neu11 = createButton("Get Political");
-    neu11.hide();
-    neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
-    neu12.hide();
-    neu13 = createButton("Request Their Instagram Directly");
-    neu13.hide();
+   //jordanButtons();
+   neu11 = createButton("Get Political");
+   neu11.hide();
+   neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
+   neu12.hide();
+   neu13 = createButton("Request Their Instagram Directly");
+   neu13.hide();
 
-    neu21 = createButton("Collaborate on a Neuroscience Assignment");
-    neu21.hide();
-    neu22 = createButton("Invite Them to a Science Seminar");
-    neu22.hide();
-    neu23 = createButton("Attend a Consciousness Discussion With Them");
-    neu23.hide();
+   neu21 = createButton("Collaborate on a Neuroscience Assignment");
+   neu21.hide();
+   neu22 = createButton("Invite Them to a Science Seminar");
+   neu22.hide();
+   neu23 = createButton("Attend a Consciousness Discussion With Them");
+   neu23.hide();
 
-    neu31 = createButton("Participate in a Neuroscience workshop");
-    neu31.hide();
-    neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
-    neu32.hide();
-    neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
-    neu33.hide();
+   neu31 = createButton("Wanna Participate in a Neuroscience Workshop With me at Emory Tomorrow?");
+   neu31.hide();
+   neu32 = createButton("Wanna Join a Healthcare Related Volunteer Oppurtunity With me Tomorrow?");
+   neu32.hide();
+   neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
+   neu33.hide();
 
-    neu41 = createButton("Approach them now");
-    neu41.hide();
-    neu42 = createButton("Meet them at a club meeting later today");
-    neu42.hide();
-    neu43 = createButton("Look at them cutely");
-    neu43.hide();
+   neu41 = createButton("Approach them now");
+   neu41.hide();
+   neu42 = createButton("Meet them at after your shared lecture class later today");
+   neu42.hide();
+   neu43 = createButton("Look at them cutely");
+   neu43.hide();
 
-    neu51 = createButton("How did you feel about the reading today?");
-    neu51.hide();
-    neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
-    neu52.hide();
-    neu53 = createButton("What are you up to today?");
-    neu53.hide();
+   neu51 = createButton("How did you feel about the reading today?");
+   neu51.hide();
+   neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
+   neu52.hide();
+   neu53 = createButton("What are you up to today?");
+   neu53.hide();
 
-    neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
-    neu61.hide();
-    neu62 = createButton(" ");
-    neu62.hide();
-    neu63 = createButton(" ");
-    neu63.hide();
+   neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
+   neu61.hide();
+   neu62 = createButton(" ");
+   neu62.hide();
+   neu63 = createButton(" ");
+   neu63.hide();
 
-    neu71 = createButton("Offer to help them with their research");
-    neu71.hide();
-    neu72 = createButton("Attend the Brainwaves event togethor!");
-    neu72.hide();
-    neu73 = createButton(" ");
-    neu73.hide();
+   neu71 = createButton("Offer to help them with their research");
+   neu71.hide();
+   neu72 = createButton("Attend the Brainwaves event togethor!");
+   neu72.hide();
+   neu73 = createButton(" ");
+   neu73.hide();
 }
 function chadButtons() {
     okChad = createButton("Ok");
@@ -518,18 +518,6 @@ function titleScreen() {
     text("Ramblin' Romance", width / 2, 200);
     noStroke();
 
-
-    /*
-    // for start "button" design
-    fill(252, 174, 200);
-    stroke(255);
-    square(width / 2, height / 2, 100, 5);
-    textFont('Courier New', 20);
-    textAlign(CENTER, CENTER);
-    fill(0);
-    text("START", width / 2, height / 2);
-    noStroke();
-    */
 }
 
 function information() {
@@ -1980,10 +1968,10 @@ function neuRoute() {
             });
             break;
         case 11:
-            background(culcsteps);
+            background(scheller);
             textBox(3, "Later that day: you approach them at after the neuroscience lecture, " +
                 "express your interest in neuroscience. After an interesting conversation you wish to keep the " +
-                "conversation going.");
+                "conversation going. What do you want to do?");
 
             neu11.position(200, 200);
             neu11.show();
@@ -2009,30 +1997,30 @@ function neuRoute() {
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 13;
+                neuScene = 14;
             });
             neu13.mousePressed(() => {
                 // remove buttons
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 14;
+                neuScene = 18;
             });
             break;
         case 12:
             background(culcsteps);
-            textBox(3, "Quick question, why? You still got their Instagram somehow.");
+            textBox(3, "Quick question, why?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 21;
+                neuScene = 13;
             });
             break;
         case 13:
-            background(culcsteps);
-            textBox(3, "After joining the Brainwaves Society, and after attending your first meeting later the same day " +
-                " you approach Jordan and ask them for their instagram. Just so you can keep up Brainwave activies of course. ;)");
+            background(scheller);
+            textBox(3, "Jordan was a little weirded out about your conversation. When you requested to follow them on Instagram " +
+            "they reluctantly entered their username.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -2042,7 +2030,57 @@ function neuRoute() {
             break;
         case 14:
             background(culcsteps);
-            textBox(3, "Props to you for being bold, let's keep these good vibes going.");
+            textBox(3, "You joined the Brainwaves Society and appraoched them after your first meeting the same day.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 15;
+            });
+            break;
+        case 15:
+            background(klaus);
+            textBox(3, "\"Hey Jordan, can't believe I'm seeing you again today. Must be fate.\" They laughed at your joke and agreed.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 16;
+            });
+            break;
+        case 16:
+            background(klaus);
+            textBox(3, "\"So it was really great talking to you today! Can I get your Instagram so I can keep up with club events?\" They gave you their username and immediately requested to follow you back ;)");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 21;
+            });
+            break;
+        case 18:
+            background(scheller);
+            textBox(3, "\"Hey Jordan, I've been seeing a lot lately. Can I get your Instagram?\" You ask earnestly");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 19;
+            });
+            break;
+        case 19:
+            background(scheller);
+            textBox(3, "\"Yeah, of course. You must also be really interested in neuroscience.\" They laugh in response while putting in their Instagram username.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 20;
+            });
+            break;
+        case 20:
+            background(scheller);
+            textBox(3, "\"Yeah something like that haha.\" Props to you for being bold, truly. Let's keep these good vibes going shall we.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
