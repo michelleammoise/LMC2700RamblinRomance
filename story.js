@@ -104,9 +104,9 @@ function setup() {
     getAudioContext().suspend();
     rectMode(CENTER);
     createCanvas(1000, 600);
-    sceneCount = 6;
+    sceneCount = 1;
     oliviaScene = 0;
-    chadScene = 2; // change to 0 when added exposition scene
+    chadScene = 0; // change to 0 when added exposition scene
     neuScene = 0;
 
     buttonSetup();
@@ -1382,7 +1382,7 @@ function chadRoute() {
                 okChad.hide();
                 chadScene = 418;
             });
-            break;        
+            break;
         case 418:
             background(1);
             textBox(0);
@@ -1397,7 +1397,7 @@ function chadRoute() {
                 chadScene = 2000000;
                 // good ending
             });
-            break;  
+            break;
         case 420:
             background(1); // change background to dorm
             textBox(0);
