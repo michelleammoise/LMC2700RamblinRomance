@@ -1,5 +1,16 @@
 // initialize vars
 // initialize variables
+let playerName;
+let getName;
+let major;
+let aero;
+let lmc;
+let biomed;
+let business;
+let cs;
+let intellect;
+let rizz;
+let attraction;
 
 let sceneCount;
 let startBtn;
@@ -151,6 +162,7 @@ function buttonSetup() {
 
     chadButtons();
     jordanButtons();
+    statsButtons();
 
     olivia11 = createButton("Approach Her After Class and Ask for Instagram");
     olivia11.hide()
@@ -166,6 +178,102 @@ function buttonSetup() {
     olivia23 = createButton("Ask Her Out for Coffee");
     olivia23.hide()
 
+}
+
+function statsButtons() {
+    let x = width / 2;
+    getName = createInput();
+    getName.hide();
+    aero = createButton("Aerospace Engineering");
+    aero.hide();
+    aero.position(x, 200);
+    aero.mousePressed(() => {
+        hideStats();
+        major = "Aerospace Engineering";
+        sceneCount = 4;
+    })
+    lmc = createButton("Literature/Media/Communications");
+    lmc.hide();
+    lmc.position(x, 250);
+    lmc.mousePressed(() => {
+        hideStats();
+        major = "Literature/Media/Communications";
+        sceneCount = 4;
+    })
+    biomed = createButton("Biomedical Engineering");
+    biomed.hide();
+    biomed.position(x, 300);
+    biomed.mousePressed(() => {
+        hideStats();
+        major = "Biomedical Engineering";
+        sceneCount = 4;
+    })
+    business = createButton("Business");
+    business.hide();
+    business.position(x, 350);
+    business.mousePressed(() => {
+        hideStats();
+        major = "Business";
+        sceneCount = 4;
+    })
+    cs = createButton("Computer Science");
+    cs.hide();
+    cs.position(x, 400);
+    cs.mousePressed(() => {
+        hideStats();
+        major = "Computer Science";
+        sceneCount = 4;
+    })
+}
+
+function setStats() {
+    switch (major) {
+        case ("Aerospace Engineering"):
+            intellect = 9;
+            rizz = 2;
+            attraction = 4;
+            break;
+        case ("Business"):
+            intellect = 1;
+            rizz = 7;
+            attraction = 8;
+            break;
+        case ("Computer Science"):
+            intellect = 5;
+            rizz = 0;
+            attraction = 4;
+            break;
+        case ("Literature/Media/Communications"):
+            intellect = 6;
+            rizz = 8;
+            attraction = 7;
+            break;
+        case ("Biomedical Engineering"):
+            intellect = 10;
+            rizz = 4;
+            attraction = 7;
+            break;
+        default:
+            // secret god mode
+            intellect = 10;
+            rizz = 10;
+            attraction = 10;
+    }
+}
+function hideStats() {
+    aero.hide();
+    lmc.hide();
+    biomed.hide();
+    business.hide();
+    cs.hide();
+}
+
+function showStats() {
+    aero.show();
+    lmc.show();
+    biomed.show();
+    business.show();
+    cs.show();
 }
 
 function jordanButtons() {
@@ -336,7 +444,24 @@ function information() {
     nextBtn.show();
 }
 
+function userInputs() {
+    background(0); // black background
+    fill(255); // text color
+    textAlign(CENTER);
+    textFont('Courier New', 20);
+    text("First, type your name, then select a major. ", width / 2, 50);
+    getName.show();
+    getName.position(width / 2, 100);
+    playerName = getName.value(); // may need to move this
+
+    showStats();
+
+}
+
 function chooseChar() {
+    getName.hide();
+    setStats();
+
     background(0); // black background
     fill(255); // text color
     textAlign(CENTER);
@@ -379,10 +504,10 @@ function playGame(sceneCount) {
             information();
             break;
         case 3:
-            chooseChar();
+            userInputs();
             break;
         case 4:
-            startScene();
+            chooseChar();
             break;
         case 5:
             oliviaRoute();
@@ -392,6 +517,9 @@ function playGame(sceneCount) {
             break;
         case 7:
             neuRoute();
+            break;
+        case 8:
+            userInputs();
             break;
         default:
             break;
@@ -531,12 +659,12 @@ function chadRoute() {
             });
             break;
         case 3:
-            background(1); // change background to dining hall/food place
+            background(1); // change background to dining hall
             textBox(0);
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "Day 3, Wednesday: You and Chad decided to have lunch together at [PLACE]. ");
+            textBox(0, "Day 3, Wednesday: You and Chad decided to have lunch together at West Village dining hall. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -611,7 +739,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2, "Chad: Hey! You're [name], right? I'm Chad. "
+            textBox(2, "Chad: Hey! You're " + playerName + ", right? I'm Chad. "
                 + "You sounded really smart in lecture today. What's up?");
             chad111.show();
             chad111.position(x, opt1y);
