@@ -90,6 +90,9 @@ function preload() {
     stuCenter = loadImage("./assets/jlstucen.jpeg");
     culcsteps = loadImage("./assets/culcsteps.png");
     scheller = loadImage("./assets/scheller.jpeg");
+    dorm = loadImage("./assets/dorm.jpg");
+    klaus = loadImage("./assets/klaus.jpg");
+    diningHall = loadImage("./assets/dininghall.jpg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -835,7 +838,7 @@ function chadRoute() {
             });
             break;
         case 2:
-            background(1); // change background to dorm?
+            background(dorm); // change background to dorm?
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
@@ -849,7 +852,7 @@ function chadRoute() {
             });
             break;
         case 3:
-            background(1); // change background to dining hall
+            background(diningHall); // change background to dining hall
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -862,7 +865,7 @@ function chadRoute() {
             });
             break;
         case 4:
-            background(1); // change background to dorm
+            background(dorm); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -873,11 +876,15 @@ function chadRoute() {
             okChad.mousePressed(() => {
                 okChad.hide();
                 // if bad, go to "410", else go to "420" for good ending
-                chadScene = 420;
+                if (rizz > 8 && attraction > 5) {
+                    chadScene = 420;
+                } else {
+                    chadScene = 410;
+                }
             });
             break;
         case 21:
-            background(1); // change background to dorm?
+            background(dorm); // change background to dorm?
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
@@ -971,7 +978,8 @@ function chadRoute() {
                 + "That night, you found Chad's Instagram account on your feed "
                 + "and followed him.");
             // increase smartness, decrease charisma
-
+            intellect++;
+            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -986,7 +994,8 @@ function chadRoute() {
             textBox(2, "Chad: I'd be down to talk! I gotta go to class, but "
                 + "you should totally text me later. Can I send you my IG handle?");
             // increase charisma/attractiveness
-
+            rizz++;
+            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1022,7 +1031,7 @@ function chadRoute() {
             });
             break;
         case 1201:
-            background(0); // change background to Klaus
+            background(klaus); // change background to Klaus
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1037,7 +1046,7 @@ function chadRoute() {
             });
             break;
         case 1210:
-            background(0); // change background to Klaus
+            background(klaus); // change background to Klaus
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1061,7 +1070,7 @@ function chadRoute() {
             });
             break;
         case 1211:
-            background(0); // change background to Klaus
+            background(klaus); // change background to Klaus
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1076,7 +1085,7 @@ function chadRoute() {
             });
             break;
         case 1212:
-            background(0); // change background to Klaus
+            // change background to Klaus
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1086,6 +1095,8 @@ function chadRoute() {
                 + "the evening.");
 
             // increase smartness and charisma
+            rizz++;
+            intellect++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1093,7 +1104,7 @@ function chadRoute() {
             });
             break;
         case 1221:
-            background(0); // change background to Klaus
+            // background(0); // change background to Klaus
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1101,6 +1112,8 @@ function chadRoute() {
             textBox(2, "Chad: I think I saw you, too. I guess you're not here for the club, then? "
                 + "That's cool, I'll just listen to the meeting.");
             // increase smarts, decrease charisma
+            intellect++;
+            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1108,7 +1121,7 @@ function chadRoute() {
             });
             break;
         case 1222:
-            background(0); // change background to Klaus
+            // background(0); // change background to Klaus
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1132,6 +1145,8 @@ function chadRoute() {
                 + "Chad grins, uncomfortably, as he walks past you. He doesn't know you enough "
                 + "to reciprocate those feelings. ");
             // increase attractiveness, decrease charisma
+            attraction++;
+            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1159,6 +1174,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n" + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n" + "You decide to ask him about his interests.");
+            intellect++;
+
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1171,7 +1188,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "It seems like he dropped his pencil in between you two. Should I let him pick it up or should I pick it up for him?");
+            textBox(0, "It seems like he dropped his pencil in between you two. Should you let him pick it up or should you pick it up for him?");
             chad211.show();
             chad211.position(x, opt1y);
             chad211.mousePressed(() => {
@@ -1201,7 +1218,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "He see you hesistate but picks up his pencil first. You guys continue to study together.\nAlthough you wished to get to know him better, you guys still enjoyed each others' presence.");
+            textBox(0, "He sees you hesistate but picks up his pencil first. You guys continue to study together.\nAlthough you wished to get to know him better, you guys still enjoyed each others' presence.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1215,6 +1232,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "The two of you coincidentally pick up the pencil at the same time. You guys make eye contact and blush. You would have thought they were working on chemistry the way they were bonding. You guys finish studying and said your goodbyes. You guys agreed to meet up again soon.");
+            rizz++;
+            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1272,6 +1291,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You see Chad raise his hand. He gets called on and he does the walk perfectly. You guys continue to enjoy the event together. You guys agreed to meet up again soon.");
+            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1285,6 +1305,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You wing it and do the walk. You trip and fall. Chad helps you up and you guys laugh it off and continue to enjoy the event together. You guys agreed to meet up again soon.");
+            attraction++;
+            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1298,6 +1320,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You ask Chad for help. He whispers the sequence to you and you do the walk perfectly, which caught his attention. You guys agreed to meet up again soon after all the fun.");
+            rizz++;
+            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1333,6 +1357,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You help him lift the bar. He thanks you and blushes. You guys end up having a productive workout together. You guys agreed to workout again soon.");
+            attraction++;
+            rizz++;
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 3;
@@ -1345,13 +1371,14 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "He almost drops the bar on himself. He gets up and says he's fine. The rest of the workout went well and you guys agreed to workout again soon.");
+            attraction--;
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 3;
             });
             break;
         case 30:
-            background(1); // change background to dining hall/food place
+            background(diningHall); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1387,7 +1414,7 @@ function chadRoute() {
             });
             break;
         case 310:
-            background(1); // change background to dining hall/food place
+            //background(1); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1400,7 +1427,7 @@ function chadRoute() {
             });
             break;
         case 311:
-            background(1); // change background to dining hall/food place
+            //background(1); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1409,6 +1436,8 @@ function chadRoute() {
                 + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
                 + "work together. You agree. "); // may want to expand conversation
             // increase charisma and attractiveness
+            rizz++;
+            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1416,7 +1445,7 @@ function chadRoute() {
             });
             break;
         case 320:
-            background(1); // change background to dining hall/food place
+            //background(1); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1425,6 +1454,7 @@ function chadRoute() {
                 + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
                 + "work together. You agree. ");
             // increase attractiveness
+            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1432,7 +1462,7 @@ function chadRoute() {
             });
             break;
         case 330:
-            background(1); // change background to dining hall/food place
+            //background(1); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1441,6 +1471,8 @@ function chadRoute() {
                 + "one of the easiest majors out there. You also state how your major is harder and yet "
                 + "you can still handle it. ");
             // increase smartness, deduct charisma
+            intellect += 2;
+            rizz -= 2;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1448,7 +1480,7 @@ function chadRoute() {
             });
             break;
         case 331:
-            background(1); // change background to dining hall/food place
+            //background(1); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1461,7 +1493,7 @@ function chadRoute() {
             });
             break;
         case 332:
-            background(1); // change background to dining hall/food place
+            //background(1); // change background to dining hall/food place
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1475,7 +1507,7 @@ function chadRoute() {
             });
             break;
         case 410:
-            background(1); // change background to dorm
+            background(dorm); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1489,7 +1521,7 @@ function chadRoute() {
             });
             break;
         case 411:
-            background(1); // change background to dorm
+            // background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1502,7 +1534,7 @@ function chadRoute() {
             });
             break;
         case 412:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1515,7 +1547,7 @@ function chadRoute() {
             });
             break;
         case 413:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1528,7 +1560,7 @@ function chadRoute() {
             });
             break;
         case 414:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1541,7 +1573,7 @@ function chadRoute() {
             });
             break;
         case 415:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1554,7 +1586,7 @@ function chadRoute() {
             });
             break;
         case 416:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1568,7 +1600,7 @@ function chadRoute() {
             });
             break;
         case 417:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1581,7 +1613,7 @@ function chadRoute() {
             });
             break;
         case 418:
-            background(1);
+            //background(1);
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1596,7 +1628,7 @@ function chadRoute() {
             });
             break;
         case 420:
-            background(1); // change background to dorm
+            //background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1610,7 +1642,7 @@ function chadRoute() {
             });
             break;
         case 421:
-            background(1); // change background to dorm
+           // background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1623,7 +1655,7 @@ function chadRoute() {
             });
             break;
         case 422:
-            background(1); // change background to dorm
+      //      background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1636,7 +1668,7 @@ function chadRoute() {
             });
             break;
         case 423:
-            background(1); // change background to dorm
+     //       background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1649,7 +1681,7 @@ function chadRoute() {
             });
             break;
         case 424:
-            background(1); // change background to dorm
+       //     background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1662,7 +1694,7 @@ function chadRoute() {
             });
             break;
         case 425:
-            background(1); // change background to dorm
+      //      background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1675,7 +1707,7 @@ function chadRoute() {
             });
             break;
         case 426:
-            background(1); // change background to dorm
+      //      background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1688,7 +1720,7 @@ function chadRoute() {
             });
             break;
         case 427:
-            background(1); // change background to dorm
+   //         background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1701,7 +1733,7 @@ function chadRoute() {
             });
             break;
         case 428:
-            background(1); // change background to dorm
+    //        background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
