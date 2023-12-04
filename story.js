@@ -34,11 +34,6 @@ let chad112;
 let chad121;
 let chad122;
 
-
-
-
-
-
 let chad311;
 let chad312;
 let chad313;
@@ -210,14 +205,6 @@ function chadButtons() {
     chad22.hide();
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
-
-
-
-
-
-
-
-
 
     chad311 = createButton("\"I can really see ourselves being closer in the future\".");
     chad311.hide();
