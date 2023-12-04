@@ -67,6 +67,7 @@ let neu31;
 let neu32;
 let neu33;
 let nextBtn2;
+let nextBtn3;
 let neu41;
 let neu42;
 let neu43;
@@ -131,6 +132,9 @@ function buttonSetup() {
     nextBtn2 = createButton("Next");
     nextBtn2.hide();
 
+    nextBtn3 = createButton("Next");
+    nextBtn3.hide();
+
     neuBtn = createButton("Non-binary");
     neuBtn.hide();
     neuBtn.mousePressed(() => {
@@ -164,7 +168,13 @@ function buttonSetup() {
     chadButtons();
     jordanButtons();
     statsButtons();
+    oliviaButtons();
 
+
+
+}
+
+function oliviaButtons() {
     olivia11 = createButton("Approach Her After Class and Ask for Instagram");
     olivia11.hide()
     olivia12 = createButton("Join the Aero-Philosophy Symposium Meeting and Get to Know Her");
@@ -178,7 +188,102 @@ function buttonSetup() {
     olivia22.hide()
     olivia23 = createButton("Ask Her Out for Coffee");
     olivia23.hide()
+}
 
+function statsButtons() {
+    let x = width / 2;
+    getName = createInput();
+    getName.hide();
+    aero = createButton("Aerospace Engineering");
+    aero.hide();
+    aero.position(x, 200);
+    aero.mousePressed(() => {
+        hideStats();
+        major = "Aerospace Engineering";
+        sceneCount = 4;
+    })
+    lmc = createButton("Literature/Media/Communications");
+    lmc.hide();
+    lmc.position(x, 250);
+    lmc.mousePressed(() => {
+        hideStats();
+        major = "Literature/Media/Communications";
+        sceneCount = 4;
+    })
+    biomed = createButton("Biomedical Engineering");
+    biomed.hide();
+    biomed.position(x, 300);
+    biomed.mousePressed(() => {
+        hideStats();
+        major = "Biomedical Engineering";
+        sceneCount = 4;
+    })
+    business = createButton("Business");
+    business.hide();
+    business.position(x, 350);
+    business.mousePressed(() => {
+        hideStats();
+        major = "Business";
+        sceneCount = 4;
+    })
+    cs = createButton("Computer Science");
+    cs.hide();
+    cs.position(x, 400);
+    cs.mousePressed(() => {
+        hideStats();
+        major = "Computer Science";
+        sceneCount = 4;
+    })
+}
+
+function setStats() {
+    switch (major) {
+        case ("Aerospace Engineering"):
+            intellect = 9;
+            rizz = 2;
+            attraction = 4;
+            break;
+        case ("Business"):
+            intellect = 1;
+            rizz = 7;
+            attraction = 8;
+            break;
+        case ("Computer Science"):
+            intellect = 5;
+            rizz = 0;
+            attraction = 4;
+            break;
+        case ("Literature/Media/Communications"):
+            intellect = 6;
+            rizz = 8;
+            attraction = 7;
+            break;
+        case ("Biomedical Engineering"):
+            intellect = 10;
+            rizz = 4;
+            attraction = 7;
+            break;
+        default:
+            // secret god mode
+            intellect = 10;
+            rizz = 10;
+            attraction = 10;
+    }
+}
+function hideStats() {
+    aero.hide();
+    lmc.hide();
+    biomed.hide();
+    business.hide();
+    cs.hide();
+}
+
+function showStats() {
+    aero.show();
+    lmc.show();
+    biomed.show();
+    business.show();
+    cs.show();
 }
 
 function statsButtons() {
@@ -468,7 +573,7 @@ function chooseChar() {
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("Select character", width / 2, 50);
-    text("\nHi " + playerName + "!" , width / 2, 50);
+    text("\nHi " + playerName + "!", width / 2, 50);
 
     boychar2.resize(200, 200);
     girlchar2.resize(200, 200);
@@ -533,7 +638,17 @@ function oliviaRoute() {
     switch (oliviaScene) {
         case 0:
             background(schoolPhoto);
-            textBox(1, "After a friendly conversation about the calculus class or another shared interest, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"");
+            textBox(1, "You picked Olivia Thompson! They are a 2nd year Aerospace major. When she's not immersed in aerospace engineering, you'll find her at the hangar, perfecting aircraft designs or engaging in high-flying discussions with peers. Olivia is a member of the Aero-Philosophy Symposium and the Nerdy Worms club.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 1;
+            });
+            break;
+        case 1:
+            background(culcsteps);
+            textBox(0, "After a friendly and interesting conversation about finding derivatives in your shared calculus class, you feel that you want to get closer to Olivia. How are you going about it?");
 
 
             olivia11.position(200, 200);
@@ -554,25 +669,94 @@ function oliviaRoute() {
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
-                oliviaScene = 1;
+                oliviaScene = 2;
             });
             olivia12.mousePressed(() => {
                 // remove buttons
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
-                oliviaScene = 1;
+                // oliviaScene = 3;
             });
             olivia13.mousePressed(() => {
                 // remove buttons
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
-                oliviaScene = 1;
+                // oliviaScene = 4;
             });
             break;
-        case 1:
-            textBox(1, "ahaha");
+        case 2:
+            background(culcsteps);
+            textBox(0, "Hello, Olivia!");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 3;
+            });
+            break;
+        case 3:
+            background(culcsteps);
+            textBox(1, "Hey, whatcha doing?");
+            nextBtn3.position(60, 550);
+            nextBtn3.show();
+            nextBtn3.mousePressed(() => {
+                nextBtn3.hide();
+                oliviaScene = 4;
+            });
+            break;
+        case 4:
+            background(culcsteps);
+            textBox(0, "Talking to you, obviously.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 5;
+            });
+            break;
+        case 5:
+            background(culcsteps);
+            textBox(1, "Haha, that must be boring then.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 6;
+            });
+            break;
+        case 6:
+            background(culcsteps);
+            textBox(0, "(Shocked) Absolutely not, you're the opposite of that!" + "Do you have an Instagram?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 7;
+            });
+            break;
+        case 7:
+            background(culcsteps);
+            textBox(1, "(Olivia looks intrigued, then grabs her phone.)" +
+                "Yeah! Here it is. [Hands you her phone]" +
+                "Let’s stay in touch, yeah?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 8;
+            });
+            break;
+        case 8:
+            background(culcsteps);
+            textBox(1, "Hey, whatcha doing?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 4;
+            });
             break;
     }
     // textBox(1, "what is this bro");
@@ -1284,7 +1468,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "The dorm room is filled with a lively energy, and "
-            +" Chad and you are sitting on the floor amidst study materials. ");
+                + " Chad and you are sitting on the floor amidst study materials. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1363,7 +1547,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "As you both make plans for the party, "
-            + "the room seems to brighten with the anticipation of shared laughter and good times.");
+                + "the room seems to brighten with the anticipation of shared laughter and good times.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1390,7 +1574,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Chad grins, and as the evening continues, the connection between you deepens, "
-            + "transitioning from study partners to potential friends ");
+                + "transitioning from study partners to potential friends ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1527,7 +1711,7 @@ function neuRoute() {
     switch (neuScene) {
         case 0:
             background(culcsteps);
-            textBox(3, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain. " +
+            textBox(3, "You picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain. " +
                 "They are also an active member of the Brainwaves Society!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
@@ -1911,7 +2095,7 @@ function textBox(chara, textString) {
     // x, y, width, height, (opt radii)
     rect(20, height / 1.5, width - 40, height / 3.25);
     if (chara == 0) {
-        fill('pink');
+        fill('pink'); //narrator textbox??
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
@@ -1925,7 +2109,7 @@ function textBox(chara, textString) {
     }
 
     if (chara == 1) {
-        fill('blue');
+        fill(151, 240, 204); //olivia textbox
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
@@ -1953,7 +2137,7 @@ function textBox(chara, textString) {
     }
 
     if (chara == 3) {
-        fill(211, 169, 249);
+        fill(211, 169, 249); //jordan textbox??
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
