@@ -6,7 +6,8 @@ let nextBtn;
 let neuBtn;
 let boyBtn;
 let girlBtn;
-
+let kanitBold;
+let crimsonBold;
 let oliviaScene;
 let oliiaText;
 // olivia buttons
@@ -25,24 +26,10 @@ let chad21;
 let chad22;
 let chad23;
 
-let chad31;
-let chad32;
-let chad33;
-
 let chad111;
 let chad112;
 let chad121;
 let chad122;
-
-
-
-
-
-
-let chad311;
-let chad312;
-let chad313;
-
 
 let olivia21;
 let olivia22;
@@ -64,12 +51,12 @@ let nextBtn2;
 // load assets
 function preload() {
     fancy = loadFont("font3.otf")
+    kanitBold = loadFont("Kanit-Bold.ttf")
+    crimsonBold = loadFont("CrimsonPro-VariableFont_wght.ttf")
 
     schoolPhoto = loadImage("./assets/techTower.jpeg");
     culcStairs = loadImage("./assets/culcStairs.png");
-    stuCenter = loadImage("./assets/jlstucen.jpeg");
     culcsteps = loadImage("./assets/culcsteps.png");
-    crc = loadImage("./assets/crc.jpeg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -195,7 +182,7 @@ function chadButtons() {
 
     chad111 = createButton("How did you feel about chapter 14 of the reading today?");
     chad112 = createButton("Hi! I heard you're interested in startups. "
-        + "I have some cool ideas I'd wanna share.");
+    + "I have some cool ideas I'd wanna share.");
     chad111.hide();
     chad112.hide();
 
@@ -212,17 +199,6 @@ function chadButtons() {
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
 
-    chad211 = createButton("Pick up pencil and papers for him.");
-    chad212 = createButton("Let him pick up his own pencil and papers.");
-    chad211.hide();
-    chad212.hide();
-
-    chad311 = createButton("\"I can really see ourselves being closer in the future\".");
-    chad311.hide();
-    chad312 = createButton("Agree and smile");
-    chad312.hide();
-    chad313 = createButton("Tell him your honest thoughts about business majors");
-    chad313.hide();
 }
 
 // draw scenes
@@ -240,31 +216,18 @@ function titleScreen() {
     fill(252, 174, 200);
     stroke(120, 34, 62);
     strokeWeight(4);
-    textFont('Courier New', 50);
+    textFont(kanitBold, 50);
     background(schoolPhoto);
     textAlign(CENTER);
     text("Ramblin' Romance", width / 2, 200);
     noStroke();
-
-
-    /*
-    // for start "button" design
-    fill(252, 174, 200);
-    stroke(255);
-    square(width / 2, height / 2, 100, 5);
-    textFont('Courier New', 20);
-    textAlign(CENTER, CENTER);
-    fill(0);
-    text("START", width / 2, height / 2);
-    noStroke();
-    */
 }
 
 function information() {
     background(0); //black background
     fill(255); // text color
     textAlign(LEFT);
-    textFont('Courier New', 20);
+    textFont('crimsonBold', 20);
     text("Buzz:");
     text("Well, well, well, look who wandered into the realm of intellectual misfortune.", 10, 50);
     text("Spoiler alert: it's you. Congratulations on your life choices.", 10, 100);
@@ -285,7 +248,7 @@ function chooseChar() {
     background(0); // black background
     fill(255); // text color
     textAlign(CENTER);
-    textFont('Courier New', 20);
+    textFont('crimsonBold', 20);
     text("Select character", width / 2, 50);
     text("hi", 400, 100);
 
@@ -400,14 +363,14 @@ function chadRoute() {
     let opt1y = 100;
     let opt2y = 150;
     let opt3y = 200;
-    switch (chadScene) {
+    switch(chadScene) {
         case 0:
             // exposition for chad
             x = width / 1.75;
             background(0);
             fill(255);
             textAlign(CENTER);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             text("You chose to romance Chad Smith!", width / 1.75, 50);
             text("Chad Smith is a third year business major at Georgia Tech.", x, 100);
             text("When he’s not hanging out with his brothers at Delta Sigma, you can", x, 125);
@@ -422,12 +385,12 @@ function chadRoute() {
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "Day 1, Monday: As you leave your LMC class, "
-                + "you see Chad Smith walking in your direction. "
-                + "You guys have talked a bit in the past, but "
-                + "are still unfamiliar with each other. What "
-                + "do you do?");
+            textFont('crimsonBold', 20);
+            textBox(0,"Day 1, Monday: As you leave your LMC class, " 
+            + "you see Chad Smith walking in your direction. "
+            + "You guys have talked a bit in the past, but "
+            + "are still unfamiliar with each other. What "
+            + "do you do?");
 
             chad11.show();
             chad11.position(x, opt1y);
@@ -461,41 +424,13 @@ function chadRoute() {
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "Day 2, Tuesday: You wake up in your dorm. You don't have classes until much later, "
-                + "so you don't have much to do this morning. You open Instagram text and Chad how he's doing. ");
+            + "so you don't have much to do this morning. You open Instagram text and Chad how he's doing. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 21;
-            });
-            break;
-        case 3:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "Day 3, Wednesday: You and Chad decided to have lunch together at [PLACE]. ");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 30;
-            });
-            break;
-        case 4:
-            background(1); // change background to dorm
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "Day 4, Thursday: You and Chad spend time studying together in your dorm. You stated that it's a more personal and relaxed setting. "
-            + "You can order some food, play some background music, and focus on your studies while also getting to spend quality time together. ");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                // if bad, go to "4100", else go to "4200" for good ending
-                chadScene = 4200;
             });
             break;
         case 21:
@@ -503,34 +438,24 @@ function chadRoute() {
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(1, "Not much. Got a lame business assignment, but I might go to a club event or gym later.");
-
+            
             chad21.show();
             chad21.position(x, opt1y);
             chad21.mousePressed(() => {
-                chad21.hide();
-                chad22.hide();
-                chad23.hide();
-                chadScene = 211;
+
             });
 
             chad22.show();
             chad22.position(x, opt2y);
             chad22.mousePressed(() => {
-                chad21.hide();
-                chad22.hide();
-                chad23.hide();
-                chadScene = 212;
+
             });
 
             chad23.show();
             chad23.position(x, opt3y);
             chad23.mousePressed(() => {
-                chad21.hide();
-                chad22.hide();
-                chad23.hide();
-                chadScene = 213;
 
             });
             break;
@@ -538,7 +463,7 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "You walk up to him. ");
             okChad.show();
             okChad.mousePressed(() => {
@@ -550,9 +475,9 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(2, "Chad: Hey! You're [name], right? I'm Chad. "
-                + "You sounded really smart in lecture today. What's up?");
+            + "You sounded really smart in lecture today. What's up?");
             chad111.show();
             chad111.position(x, opt1y);
             chad111.mousePressed(() => {
@@ -573,10 +498,10 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(2, "Chad: Oh, it was cool, I guess. I didn't actually pay attention. "
-                + "Anyways, I have to go. We should talk about other stuff in the future, "
-                + "though. I'll see you around.");
+            + "Anyways, I have to go. We should talk about other stuff in the future, "
+            + "though. I'll see you around.");
             okChad.show();
             okChad.mousePressed(() => {
                 chadScene = 1112;
@@ -587,13 +512,13 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "He walks away. It seems Chad isn't a fan of academics. "
-                + "You spend the rest of the day finishing your classes as usual. "
-                + "That night, you found Chad's Instagram account on your feed "
-                + "and followed him.");
+            + "You spend the rest of the day finishing your classes as usual. "
+            + "That night, you found Chad's Instagram account on your feed "
+            + "and followed him.");
             // increase smartness, decrease charisma
-
+            
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -604,9 +529,9 @@ function chadRoute() {
             // textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(2, "Chad: I'd be down to talk! I gotta go to class, but "
-                + "you should totally text me later. Can I send you my IG handle?");
+            + "you should totally text me later. Can I send you my IG handle?");
             // increase charisma/attractiveness
 
             okChad.show();
@@ -621,8 +546,8 @@ function chadRoute() {
             textAlign(LEFT);
             textFont("Courier New", 20);
             textBox(0, "You received Chad's Instagram account! "
-                + "Later that day, you guys texted for hours about everything from "
-                + "business, hobbies, and funny stories.");
+            + "Later that day, you guys texted for hours about everything from "
+            + "business, hobbies, and funny stories.");
 
             okChad.show();
             okChad.mousePressed(() => {
@@ -634,9 +559,9 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "Chad has always been outspoken about being part of the Entrepreneurial Alliance Club. "
-                + "You decide to wait until a club meeting today to talk to Chad, knowing he will be there.");
+            + "You decide to wait until a club meeting today to talk to Chad, knowing he will be there.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -648,9 +573,9 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "You arrive just in time for the club meeting. Unsurprisingly, Chad is already "
-                + "sitting down. You sit next to him.");
+            textFont('crimsonBold', 20);
+            textBox(0,"You arrive just in time for the club meeting. Unsurprisingly, Chad is already "
+            + "sitting down. You sit next to him.");
 
             okChad.show();
             okChad.mousePressed(() => {
@@ -663,8 +588,8 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(2,"Chad: I thought you looked familiar. You're [name], right? I didn't know you were "
+            textFont('crimsonBold', 20);
+            textBox(2,"I thought you looked familiar. You're [name], right? I didn't know you were "
             + "interested in this stuff?");
 
             chad121.show();
@@ -679,7 +604,7 @@ function chadRoute() {
             chad122.mousePressed(() => {
                 chad121.hide();
                 chad122.hide();
-                chadScene = 1221;
+                chadScene = 1221;F
             });
             break;
         case 1211:
@@ -687,8 +612,8 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(2,"Chad: No way, really?! We should honestly share ideas. Can we talk about it on IG? "
+            textFont('crimsonBold', 20);
+            textBox(2,"No way, really?! We should honestly share ideas. Can we talk about it on IG? "
             + "It'd be cool if we can connect outside meetings, and we can keep each other in the loop "
             + "for future meetings. ");
             okChad.show();
@@ -702,10 +627,10 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "You guys share Instagram accounts. For the rest of the meeting, you both are "
-                + "actively involved in the conversation. Afterwards, you continue texting Chad through "
-                + "the evening.");
+            + "actively involved in the conversation. Afterwards, you continue texting Chad through "
+            + "the evening.");
 
             // increase smartness and charisma
             okChad.show();
@@ -719,8 +644,8 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(2, "Chad: I think I saw you, too. I guess you're not here for the club, then? "
+            textFont('crimsonBold', 20);
+            textBox(2, "I think I saw you, too. I guess you're not here for the club, then? "
             + "That's cool, I'll just listen to the meeting.");
             // increase smarts, decrease charisma
             okChad.show();
@@ -734,10 +659,10 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "For the rest of the meeting, Chad doesn't pay much attention to you, "
-                + "feeling a little uncomfortable that you came just for him. But you try to make "
-                + "small talk, and he eventually agrees to share his Instagram account. ");
+            + "feeling a little uncomfortable that you came just for him. But you try to make "
+            + "small talk, and he eventually agrees to share his Instagram account. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -749,252 +674,33 @@ function chadRoute() {
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "You turn your head to the side, smile, and glance over to his eyes. "
-                + "Chad grins, uncomfortably, as he walks past you. He doesn't know you enough "
-                + "to reciprocate those feelings. ");
+            + "Chad grins, uncomfortably, as he walks past you. He doesn't know you enough "
+            + "to reciprocate those feelings. ");
             // increase attractiveness, decrease charisma
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 1301;
-            })
+            }) 
             break;
         case 1301:
             background(culcStairs);
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
-            textFont('Courier New', 20);
+            textFont('crimsonBold', 20);
             textBox(0, "Later that day, you find Chad's Instagram account and follow him, "
-                + "hoping to provide a better impression next time.");
+            + "hoping to provide a better impression next time.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 2;
             });
             break;
-        case 211: // offer to help on homework
-            background(stuCenter);
-            textBox(0); // probably make 0 be narrator
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n" + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n" + "You decide to ask him about his interests.");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 2111;
-            });
-            break;
-        case 212: // attend club event
-            background(stuCenter);
-            textBox(0); // probably make 0 be narrator
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "attend club");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 2111;
-            });
-            break;
-
-        case 2111: //hw help
-            background(stuCenter);
-            textBox(0); // probably make 0 be narrator
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "It seems like he dropped his pencil in between you two. Should I let him pick it up or should I pick it up for him?");
-            okChad.show();
-            okChad.mousePressed(() => {
-                chad211.show();
-                chad212.show();
-                okChad.hide();
-                chadScene = 2121;
-            });
-            break;
-        case 2112: // attend club event
-            background(scheller);
-            textBox(0); // probably make 0 be narrator
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "we at the club");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 2112;
-            });
-            break;
-        case 213: // invite to gym
-            background(crc);
-            textBox(0); // probably make 0 be narrator
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "crc me");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 2113;
-            });
-            break;
-        case 2113: // invite to gym
-        background(crc);
-        textBox(0); // probably make 0 be narrator
-        fill(0);
-        textAlign(LEFT);
-        textFont('Courier New', 20);
-        textBox(0, "crc me");
-        okChad.show();
-        okChad.mousePressed(() => {
-            okChad.hide();
-            chadScene = 2113;
-        });
-
-        case 2121: //hw help
-            background(stuCenter);
-            textBox(0); // probably make 0 be narrator
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "It seems like he dropped his pencil in between you two. Should I let him pick it up or should I pick it up for him?");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 2121;
-            });
-            break;
-        // case 212: // attend club event
-        // case 213: // invite to gym
-
-        case 30:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(2, "Chad: Good to see you again! I honestly had fun yesterday. I didn't expect us "
-            + "to have this much in common. It's hard being a business major. I've been swamped with work lately, "
-            + "but it was worth spending time with you. ");
-            chad311.show();
-            chad311.position(x, opt1y);
-            chad311.mousePressed(() => {
-                chad311.hide();
-                chad312.hide();
-                chad313.hide();
-                chadScene = 310;
-            });
-
-            chad312.show();
-            chad312.position(x, opt2y);
-            chad312.mousePressed(() => {
-                chad311.hide();
-                chad312.hide();
-                chad313.hide();
-                chadScene = 320;
-            });
-
-            chad313.show();
-            chad313.position(x, opt3y);
-            chad313.mousePressed(() => {
-                chad311.hide();
-                chad312.hide();
-                chad313.hide();
-                chadScene = 330;
-            });
-            break;
-        case 310:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(2, "Chad: You're right.");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 311;
-            });
-            break;
-        case 311:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "Both of you blush. You guys spend of the rest of the hour talking about everything "
-            + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
-            + "work together. You agree. "); // may want to expand conversation
-            // increase charisma and attractiveness
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 4;
-            });
-            break;
-        case 320:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "He blushes. You guys spend of the rest of the hour talking about everything "
-            + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
-            + "work together. You agree. ");
-            // increase attractiveness
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 4; // also may want to expand story
-            });
-            break;
-        case 330:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "You tell him how he shouldn't be complaining as a business major, since it's "
-            + "one of the easiest majors out there. You also state how your major is harder and yet "
-            + "you can still handle it. ");
-            // increase smartness, deduct charisma
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 331;
-            });
-            break;
-        case 331:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "He didn't ask for all that. Let's say he was not amused. ");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 332;
-            });
-            break;
-        case 332:
-            background(1); // change background to dining hall/food place
-            textBox(0);
-            fill(0);
-            textAlign(LEFT);
-            textFont('Courier New', 20);
-            textBox(0, "You apologize and offer to help him study tomorrow for his upcoming test. "
-            + "He reluctantly agrees.");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 4;
-            });
-            break;
+        
+    
         default:
     }
 }
@@ -1015,7 +721,7 @@ function neuRoute() {
         case 1:
             background(culcsteps);
             textBox(3, "After a friendly conversation about the nueroscience lecture, express your interest in continuing the conversation. You could say something like, \"I've really enjoyed talking with you. Do you mind if I add you on Instagram? It would be great to stay in touch.\"")
-
+            
             neu11.position(200, 200);
             neu11.show();
             neu11.size(100, 100);
