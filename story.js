@@ -1,5 +1,16 @@
 // initialize vars
 // initialize variables
+let playerName;
+let getName;
+let major;
+let aero;
+let lmc;
+let biomed;
+let business;
+let cs;
+let intellect;
+let rizz;
+let attraction;
 
 let sceneCount;
 let startBtn;
@@ -152,6 +163,7 @@ function buttonSetup() {
 
     chadButtons();
     jordanButtons();
+    statsButtons();
 
     olivia11 = createButton("Approach Her After Class and Ask for Instagram");
     olivia11.hide()
@@ -167,6 +179,102 @@ function buttonSetup() {
     olivia23 = createButton("Ask Her Out for Coffee");
     olivia23.hide()
 
+}
+
+function statsButtons() {
+    let x = width / 2;
+    getName = createInput();
+    getName.hide();
+    aero = createButton("Aerospace Engineering");
+    aero.hide();
+    aero.position(x, 200);
+    aero.mousePressed(() => {
+        hideStats();
+        major = "Aerospace Engineering";
+        sceneCount = 4;
+    })
+    lmc = createButton("Literature/Media/Communications");
+    lmc.hide();
+    lmc.position(x, 250);
+    lmc.mousePressed(() => {
+        hideStats();
+        major = "Literature/Media/Communications";
+        sceneCount = 4;
+    })
+    biomed = createButton("Biomedical Engineering");
+    biomed.hide();
+    biomed.position(x, 300);
+    biomed.mousePressed(() => {
+        hideStats();
+        major = "Biomedical Engineering";
+        sceneCount = 4;
+    })
+    business = createButton("Business");
+    business.hide();
+    business.position(x, 350);
+    business.mousePressed(() => {
+        hideStats();
+        major = "Business";
+        sceneCount = 4;
+    })
+    cs = createButton("Computer Science");
+    cs.hide();
+    cs.position(x, 400);
+    cs.mousePressed(() => {
+        hideStats();
+        major = "Computer Science";
+        sceneCount = 4;
+    })
+}
+
+function setStats() {
+    switch (major) {
+        case ("Aerospace Engineering"):
+            intellect = 9;
+            rizz = 2;
+            attraction = 4;
+            break;
+        case ("Business"):
+            intellect = 1;
+            rizz = 7;
+            attraction = 8;
+            break;
+        case ("Computer Science"):
+            intellect = 5;
+            rizz = 0;
+            attraction = 4;
+            break;
+        case ("Literature/Media/Communications"):
+            intellect = 6;
+            rizz = 8;
+            attraction = 7;
+            break;
+        case ("Biomedical Engineering"):
+            intellect = 10;
+            rizz = 4;
+            attraction = 7;
+            break;
+        default:
+            // secret god mode
+            intellect = 10;
+            rizz = 10;
+            attraction = 10;
+    }
+}
+function hideStats() {
+    aero.hide();
+    lmc.hide();
+    biomed.hide();
+    business.hide();
+    cs.hide();
+}
+
+function showStats() {
+    aero.show();
+    lmc.show();
+    biomed.show();
+    business.show();
+    cs.show();
 }
 
 function jordanButtons() {
@@ -337,7 +445,24 @@ function information() {
     nextBtn.show();
 }
 
+function userInputs() {
+    background(0); // black background
+    fill(255); // text color
+    textAlign(CENTER);
+    textFont('Courier New', 20);
+    text("First, type your name, then select a major. ", width / 2, 50);
+    getName.show();
+    getName.position(width / 2, 100);
+    playerName = getName.value(); // may need to move this
+
+    showStats();
+
+}
+
 function chooseChar() {
+    getName.hide();
+    setStats();
+
     background(0); // black background
     fill(255); // text color
     textAlign(CENTER);
@@ -380,10 +505,10 @@ function playGame(sceneCount) {
             information();
             break;
         case 3:
-            chooseChar();
+            userInputs();
             break;
         case 4:
-            startScene();
+            chooseChar();
             break;
         case 5:
             oliviaRoute();
@@ -393,6 +518,9 @@ function playGame(sceneCount) {
             break;
         case 7:
             neuRoute();
+            break;
+        case 8:
+            userInputs();
             break;
         default:
             break;
@@ -532,12 +660,12 @@ function chadRoute() {
             });
             break;
         case 3:
-            background(1); // change background to dining hall/food place
+            background(1); // change background to dining hall
             textBox(0);
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "Day 3, Wednesday: You and Chad decided to have lunch together at [PLACE]. ");
+            textBox(0, "Day 3, Wednesday: You and Chad decided to have lunch together at West Village dining hall. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -612,7 +740,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(2, "Chad: Hey! You're [name], right? I'm Chad. "
+            textBox(2, "Chad: Hey! You're " + playerName + ", right? I'm Chad. "
                 + "You sounded really smart in lecture today. What's up?");
             chad111.show();
             chad111.position(x, opt1y);
@@ -1149,6 +1277,127 @@ function chadRoute() {
                 chadScene = 4;
             });
             break;
+        case 410:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "The dorm room is filled with a lively energy, and "
+            +" Chad and you are sitting on the floor amidst study materials. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 411;
+            });
+            break;
+        case 411:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: You know, these study sessions have been surprisingly enjoyable, Chad.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 412;
+            });
+            break;
+        case 412:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: Yeah, they have. It's been cool having someone to tackle the work with.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 413;
+            });
+            break;
+        case 413:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "A comfortable silence settles in as you both exchange smiles. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 414;
+            });
+            break;
+        case 414:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: I was thinking, there's a frat party happening this weekend. Would you be up for going together?");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 415;
+            });
+            break;
+        case 415:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: A party? That sounds like a great way to unwind. Sure, I'm in. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 416;
+            });
+            break;
+        case 416:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "As you both make plans for the party, "
+            + "the room seems to brighten with the anticipation of shared laughter and good times.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 417;
+            });
+            break;
+        case 417:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: Awesome! It'll be a blast. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 418;
+            });
+            break;        
+        case 418:
+            background(1);
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Chad grins, and as the evening continues, the connection between you deepens, "
+            + "transitioning from study partners to potential friends ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 2000000;
+                // good ending
+            });
+            break;  
         case 420:
             background(1); // change background to dorm
             textBox(0);
