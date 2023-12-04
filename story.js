@@ -1527,7 +1527,7 @@ function neuRoute() {
     switch (neuScene) {
         case 0:
             background(culcsteps);
-            textBox(3, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain. " +
+            textBox(3, "You picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain. " +
                 "They are also an active member of the Brainwaves Society!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
@@ -1910,12 +1910,12 @@ function textBox(chara, textString) {
     strokeWeight(3);
     // x, y, width, height, (opt radii)
     rect(20, height / 1.5, width - 40, height / 3.25);
-    if (chara == 0) {
-        fill('pink');
+    if (chara == 0) { // Narrator's textbox
+        fill(179, 163, 105); // Gold colored text box
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
-        fill(0);
+        fill(255); // White textbox
         textSize(20);
         noStroke();
         // textAlign(CENTER, CENTER);
@@ -1924,12 +1924,12 @@ function textBox(chara, textString) {
         // nextButton
     }
 
-    if (chara == 1) {
-        fill('blue');
+    if (chara == 1) { // Chad's textbox
+        fill(0, 48, 87); // Navy Blue colored box
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
-        fill(0);
+        fill(255); // White text
         textSize(20);
         noStroke();
         // textAlign(CENTER, CENTER);
@@ -1938,7 +1938,7 @@ function textBox(chara, textString) {
         // nextButton
     }
 
-    if (chara == 2) { // chad textbox
+    if (chara == 2) { // narrator
         fill('grey');
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
@@ -1952,12 +1952,12 @@ function textBox(chara, textString) {
         // nextButton
     }
 
-    if (chara == 3) {
-        fill(211, 169, 249);
+    if (chara == 3) { // Jordan's textbox
+        fill(255, 255, 255); // White colored box
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
-        fill(0);
+        fill(0); // Black text
         textSize(20);
         noStroke();
         text(textString, width / 15, height / 1.35, width - 100, height - 40);
