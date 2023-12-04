@@ -256,6 +256,21 @@ function chadButtons() {
     chad211.hide();
     chad212.hide();
 
+    chad2130 = createButton("Volunteer to participate in the event");
+    chad2140 = createButton("Let someone else go for it");
+    chad2130.hide();
+    chad2140.hide();
+
+    chad215 = createButton("Wing it");
+    chad215.hide();
+    chad216 = createButton("Ask Chad for help");
+    chad216.hide();
+
+    chad217 = createButton("Help spot Chad at the benchpress");
+    chad218 = createButton("Ask Chad to spot you at the benchpress");
+    chad217.hide();
+    chad218.hide();
+
     //day 3 buttons
     chad311 = createButton("\"I can really see ourselves being closer in the future\".");
     chad311.hide();
@@ -886,11 +901,20 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "Innovative Yellow Jackets is hosting a club event today. You decide to invite Chad to the event.");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 2111;
+            textBox(0, "Innovative Yellow Jackets happens to be hosting an event with a famous model teaching students confidence and how to model." + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
+            chad2130.show();
+            chad2130.position(x, opt1y);
+            chad2130.mousePressed(() => {
+                chad2130.hide();
+                chad2140.hide();
+                chadScene = 2121;
+            });
+            chad2140.show();
+            chad2140.position(x, opt2y);
+            chad2140.mousePressed(() => {
+                chad2130.hide();
+                chad2140.hide();
+                chadScene = 2122;
             });
             break;
         case 2121: // attend club event
@@ -899,11 +923,59 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "we at the club");
+            textBox(0, "The second that the guest speaker calls on you, your mind goes blank. You forgot how to copy the sequence of the runaway walk. \nShould you wing it or ask Chad for help?");
+            chad215.show();
+            chad215.position(x, opt1y);
+            chad215.mousePressed(() => {
+                chad215.hide();
+                chad216.hide();
+                chadScene = 2123;
+            });
+            chad216.show();
+            chad216.position(x, opt2y);
+            chad216.mousePressed(() => {
+                chad215.hide();
+                chad216.hide();
+                chadScene = 2124;
+            });
+            break;
+        case 2122: // attend club event
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You see Chad raise his hand. He gets called on and he does the walk perfectly. You guys continue to enjoy the event together. You guys agreed to meet up again soon.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
-                chadScene = 2112;
+                chadScene = 3;
+            });
+            break;
+        case 2123:
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You wing it and do the walk. You trip and fall. Chad helps you up and you guys laugh it off and continue to enjoy the event together. You guys agreed to meet up again soon.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 2124: // attend club event
+            background(scheller);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You ask Chad for help. He whispers the sequence to you and you do the walk perfectly, which caught his attention. You guys agreed to meet up again soon after all the fun.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
             });
             break;
         case 213: // invite to gym
@@ -912,10 +984,19 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "After going back to your dorm, Chad meets you at the gym");
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
+            textBox(0, "After going back to your dorm, Chad meets you at the gym. While doing the bench press, you notice Chad struggling to lift the bar. Should you help him or let him struggle?");
+            chad217.show();
+            chad217.position(x, opt1y);
+            chad217.mousePressed(() => {
+                chad217.hide();
+                chad218.hide();
+                chadScene = 2113;
+            });
+            chad218.show();
+            chad218.position(x, opt2y);
+            chad218.mousePressed(() => {
+                chad217.hide();
+                chad218.hide();
                 chadScene = 2113;
             });
             break;
@@ -925,15 +1006,12 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "crc me");
-            okChad.show();
+            textBox(0, "You help him lift the bar. He thanks you and blushes. You guys end up having a productive workout together. You guys agreed to workout again soon.");
             okChad.mousePressed(() => {
                 okChad.hide();
-                chadScene = 2113;
+                chadScene = 3;
             });
-
-
-
+            break;
         case 30:
             background(1); // change background to dining hall/food place
             textBox(0);
@@ -1188,7 +1266,7 @@ function neuRoute() {
         case 0:
             background(culcsteps);
             textBox(3, "you picked Jordan Song! They are a 4th year Neuroscience major and can often be found pondering the intricate mysteries of the brain. " +
-            "They are also an active member of the Brainwaves Society!");
+                "They are also an active member of the Brainwaves Society!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1199,8 +1277,8 @@ function neuRoute() {
         case 1:
             background(stuCenter);
             textBox(3, "Day 1: Monday. As you leave your LMC class, you see Jordan Song walking in your direction. " +
-            "You guys have talked a little bit in the past but do not know each other that well. What do you do next?");
-    
+                "You guys have talked a little bit in the past but do not know each other that well. What do you do next?");
+
             neu41.position(200, 200);
             neu41.show();
             neu41.size(100, 100);
@@ -1238,7 +1316,7 @@ function neuRoute() {
         case 2:
             background(stuCenter);
             textBox(3, "You walk upto them, but at the last minute you lose your nerve and turn back around. " +
-            "Hopefully you can speak with them in the neuroscience lecture class you both are in.");
+                "Hopefully you can speak with them in the neuroscience lecture class you both are in.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1249,7 +1327,7 @@ function neuRoute() {
         case 3:
             background(stuCenter);
             textBox(3, "Jordan has always been outspoken about neuroscience. You decide to wait until " +
-            "the lecture class, which you both are in, later today to talk to them.");
+                "the lecture class, which you both are in, later today to talk to them.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1260,8 +1338,8 @@ function neuRoute() {
         case 4:
             background(stuCenter);
             textBox(3, "You turn your head to the side, smile, and glance up to their eyes. Jordan smiles, uncomfortably, " +
-            "as they walk by. They do not know how to reciprocate those feelings. Hopefully you can speak with them " +
-            "in the neuroscience lecture class you are both in.");
+                "as they walk by. They do not know how to reciprocate those feelings. Hopefully you can speak with them " +
+                "in the neuroscience lecture class you are both in.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1272,8 +1350,8 @@ function neuRoute() {
         case 11:
             background(culcsteps);
             textBox(3, "Later that day: you approach them at after the neuroscience lecture, " +
-            "express your interest in neuroscience. After an interesting conversation you wish to keep the " +
-            "conversation going.");
+                "express your interest in neuroscience. After an interesting conversation you wish to keep the " +
+                "conversation going.");
 
             neu11.position(200, 200);
             neu11.show();
@@ -1322,7 +1400,7 @@ function neuRoute() {
         case 13:
             background(culcsteps);
             textBox(3, "After joining the Brainwaves Society, and after attending your first meeting later the same day " +
-            " you approach Jordan and ask them for their instagram. Just so you can keep up Brainwave activies of course. ;)");
+                " you approach Jordan and ask them for their instagram. Just so you can keep up Brainwave activies of course. ;)");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1331,7 +1409,7 @@ function neuRoute() {
             });
             break;
         case 14:
-        background(culcsteps);
+            background(culcsteps);
             textBox(3, "Props to you for being bold, let's keep these good vibes going.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
@@ -1343,7 +1421,7 @@ function neuRoute() {
         case 21:
             background(stuCenter);
             textBox(3, "Day 2: Tuesday. Now that you've left an impression and Jordan knows you a little better, you " +
-            "decide to make the first move once again and direct message them on Instagram.");
+                "decide to make the first move once again and direct message them on Instagram.");
 
             neu51.position(200, 200);
             neu51.show();
@@ -1467,7 +1545,7 @@ function neuRoute() {
             });
             break;
         case 28:
-        background(culcStairs);
+            background(culcStairs);
             textBox(3, "On Wednesday you had a wonderful time talking about your shared passion of the brain. Your academic bond has been strengthened and Jordan's expertise in the topic was able to shine.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
@@ -1527,7 +1605,7 @@ function neuRoute() {
         case 35:
             background(culcsteps);
             textBox(3, "The lecture, unfortunately, was not that interesting. Even Jordan, the science aficionado, had trouble staying awake. However, " +
-            "they leaned on your shoulder for most of it so take it as a win.");
+                "they leaned on your shoulder for most of it so take it as a win.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1548,7 +1626,7 @@ function neuRoute() {
         case 43: // Good Ending
             background(schoolPhoto);
             textBox(3, "Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship, if you could " +
-            "only see Cupid now.");
+                "only see Cupid now.");
             break;
         case 44: // Neutral Ending
             background(schoolPhoto);
@@ -1556,7 +1634,7 @@ function neuRoute() {
         case 45: // Bad Ending
             background(schoolPhoto);
             textBox(3, "Thank god you didn't go to the Chi Phi party at all. Jordan told everyone about your awful romantic skills, you have become " +
-            "the laughing stock of GT. Cupid is weaping.");
+                "the laughing stock of GT. Cupid is weaping.");
             break;
         default:
             break;
