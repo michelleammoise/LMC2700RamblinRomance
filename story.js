@@ -453,7 +453,11 @@ function userInputs() {
     text("First, type your name, then select a major. ", width / 2, 50);
     getName.show();
     getName.position(width / 2, 100);
+    if (playerName === "") {
+        playerName = "Player";
+    }
     playerName = getName.value(); // may need to move this
+
 
     showStats();
 
@@ -468,7 +472,7 @@ function chooseChar() {
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("Select character", width / 2, 50);
-    text("\nHi " + playerName + "!" , width / 2, 50);
+    text("\nHi " + playerName + "!", width / 2, 50);
 
     boychar2.resize(200, 200);
     girlchar2.resize(200, 200);
@@ -998,6 +1002,14 @@ function chadRoute() {
                 chadScene = 2113;
             });
             break;
+            chad213.show();
+            chad213.position(x, opt2y);
+            chad213.mousePressed(() => {
+                chad211.hide();
+                chad212.hide();
+                chadScene = 2113;
+            });
+            break;
         case 2112: //hw help
             background(stuCenter);
             textBox(0); // probably make 0 be narrator
@@ -1284,7 +1296,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "The dorm room is filled with a lively energy, and "
-            +" Chad and you are sitting on the floor amidst study materials. ");
+                + " Chad and you are sitting on the floor amidst study materials. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1363,7 +1375,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "As you both make plans for the party, "
-            + "the room seems to brighten with the anticipation of shared laughter and good times.");
+                + "the room seems to brighten with the anticipation of shared laughter and good times.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1390,7 +1402,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Chad grins, and as the evening continues, the connection between you deepens, "
-            + "transitioning from study partners to potential friends ");
+                + "transitioning from study partners to potential friends.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1404,7 +1416,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "However, The dorm room feels awkward, with an evident distance between you and Chad. "
+            textBox(0, "However, the dorm room feels awkward, with an evident distance between you and Chad. "
                 + "Study materials are scattered, and the atmosphere is strained.");
             okChad.show();
             okChad.mousePressed(() => {
