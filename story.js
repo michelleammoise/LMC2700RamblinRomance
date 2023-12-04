@@ -468,7 +468,7 @@ function chooseChar() {
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("Select character", width / 2, 50);
-    text("Hi" + width / 2, 50);
+    text("\nHi " + playerName + "!" , width / 2, 50);
 
     boychar2.resize(200, 200);
     girlchar2.resize(200, 200);
