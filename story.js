@@ -92,9 +92,9 @@ function setup() {
     getAudioContext().suspend();
     rectMode(CENTER);
     createCanvas(1000, 600);
-    sceneCount = 6;
+    sceneCount = 1;
     oliviaScene = 0;
-    chadScene = 2; // change to 0 when added exposition scene
+    chadScene = 0; // change to 0 when added exposition scene
     neuScene = 0;
 
     buttonSetup();
