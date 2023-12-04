@@ -77,6 +77,7 @@ function preload() {
     culcStairs = loadImage("./assets/culcStairs.png");
     stuCenter = loadImage("./assets/jlstucen.jpeg");
     culcsteps = loadImage("./assets/culcsteps.png");
+    scheller = loadImage("./assets/scheller.jpeg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -92,9 +93,9 @@ function setup() {
     getAudioContext().suspend();
     rectMode(CENTER);
     createCanvas(1000, 600);
-    sceneCount = 1;
+    sceneCount = 6;
     oliviaScene = 0;
-    chadScene = 0; // change to 0 when added exposition scene
+    chadScene = 2; // change to 0 when added exposition scene
     neuScene = 0;
 
     buttonSetup();
@@ -896,7 +897,7 @@ function chadRoute() {
             });
             break
         case 212: // attend club event
-            background(stuCenter);
+            background(scheller);
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
@@ -990,17 +991,17 @@ function chadRoute() {
             chad217.mousePressed(() => {
                 chad217.hide();
                 chad218.hide();
-                chadScene = 2113;
+                chadScene = 2131;
             });
             chad218.show();
             chad218.position(x, opt2y);
             chad218.mousePressed(() => {
                 chad217.hide();
                 chad218.hide();
-                chadScene = 2114;
+                chadScene = 2132;
             });
             break;
-        case 2113: // invite to gym
+        case 2131: // invite to gym
             background(crc);
             textBox(0); // probably make 0 be narrator
             fill(0);
@@ -1012,7 +1013,7 @@ function chadRoute() {
                 chadScene = 3;
             });
             break;
-        case 2114: // invite to gym
+        case 2132: // invite to gym
             background(crc);
             textBox(0); // probably make 0 be narrator
             fill(0);
