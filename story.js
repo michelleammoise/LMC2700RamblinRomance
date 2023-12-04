@@ -684,14 +684,14 @@ function oliviaRoute() {
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
-                // oliviaScene = 3;
+                oliviaScene = 8;
             });
             olivia13.mousePressed(() => {
                 // remove buttons
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
-                // oliviaScene = 4;
+                oliviaScene = 14;
             });
             break;
         case 2:
@@ -736,7 +736,7 @@ function oliviaRoute() {
             break;
         case 6:
             background(culcsteps);
-            textBox(0, "(Shocked) Absolutely not, you're the opposite of that!" + "Do you have an Instagram?");
+            textBox(0, "[Shocked] Absolutely not, you're the opposite of that! " + "Do you have an Instagram?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -746,8 +746,8 @@ function oliviaRoute() {
             break;
         case 7:
             background(culcsteps);
-            textBox(1, "(Olivia looks intrigued, then grabs her phone.)" +
-                "Yeah! Here it is. [Hands you her phone]" +
+            textBox(1, "[Olivia looks intrigued, then grabs her phone.] " +
+                "Yeah! Here it is. [Hands you her phone] " +
                 "Let’s stay in touch, yeah?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
@@ -757,17 +757,158 @@ function oliviaRoute() {
             });
             break;
         case 8:
-            background(culcsteps);
-            textBox(1, "Hey, whatcha doing?");
+            background(culcStairs);
+            textBox(0, "[Casually strolls into the Aero-Philosophy Symposium meeting, spotting Olivia engrossed in the discussion]\nMind if I snag a spot? Aerospace and philosophy sound like a wild combo.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 4;
+                oliviaScene = 9;
             });
             break;
+        case 9:
+            background(culcStairs);
+            textBox(1, "Go for it! It's a wild ride, all right.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 10;
+            });
+            break;
+        case 10:
+            background(culcStairs);
+            textBox(0, "[Engage in the Symposium, exploring the curious intersection of aerospace and deep thoughts]\nSurprisingly mind-expanding. Never thought rockets and existential musings would go hand in hand.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 11;
+            });
+            break;
+        case 11:
+            background(culcStairs);
+            textBox(1, "Life's full of surprises, just like the cosmos.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 12;
+            });
+            break;
+        case 12:
+            background(culcStairs);
+            textBox(0, "[After the meeting, you both gather your belongings together]\nThis was strangely fascinating. By the way, any chance I could grab your Instagram? Maybe share more mind-boggling reads.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 13;
+            });
+            break;
+        case 13:
+            background(culcStairs);
+            textBox(1, "Haha, why not? \n[Shares Instagram]\n Brace yourself for more cosmic contemplations.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 9;
+            });
+            break;
+        // choice 13
+        case 14:
+            background(culcsteps);
+            textBox(0, "So, there's this Nerdy Worms club event happening. Thought you might be interested.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 17;
+            });
+            break;
+        case 17:
+            background(culcsteps);
+            textBox(1, "Nerdy Worms? What's that about?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 18;
+            });
+            break;
+        case 18:
+            background(culcsteps);
+            textBox(0, "Oh, just your average gathering of cosmic minds and quirky discussions. Interested?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 19;
+            });
+            break;
+        case 19:
+            background(culcsteps);
+            textBox(1, "Cosmic minds, huh? Count me in!");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 20;
+            });
+            break;
+        case 20:
+            background(scheller);
+            textBox(0, "[Attend the Nerdy Worms event, engaging in lively discussions about everything from quantum physics to the best sci-fi shows]");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 21;
+            });
+            break;
+        case 21:
+            background(scheller);
+            textBox(0, "This was surprisingly fun. Nerdy minds think alike, I guess.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 22;
+            });
+            break;
+        case 22:
+            background(scheller);
+            textBox(1, "Absolutely! Different, yet strangely relatable.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 23;
+            });
+            break;
+        case 23:
+            background(scheller);
+            textBox(0, "[As the event winds down, seize the moment]\nI had a great time with you today. Mind if I follow you on Instagram? We can keep each other in the loop about future cosmic adventures.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 24;
+            });
+            break;
+        case 24:
+            background(scheller);
+            textBox(1, "Sounds like a plan! \n[Shares Instagram] \nLet the cosmic updates begin!");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 25;
+            });
+            break;
+
     }
-    // textBox(1, "what is this bro");
 }
 
 function chadRoute() {
