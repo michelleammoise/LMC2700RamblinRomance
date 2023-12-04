@@ -908,6 +908,127 @@ function chadRoute() {
                 chadScene = 4;
             });
             break;
+        case 410:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "The dorm room is filled with a lively energy, and "
+            +" Chad and you are sitting on the floor amidst study materials. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 411;
+            });
+            break;
+        case 411:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: You know, these study sessions have been surprisingly enjoyable, Chad.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 412;
+            });
+            break;
+        case 412:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: Yeah, they have. It's been cool having someone to tackle the work with.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 413;
+            });
+            break;
+        case 413:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "A comfortable silence settles in as you both exchange smiles. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 414;
+            });
+            break;
+        case 414:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: I was thinking, there's a frat party happening this weekend. Would you be up for going together?");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 415;
+            });
+            break;
+        case 415:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: A party? That sounds like a great way to unwind. Sure, I'm in. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 416;
+            });
+            break;
+        case 416:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "As you both make plans for the party, "
+            + "the room seems to brighten with the anticipation of shared laughter and good times.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 417;
+            });
+            break;
+        case 417:
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: Awesome! It'll be a blast. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 418;
+            });
+            break;        
+        case 418:
+            background(1);
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Chad grins, and as the evening continues, the connection between you deepens, "
+            + "transitioning from study partners to potential friends ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 2000000;
+                // good ending
+            });
+            break;  
         case 420:
             background(1); // change background to dorm
             textBox(0);
@@ -936,31 +1057,31 @@ function chadRoute() {
             });
             break;
         case 422:
-        background(1); // change background to dorm
-        textBox(0);
-        fill(0);
-        textAlign(LEFT);
-        textFont('Courier New', 20);
-        textBox(2, "Chad: They're just study sessions, you know? Nothing special.");
-        okChad.show();
-        okChad.mousePressed(() => {
-            okChad.hide();
-            chadScene = 423;
-        });
-        break;
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: They're just study sessions, you know? Nothing special.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 423;
+            });
+            break;
         case 423:
-        background(1); // change background to dorm
-        textBox(0);
-        fill(0);
-        textAlign(LEFT);
-        textFont('Courier New', 20);
-        textBox(0, "There's an uncomfortable silence, and you sense a shift in the dynamic.");
-        okChad.show();
-        okChad.mousePressed(() => {
-            okChad.hide();
-            chadScene = 424;
-        });
-        break;
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "There's an uncomfortable silence, and you sense a shift in the dynamic.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 424;
+            });
+            break;
         case 424:
             background(1); // change background to dorm
             textBox(0);
@@ -975,44 +1096,44 @@ function chadRoute() {
             });
             break;
         case 425:
-        background(1); // change background to dorm
-        textBox(0);
-        fill(0);
-        textAlign(LEFT);
-        textFont('Courier New', 20);
-        textBox(2, "Chad: Yeah, well, I'm not really into all that stuff. ");
-        okChad.show();
-        okChad.mousePressed(() => {
-            okChad.hide();
-            chadScene = 426;
-        });
-        break;
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(2, "Chad: Yeah, well, I'm not really into all that stuff. ");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 426;
+            });
+            break;
         case 426:
-        background(1); // change background to dorm
-        textBox(0);
-        fill(0);
-        textAlign(LEFT);
-        textFont('Courier New', 20);
-        textBox(0, "Chad's tone is dismissive, and you catch a hint of embarrassment in his expression.");
-        okChad.show();
-        okChad.mousePressed(() => {
-            okChad.hide();
-            chadScene = 427;
-        });
-        break;
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "Chad's tone is dismissive, and you catch a hint of embarrassment in his expression.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 427;
+            });
+            break;
         case 427:
-        background(1); // change background to dorm
-        textBox(0);
-        fill(0);
-        textAlign(LEFT);
-        textFont('Courier New', 20);
-        textBox(0, "You: Right, my bad. I guess I misread the situation.");
-        okChad.show();
-        okChad.mousePressed(() => {
-            okChad.hide();
-            chadScene = 428;
-        });
-        break;
+            background(1); // change background to dorm
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You: Right, my bad. I guess I misread the situation.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 428;
+            });
+            break;
         case 428:
             background(1); // change background to dorm
             textBox(0);
