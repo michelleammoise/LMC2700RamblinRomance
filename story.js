@@ -80,9 +80,9 @@ function setup() {
     getAudioContext().suspend();
     rectMode(CENTER);
     createCanvas(1000, 600);
-    sceneCount = 1;
+    sceneCount = 6;
     oliviaScene = 0;
-    chadScene = 0; // change to 0 when added exposition scene
+    chadScene = 2; // change to 0 when added exposition scene
     neuScene = 0;
 
     buttonSetup();
@@ -202,7 +202,7 @@ function chadButtons() {
     // day 2 buttons
     chad21 = createButton("Offer to help on his homework");
     chad21.hide();
-    chad22 = createButton("Attend the Entrepreneurial Alliance club event together");
+    chad22 = createButton("Attend the Innovative Yellow Jackets club event together");
     chad22.hide();
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
@@ -795,42 +795,61 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "It seems like he dropped his pencil in between you two. Should I let him pick it up or should I pick it up for him?");
-            okChad.show();
-            okChad.mousePressed(() => {
-                chad211.show();
-                chad212.show();
-                okChad.hide();
-                chadScene = 2121;
+            chad211.show();
+            chad211.position(x, opt1y);
+            chad211.mousePressed(() => {
+                chad211.hide();
+                chad212.hide();
+                chadScene = 2112;
+            });
+            chad212.show();
+            chad212.position(x, opt2y);
+            chad212.mousePressed(() => {
+                chad211.hide();
+                chad212.hide();
+                chadScene = 2113;
             });
             break;
-        case 21111: //hw help
+        case 2112: //hw help
             background(stuCenter);
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "fix me");
+            textBox(0, "He see you hesistate but picks up his pencil first. You guys continue to study together.\nAlthough you wished to get to know him better, you guys still enjoyed each others' presence.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 3;
             });
             break;
+        case 2113: //hw help
+            background(stuCenter);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "The two of you coincidentally pick up the pencil at the same time. You guys make eye contact and blush. You would have thought they were working on chemistry the way they were bonding. You guys finish studying and said your goodbyes. You guys agreed to meet up again soon.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break
         case 212: // attend club event
             background(stuCenter);
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "attend club");
-            textBox(0, "does this work?");
+            textBox(0, "Innovative Yellow Jackets is hosting a club event today. You decide to invite Chad to the event.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 2111;
             });
             break;
-        case 2112: // attend club event
+        case 2121: // attend club event
             background(scheller);
             textBox(0); // probably make 0 be narrator
             fill(0);
