@@ -997,7 +997,7 @@ function chadRoute() {
             chad218.mousePressed(() => {
                 chad217.hide();
                 chad218.hide();
-                chadScene = 2113;
+                chadScene = 2114;
             });
             break;
         case 2113: // invite to gym
@@ -1007,6 +1007,18 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You help him lift the bar. He thanks you and blushes. You guys end up having a productive workout together. You guys agreed to workout again soon.");
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 3;
+            });
+            break;
+        case 2114: // invite to gym
+            background(crc);
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "He almost drops the bar on himself. He gets up and says he's fine. The rest of the workout went well and you guys agreed to workout again soon.");
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 3;
