@@ -113,6 +113,8 @@ function preload() {
     neuchar2 = loadImage("./assets/2djordan2.png");
     boychar2 = loadImage("./assets/2dboy2.png");
     girlchar2 = loadImage("./assets/2dgirl2.png");
+
+    buzz = loadImage("./assets/buzz.png");
 }
 
 // setup
