@@ -105,7 +105,8 @@ function preload() {
     diningHall = loadImage("./assets/dininghall.jpg");
     crossland = loadImage("./assets/crossland.jpeg");
     badParty = loadImage("./assets/badparty.jpg");
-    goodParty = loadImage("./assets/goodparty.jpg");
+    goodParty = loadImage("./assets/fratparty.jpeg");
+    charBG = loadImage("./assets/charBG.png");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -137,7 +138,7 @@ function buttonSetup() {
     startBtn.position(width / 2 - startBtn.width / 2, height / 2 - startBtn.height / 2);
 
     startBtn.mousePressed(() => {
-        startBtn.remove();
+        startBtn.hide();
         sceneCount = 2;
     });
 
@@ -170,7 +171,7 @@ function buttonSetup() {
     styleButton(nextBtn, nextBtnStyle);
 
     nextBtn.mousePressed(() => {
-        nextBtn.remove();
+        nextBtn.hide();
         sceneCount = 3;
     });
 
@@ -220,9 +221,9 @@ function styleAndRemoveButton(button, style, sceneNumber) {
     button.style(style);
     button.mousePressed(() => {
         // Remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
+        neuBtn.hide();
+        boyBtn.hide();
+        girlBtn.hide();
         sceneCount = sceneNumber;
     });
 }
@@ -586,7 +587,7 @@ function chooseChar() {
     getName.hide();
     setStats();
 
-    background(0); // black background
+    background(charBG); // background
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
@@ -609,7 +610,7 @@ function chooseChar() {
     girlBtn.position(485, 450);
     girlBtn.show();
     // neuBtn = createButton("Non-binary");
-    neuBtn.position(685, 450);
+    neuBtn.position(660, 450);
     neuBtn.show();
 }
 
@@ -657,7 +658,7 @@ function oliviaRoute() {
     switch (oliviaScene) {
         case 0:
             background(schoolPhoto);
-            textBox(1, "You picked Olivia Thompson! She is a 2nd year Aerospace major. When she's not immersed in aerospace engineering, you'll find her at the hangar, perfecting aircraft designs or engaging in high-flying discussions with peers. Olivia is a member of the Aero-Philosophy Symposium and the Nerdy Worms club.");
+            textBox(2, "You picked Olivia Thompson! She is a 2nd year Aerospace major. When she's not immersed in aerospace engineering, you'll find her at the hangar, perfecting aircraft designs or engaging in high-flying discussions with peers. Olivia is a member of the Aero-Philosophy Symposium and the Nerdy Worms club.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -688,6 +689,8 @@ function oliviaRoute() {
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
+                rizz += 2;
+                attraction++;
                 oliviaScene = 2;
             });
             olivia12.mousePressed(() => {
@@ -695,6 +698,9 @@ function oliviaRoute() {
                 olivia11.remove();
                 olivia12.remove();
                 olivia13.remove();
+                rizz++;
+                attraction++;
+                intellect++;
                 oliviaScene = 8;
             });
             olivia13.mousePressed(() => {
@@ -703,6 +709,8 @@ function oliviaRoute() {
                 olivia12.remove();
                 olivia13.remove();
                 oliviaScene = 14;
+                intellect += 2;
+                attraction++;
             });
             break;
         // day 1 choice 1
@@ -718,7 +726,7 @@ function oliviaRoute() {
             break;
         case 3:
             background(culcsteps);
-            textBox(1, "Hey, whatcha doing?");
+            textBox(2, "Hey, whatcha doing?");
             nextBtn3.position(60, 550);
             nextBtn3.show();
             nextBtn3.mousePressed(() => {
@@ -738,7 +746,7 @@ function oliviaRoute() {
             break;
         case 5:
             background(culcsteps);
-            textBox(1, "Haha, that must be boring then.");
+            textBox(2, "Haha, that must be boring then.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -758,14 +766,14 @@ function oliviaRoute() {
             break;
         case 7:
             background(culcsteps);
-            textBox(1, "[Olivia looks intrigued, then grabs her phone.] " +
+            textBox(2, "[Olivia looks intrigued, then grabs her phone.] " +
                 "Yeah! Here it is. [Hands you her phone] " +
-                "Let’s stay in touch, yeah?");
+                "Let's stay in touch, yeah?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 8;
+                oliviaScene = 25;
             });
             break;
         // day 1 choice 2
@@ -781,7 +789,7 @@ function oliviaRoute() {
             break;
         case 9:
             background(culcStairs);
-            textBox(1, "Go for it! It's a wild ride, all right.");
+            textBox(2, "Go for it! It's a wild ride, all right.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -801,7 +809,7 @@ function oliviaRoute() {
             break;
         case 11:
             background(culcStairs);
-            textBox(1, "Life's full of surprises, just like the cosmos.");
+            textBox(2, "Life's full of surprises, just like the cosmos.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -821,7 +829,7 @@ function oliviaRoute() {
             break;
         case 13:
             background(culcStairs);
-            textBox(1, "Haha, why not? \n[Shares Instagram]\n Brace yourself for more cosmic contemplations.");
+            textBox(2, "Haha, why not? \n[Shares Instagram]\n Brace yourself for more cosmic contemplations.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -842,7 +850,7 @@ function oliviaRoute() {
             break;
         case 17:
             background(culcsteps);
-            textBox(1, "Nerdy Worms? What's that about?");
+            textBox(2, "Nerdy Worms? What's that about?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -862,7 +870,7 @@ function oliviaRoute() {
             break;
         case 19:
             background(culcsteps);
-            textBox(1, "Cosmic minds, huh? Count me in!");
+            textBox(2, "Cosmic minds, huh? Count me in!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -892,7 +900,7 @@ function oliviaRoute() {
             break;
         case 22:
             background(scheller);
-            textBox(1, "Absolutely! Different, yet strangely relatable.");
+            textBox(2, "Absolutely! Different, yet strangely relatable.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -912,7 +920,7 @@ function oliviaRoute() {
             break;
         case 24:
             background(scheller);
-            textBox(1, "Sounds like a plan! \n[Shares Instagram] \nLet the cosmic updates begin!");
+            textBox(2, "Sounds like a plan! \n[Shares Instagram] \nLet the cosmic updates begin!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -952,9 +960,11 @@ function oliviaRoute() {
                 // remove buttons
                 olivia211.remove();
                 olivia212.remove();
+                rizz -= 2;
                 oliviaScene = 48;
             });
             break;
+        // day 2 choice 1
         case 27:
             background(crossland);
             textBox(0, "Hey Olivia! Calculus, huh? The joy of derivatives and integrals.");
@@ -967,7 +977,7 @@ function oliviaRoute() {
             break;
         case 28:
             background(crossland);
-            textBox(1, "[Laughs] Yeah, joyous indeed. Trying to make sense of all this.");
+            textBox(2, "[Laughs] Yeah, joyous indeed. Trying to make sense of all this.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -987,7 +997,7 @@ function oliviaRoute() {
             break;
         case 30:
             background(crossland);
-            textBox(1, "[Smiling] Sure, why not? Let's tackle this beast together.");
+            textBox(2, "[Smiling] Sure, why not? Let's tackle this beast together.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1007,10 +1017,12 @@ function oliviaRoute() {
             break;
         case 32:
             background(crossland);
-            textBox(1, "[Grinning] Maybe it's the company making it enjoyable.");
+            textBox(2, "[Grinning] Maybe it's the company making it enjoyable.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
+                intellect += 1;
+                attraction += 1;
                 nextBtn2.hide();
                 oliviaScene = 33;
             });
@@ -1032,12 +1044,15 @@ function oliviaRoute() {
                 olivia22.remove();
                 olivia23.remove();
                 oliviaScene = 34;
+                intellect += 1;
             });
             olivia23.mousePressed(() => {
                 // remove buttons
                 olivia22.remove();
                 olivia23.remove();
                 oliviaScene = 42;
+                attraction -= 3;
+                rizz -= 4;
             });
             break;
         case 34:
@@ -1052,12 +1067,12 @@ function oliviaRoute() {
             break;
         case 35:
             background(crossland);
-            textBox(1, "Hangar session? What's that all about?");
+            textBox(2, "Hangar session? What's that all about?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 36;
+                oliviaScene = 37;
             });
             break;
         case 37:
@@ -1102,7 +1117,7 @@ function oliviaRoute() {
             break;
         case 41:
             background(crossland);
-            textBox(1, "[Teasingly] Top-notch engineers, right?");
+            textBox(2, "[Teasingly] Top-notch engineers, right?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1122,7 +1137,7 @@ function oliviaRoute() {
             break;
         case 43:
             background(crossland);
-            textBox(1, "(Raises an eyebrow) What is it?");
+            textBox(2, "(Raises an eyebrow) What is it?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1142,7 +1157,7 @@ function oliviaRoute() {
             break;
         case 45:
             background(crossland);
-            textBox(1, "(Uncomfortable) Uh, thanks?");
+            textBox(2, "(Uncomfortable) Uh, thanks?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1152,7 +1167,7 @@ function oliviaRoute() {
             break;
         case 46:
             background(crossland);
-            textBox(1, "No, really. It's like your beauty has its own gravitational pull, and I'm helplessly drawn towards it.");
+            textBox(2, "No, really. It's like your beauty has its own gravitational pull, and I'm helplessly drawn towards it.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1162,7 +1177,7 @@ function oliviaRoute() {
             break;
         case 47:
             background(crossland);
-            textBox(1, "[Clearly annoyed] Are you done?");
+            textBox(2, "[Clearly annoyed] Are you done?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1192,6 +1207,8 @@ function oliviaRoute() {
                 olivia32.remove();
                 olivia33.remove();
                 oliviaScene = 49;
+                rizz += 1;
+                intellect += 1;
             });
             olivia32.mousePressed(() => {
                 // remove buttons
@@ -1199,6 +1216,8 @@ function oliviaRoute() {
                 olivia32.remove();
                 olivia33.remove();
                 oliviaScene = 53;
+                intellect += 1;
+                rizz += 1;
             });
             olivia33.mousePressed(() => {
                 // remove buttons
@@ -1206,6 +1225,8 @@ function oliviaRoute() {
                 olivia32.remove();
                 olivia33.remove();
                 oliviaScene = 59;
+                attraction -= 1;
+                rizz += 1;
             });
             break;
         case 49:
@@ -1220,7 +1241,7 @@ function oliviaRoute() {
             break;
         case 50:
             background(crossland);
-            textBox(0, "Hmm, a study session? That could work.");
+            textBox(2, "Hmm, a study session? That could work.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1240,7 +1261,7 @@ function oliviaRoute() {
             break;
         case 52:
             background(crossland);
-            textBox(0, "[Smirking] Sounds like a plan. Let's make sure no calculus problem goes unsolved.");
+            textBox(2, "[Smirking] Sounds like a plan. Let's make sure no calculus problem goes unsolved.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1260,7 +1281,7 @@ function oliviaRoute() {
             break;
         case 54:
             background(crossland);
-            textBox(0, "Really? I had no idea.");
+            textBox(2, "Really? I had no idea.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1280,7 +1301,7 @@ function oliviaRoute() {
             break;
         case 56:
             background(crossland);
-            textBox(0, "[Casually] Aerospace, huh? Sure, why not? I'm up for some out-of-this-world knowledge.");
+            textBox(2, "[Casually] Aerospace, huh? Sure, why not? I'm up for some out-of-this-world knowledge.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1300,7 +1321,7 @@ function oliviaRoute() {
             break;
         case 58:
             background(crossland);
-            textBox(0, "[Smiling] Sounds interesting. Let's do it.");
+            textBox(2, "[Smiling] Sounds interesting. Let's do it.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1320,7 +1341,7 @@ function oliviaRoute() {
             break;
         case 60:
             background(crossland);
-            textBox(0, "Ugh, don't even get me started. I'm convinced these numbers are playing mind games with me.");
+            textBox(2, "Ugh, don't even get me started. I'm convinced these numbers are playing mind games with me.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1340,7 +1361,7 @@ function oliviaRoute() {
             break;
         case 62:
             background(crossland);
-            textBox(0, "You’re actually good at this?");
+            textBox(2, "You’re actually good at this?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1360,7 +1381,7 @@ function oliviaRoute() {
             break;
         case 64:
             background(crossland);
-            textBox(0, "That’s…nice");
+            textBox(2, "That’s… nice.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1380,12 +1401,12 @@ function oliviaRoute() {
             break;
         case 66:
             background(crossland);
-            textBox(0, "OH, thanks. You should help me out more.");
+            textBox(2, "Oh, thanks. You should help me out more.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 67;
+                oliviaScene = 68;
             });
             break;
         case 68:
@@ -1399,10 +1420,10 @@ function oliviaRoute() {
                 console.log("Attract: " + attraction);
                 console.log("Rizz: " + rizz);
                 console.log("Intellect: " + intellect);
-                if (rizz > 6 && attraction > 4) {
+                if (rizz >= 3 && attraction > 5) {
                     oliviaScene = 69;
                 } else {
-                    oliviaScene = 69;
+                    oliviaScene = 79;
                 }
             });
             break;
@@ -1413,17 +1434,7 @@ function oliviaRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 70;
-            });
-            break;
-        case 71:
-            background(dorm);
-            textBox(0, "This study session has been surprisingly productive.");
-            nextBtn2.position(60, 550);
-            nextBtn2.show();
-            nextBtn2.mousePressed(() => {
-                nextBtn2.hide();
-                oliviaScene = 72;
+                oliviaScene = 71;
             });
             break;
         case 71:
@@ -1438,7 +1449,7 @@ function oliviaRoute() {
             break;
         case 72:
             background(dorm);
-            textBox(1, "Yeah, and it's been nice having company. Makes calculus a little less daunting.");
+            textBox(2, "Yeah, and it's been nice having company. Makes calculus a little less daunting.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1458,7 +1469,7 @@ function oliviaRoute() {
             break;
         case 74:
             background(dorm);
-            textBox(1, "Me too. It's been a different kind of excitement, you know? Sharing the things I love with someone who gets it.");
+            textBox(2, "Me too. It's been a different kind of excitement, you know? Sharing the things I love with someone who gets it.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1478,7 +1489,7 @@ function oliviaRoute() {
             break;
         case 76:
             background(dorm);
-            textBox(1, "[Smiling] That was unexpected but definitely a pleasant surprise.");
+            textBox(2, "[Smiling] That was unexpected but definitely a pleasant surprise.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -1498,12 +1509,126 @@ function oliviaRoute() {
             break;
         case 78:
             background(dorm);
-            textBox(0, "[You both return to your study materials, but there's a newfound warmth and closeness that lingers in the air, turning the study session into a heartwarming memory.]");
+            textBox(0, "Good Ending: \n[You both return to your study materials, but there's a newfound warmth and closeness that lingers in the air, turning the study session into a heartwarming memory.]");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 79;
+                oliviaScene = 0;
+                sceneCount = 1;
+                startBtn.show();
+            });
+            break;
+        case 79:
+            background(dorm);
+            textBox(0, "[The dorm room feels tense and awkward, with scattered textbooks and an uncomfortable silence between you and Olivia. Olivia is focused on her aerospace engineering notes, and you attempt to flip through your calculus book, but the atmosphere is heavy.]");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 80;
+            });
+            break;
+        case 80:
+            background(dorm);
+            textBox(0, "This study session feels... different.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 81;
+            });
+            break;
+        case 81:
+            background(dorm);
+            textBox(2, "Yeah, it does.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 82;
+            });
+            break;
+        case 82:
+            background(dorm);
+            textBox(0, "[There's an uneasy pause as you both avoid eye contact.]\nI thought we had something, Olivia.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 83;
+            });
+            break;
+        case 83:
+            background(dorm);
+            textBox(2, "Did we? I mean, we've been spending time together, but...");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 84;
+            });
+            break;
+        case 84:
+            background(dorm);
+            textBox(0, "[The hesitation in Olivia's voice hangs in the air.]\nI thought there was a connection. Maybe I misread things.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 85;
+            });
+            break;
+        case 85:
+            background(dorm);
+            textBox(2, "[Olivia looks uncomfortable, shifting in her seat.]\nLook, I appreciate the time we spent together, but I think it's better if we focus on our studies.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 86;
+            });
+            break;
+        case 86:
+            background(dorm);
+            textBox(0, "[You feel a sinking feeling in your chest.]\nYeah, maybe you're right.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 87;
+            });
+            break;
+        case 87:
+            background(dorm);
+            textBox(2, "[An awkward silence settles in, punctuated only by the sound of turning pages.]\nI think we should just stick to being classmates.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 88;
+            });
+            break;
+        case 88:
+            background(dorm);
+            textBox(2, "[The words linger, and the room feels colder than before.]\nSure, classmates it is.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 89;
+            });
+            break;
+        case 89:
+            background(dorm);
+            textBox(2, "Bad Ending: [The study session continues, but the connection you thought was there begins to fade. As you leave Olivia's dorm, there's a palpable sense of disappointment, and what could have been remains unexplored.]");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 0;
+                sceneCount = 1;
+                startBtn.show();
             });
             break;
     }
@@ -1938,7 +2063,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n"
-            + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n");
+                + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n");
             okChad.show();
             okChad.mousePressed(() => {
                 intellect++;
@@ -2015,7 +2140,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Innovative Yellow Jackets happens to be hosting an event with a famous model teaching students confidence and how to model."
-            + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
+                + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
             chad2130.show();
             chad2130.position(x, opt1y);
             chad2130.mousePressed(() => {
@@ -2060,9 +2185,9 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You see Chad raise his hand. He gets called on and he does the walk perfectly. You guys continue to enjoy the event together. You guys agreed to meet up again soon.");
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
+                attraction++;
                 okChad.hide();
                 chadScene = 3;
             });
@@ -2128,7 +2253,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You help him lift the bar right before it falls onto him. He thanks you and compliments your spotting abilities. "
-            + "You guys end up having a productive workout together and agreed to workout again in the future. ");
+                + "You guys end up having a productive workout together and agreed to workout again in the future. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -2146,7 +2271,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "He almost drops the bar on himself. He gets up and says he's fine, although he's a little irritated. "
-            + "Regardless, the rest of the workout went better and you guys agreed to workout again soon.");
+                + "Regardless, the rest of the workout went better and you guys agreed to workout again soon.");
             okChad.show();
             okChad.mousePressed(() => {
                 console.log("Pressed");
@@ -2199,7 +2324,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             image(boychar2, x, 200);
-            textBox(2, "Chad: You're right.");
+            textBox(2, "Chad: Maybe so.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -2217,7 +2342,7 @@ function chadRoute() {
                 + "work together. You agree. "); // may want to expand conversation
             okChad.show();
             okChad.mousePressed(() => {
-            // increase charisma and attractiveness
+                // increase charisma and attractiveness
                 rizz += 3;
                 attraction += 3;
                 okChad.hide();
@@ -2538,9 +2663,17 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "BAD ENDING: You did not successfully get Chad to go with you. He did not "
-                + "resonate with some of your actions. Or maybe he didn't like your major. Better luck next time.");
+            textBox(0, "BAD ENDING: You did not successfully get Chad to go with you to the party. He did not "
+                + "resonate with some of your actions. Or maybe he didn't like your major. "
+                + "The party was awkward, and people noted that you were alone. Better luck next time.");
             // maybe add restart button
+            okChad.show();
+            okChad.mousePressed(() => {
+                sceneCount = 1;
+                chadScene = 0;
+                okChad.hide();
+                startBtn.show();
+            });
             break;
         case 888:
             background(goodParty);
@@ -2550,7 +2683,15 @@ function chadRoute() {
             textFont('Courier New', 20);
             textBox(0, "GOOD ENDING: You and Chad went to the frat party and had fun! He sees the both "
                 + "of you together in the future. This is just the beginning of a beautiful relationship. ");
-        // maybe add restart button
+            // maybe add restart button
+            okChad.show();
+            okChad.mousePressed(() => {
+                sceneCount = 1;
+                chadScene = 0;
+                okChad.hide();
+                startBtn.show();
+            });
+            break;
         default:
     }
 }
@@ -2993,12 +3134,12 @@ function textBox(chara, textString) {
     strokeWeight(3);
     // x, y, width, height, (opt radii)
     rect(20, height / 1.5, width - 40, height / 3.25);
-    if (chara == 0) { // Narrator's textbox
+    if (chara == 0) { // Narrator's textBox
         fill(179, 163, 105); // Gold colored text box
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
-        fill(255); // White textbox
+        fill(255); // White textBox
         textSize(20);
         noStroke();
         // textAlign(CENTER, CENTER);
@@ -3007,7 +3148,7 @@ function textBox(chara, textString) {
         // nextButton
     }
 
-    if (chara == 1) { // Chad's textbox
+    if (chara == 1) { // Chad's textBox
         fill(0, 48, 87); // Navy Blue colored box
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
@@ -3021,8 +3162,8 @@ function textBox(chara, textString) {
         // nextButton
     }
 
-    if (chara == 2) { // narrator
-        fill('grey');
+    if (chara == 2) { // olivia
+        fill(70, 140, 89);
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
 
@@ -3035,7 +3176,7 @@ function textBox(chara, textString) {
         // nextButton
     }
 
-    if (chara == 3) { // Jordan's textbox
+    if (chara == 3) { // Jordan's textBox
         fill(255, 255, 255); // White colored box
         stroke(178, 59, 30);
         rect(40, height / 1.45, width - 80, height / 3.75);
