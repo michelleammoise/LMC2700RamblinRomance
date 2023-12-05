@@ -433,45 +433,61 @@ function titleScreen() {
 }
 
 function information() {
-    background(0); //black background
-    fill(255); // text color
-    textAlign(LEFT);
-    textFont('Courier New', 20);
-    text("Buzz:");
-    text("Well, well, well, look who wandered into the realm of intellectual misfortune.", 10, 50);
-    text("Spoiler alert: it's you. Congratulations on your life choices.", 10, 100);
-    text("Buckle up, my friend, for you're about to witness a GT love story so tragic,", 10, 150);
-    text("Cupid himself would probably cry.", 10, 200);
-
-    text("Your Mission (if you choose to accept it):", 10, 300);
-    text("1. Get a date for the Chi Phi Frat party this Friday.", 10, 350);
-    text("2. Pick a student to pursue.", 10, 400);
-    text("3. Each day you will be given a choice, your decision affects your stats.", 10, 450);
-    text("4. The day of the party, your choices will determine your love fate.", 10, 500);
-
-    nextBtn.position(30, 550);
-    nextBtn.show();
-}
-
-function userInputs() {
-    background(0); // black background
+    background('#FF69B4'); // pink background
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
+
+    // Centered text
+    text("Buzz:", width / 2, 50);
+    text("Well, well, well, look who wandered into the realm of intellectual misfortune.", width / 2, 100);
+    text("Spoiler alert: it's you. Congratulations on your life choices.", width / 2, 150);
+    text("Buckle up, my friend, for you're about to witness a GT love story so tragic,", width / 2, 200);
+    text("Cupid himself would probably cry.", width / 2, 250);
+
+    text("Your Mission (if you choose to accept it):", width / 2, 350);
+    text("1. Get a date for the Chi Phi Frat party this Friday.", width / 2, 400);
+    text("2. Pick a student to pursue.", width / 2, 450);
+    text("3. Each day you will be given a choice, your decision affects your stats.", width / 2, 500);
+    text("4. The day of the party, your choices will determine your love fate.", width / 2, 550);
+
+    // Adjusted position for the "Next" button
+    nextBtn.position(width - 100, height - 50);
+    nextBtn.show();
+}
+
+
+function userInputs() {
+    background('#FF69B4'); // pink background
+    fill(255); // text color
+    textAlign(CENTER);
+    textFont('Courier New', 20);
+    
+    // Centered text
     text("First, type your name, then select a major. ", width / 2, 50);
     text("Some majors are more likely to romance a partner, so choose wisely! ", width / 2, 75);
+
+    // Centered text box for name input
+    let textBoxWidth = 500;
+    let textBoxHeight = 20;
+    let textBoxX = (width - textBoxWidth) / 2;
+    let textBoxY = 150;
+
     getName.show();
-    getName.size(500, 20);
-    getName.position((width / 2) - 200, 100);
+    getName.size(textBoxWidth, textBoxHeight);
+    getName.position(textBoxX, textBoxY);
+    textAlign(CENTER);
+    
+    // Default playerName if the input is empty
     if (playerName === "") {
         playerName = "Player";
     }
-    playerName = getName.value(); // may need to move this
 
+    playerName = getName.value(); // You may need to move this depending on your needs
 
     showStats();
-
 }
+
 
 function chooseChar() {
     getName.hide();
