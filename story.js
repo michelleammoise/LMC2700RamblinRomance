@@ -97,7 +97,7 @@ function preload() {
     diningHall = loadImage("./assets/dininghall.jpg");
     crossland = loadImage("./assets/crossland.jpeg");
     badParty = loadImage("./assets/badparty.jpg");
-    goodParty = loadImage("./assets/goodparty.jpg");
+    goodParty = loadImage("./assets/fratparty.jpeg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -360,6 +360,8 @@ function jordanButtons() {
    neu72.hide();
    neu73 = createButton(" ");
    neu73.hide();
+
+   neuchar2.resize(200, 200);
 }
 function chadButtons() {
     okChad = createButton("Ok");
@@ -2117,7 +2119,6 @@ function chadRoute() {
 }
 
 function neuRoute() {
-    //neuScene = 0;
     switch (neuScene) {
         case 0:
             background(culcsteps);
@@ -2125,6 +2126,7 @@ function neuRoute() {
                 "They are also an active member of the Brainwaves Society!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 1;
@@ -2138,6 +2140,7 @@ function neuRoute() {
             neu41.position(200, 200);
             neu41.show();
             neu41.size(100, 100);
+            //image(neuchar2, 60, 200);
 
             neu42.position(400, 200);
             neu42.show();
@@ -2250,15 +2253,18 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                intellect += 1;
+                attraction -= 2;
                 neuScene = 13;
             });
             break;
         case 13:
             background(scheller);
-            textBox(3, "Jordan was a little weirded out about your conversation. When you requested to follow them on Instagram " +
+            textBox(3, "Jordan was a little weirded out about your conversation. When you asked to follow them on Instagram " +
             "they reluctantly entered their username.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            //image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 21;
@@ -2269,8 +2275,11 @@ function neuRoute() {
             textBox(3, "You joined the Brainwaves Society and appraoched them after your first meeting the same day.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            //image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 1;
+                intellect += 2;
                 neuScene = 15;
             });
             break;
@@ -2279,6 +2288,7 @@ function neuRoute() {
             textBox(3, "\"Hey Jordan, can't believe I'm seeing you again today. Must be fate.\" They laughed at your joke and agreed.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 16;
@@ -2289,6 +2299,7 @@ function neuRoute() {
             textBox(3, "\"So it was really great talking to you today! Can I get your Instagram so I can keep up with club events?\" They gave you their username and immediately requested to follow you back ;)");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 21;
@@ -2299,8 +2310,10 @@ function neuRoute() {
             textBox(3, "\"Hey Jordan, I've been seeing a lot lately. Can I get your Instagram?\" You ask earnestly");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 1;
                 neuScene = 19;
             });
             break;
@@ -2309,6 +2322,7 @@ function neuRoute() {
             textBox(3, "\"Yeah, of course. You must also be really interested in neuroscience.\" They laugh in response while putting in their Instagram username.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 20;
@@ -2319,6 +2333,7 @@ function neuRoute() {
             textBox(3, "\"Yeah something like that haha.\" Props to you for being bold, truly. Let's keep these good vibes going shall we.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 21;
@@ -2368,8 +2383,11 @@ function neuRoute() {
             textBox(3, "They respond: It was really interesting! I've been wanting to talk to someone about it!")
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                intellect += 1;
+                attraction += 1;
                 neuScene = 25;
             });
             break;
@@ -2378,8 +2396,11 @@ function neuRoute() {
             textBox(3, "They respond: Yeah I love reading and talking about new research that's published. Send me the article!")
             nextBtn2.position(60, 550);
             nextBtn2.show();
+            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 2;
+                intellect += 2;
                 neuScene = 25;
             });
             break;
@@ -2390,6 +2411,7 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                intellect += 1;
                 neuScene = 25;
             });
             break;
@@ -2481,6 +2503,8 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
+                attraction += 1;
+                intellect += 1;
                 neuScene = 34;
             });
             neu22.mousePressed(() => {
@@ -2488,6 +2512,8 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
+                attraction += 2;
+                intellect += 2;
                 neuScene = 35;
             });
             neu23.mousePressed(() => {
@@ -2495,50 +2521,65 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
+                attraction -= 1;
+                intellect += 1;
                 neuScene = 36;
             });
             break;
         case 34:
             background(culcsteps);
-            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research.")
+            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research. " +
+            "However has your effort this week paid off?")
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 44;
+                if (attraction >= 5 && intellect >= 4) {
+                    neuScene = 43;
+                } else {
+                    neuScene = 44;
+                }
             });
             break;
         case 35:
             background(culcsteps);
             textBox(3, "The lecture, unfortunately, was not that interesting. Even Jordan, the science aficionado, had trouble staying awake. However, " +
-                "they leaned on your shoulder for most of it so take it as a win.");
+                "they leaned on your shoulder for most of it so take it as a win. However has your effort this week paid off?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 44;
+                if (attraction >= 5 && intellect >= 4) {
+                    neuScene = 43;
+                } else {
+                    neuScene = 44;
+                }
             });
             break;
         case 36:
             background(culcsteps);
-            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward.");
+            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward. " +
+            "However has your effort this week paid off?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 44;
+                if (attraction >= 6 && intellect >= 5) {
+                    neuScene = 43;
+                } else {
+                    neuScene = 44;
+                }
             });
             break;
         case 43: // Good Ending
-            background(schoolPhoto);
-            textBox(3, "Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship, if you could " +
-                "only see Cupid now.");
+            background(goodParty);
+            textBox(3, "It did! Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship!");
             break;
         case 44: // Neutral Ending
-            background(schoolPhoto);
-            textBox(3, "Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
+            background(badParty);
+            textBox(3, "It did not. Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
         case 45: // Bad Ending
-            background(schoolPhoto);
+            background(dorm);
             textBox(3, "Thank god you didn't go to the Chi Phi party at all. Jordan told everyone about your awful romantic skills, you have become " +
                 "the laughing stock of GT. Cupid is weaping.");
             break;
