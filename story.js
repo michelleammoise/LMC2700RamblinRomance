@@ -12,6 +12,8 @@ let intellect;
 let rizz;
 let attraction;
 
+let boychar2;
+
 let sceneCount;
 let startBtn;
 let nextBtn;
@@ -200,6 +202,7 @@ function statsButtons() {
     aero = createButton("Aerospace Engineering");
     aero.hide();
     aero.position(x, 200);
+    
     aero.mousePressed(() => {
         hideStats();
         major = "Aerospace Engineering";
@@ -295,7 +298,7 @@ function statsButtons() {
     getName.hide();
     aero = createButton("Aerospace Engineering");
     aero.hide();
-    aero.position(x, 200);
+    aero.position(x - 20, 200);
     aero.mousePressed(() => {
         hideStats();
         major = "Aerospace Engineering";
@@ -303,7 +306,7 @@ function statsButtons() {
     })
     lmc = createButton("Literature/Media/Communications");
     lmc.hide();
-    lmc.position(x, 250);
+    lmc.position(x - 40, 250);
     lmc.mousePressed(() => {
         hideStats();
         major = "Literature/Media/Communications";
@@ -311,7 +314,7 @@ function statsButtons() {
     })
     biomed = createButton("Biomedical Engineering");
     biomed.hide();
-    biomed.position(x, 300);
+    biomed.position(x - 20, 300);
     biomed.mousePressed(() => {
         hideStats();
         major = "Biomedical Engineering";
@@ -319,7 +322,7 @@ function statsButtons() {
     })
     business = createButton("Business");
     business.hide();
-    business.position(x, 350);
+    business.position(x + 3, 350);
     business.mousePressed(() => {
         hideStats();
         major = "Business";
@@ -327,7 +330,7 @@ function statsButtons() {
     })
     cs = createButton("Computer Science");
     cs.hide();
-    cs.position(x, 400);
+    cs.position(x - 10, 400);
     cs.mousePressed(() => {
         hideStats();
         major = "Computer Science";
@@ -559,8 +562,10 @@ function userInputs() {
     textAlign(CENTER);
     textFont('Courier New', 20);
     text("First, type your name, then select a major. ", width / 2, 50);
+    text("Some majors are more likely to romance a partner, so choose wisely! ", width / 2, 75);
     getName.show();
-    getName.position(width / 2, 100);
+    getName.size(500, 20);
+    getName.position((width / 2) - 200, 100);
     if (playerName === "") {
         playerName = "Player";
     }
@@ -931,8 +936,7 @@ function chadRoute() {
             text("find him participating in the Entrepreneurial Ventures Alliance,", x, 150);
             text("working out at the CRC, or sitting in your LMC class,", x, 175);
             text("just waiting for you to talk to him!", x, 200);
-            boyChar.resize(74.05, 200);
-            image(boyChar, x - 80, 300);
+            image(boychar2, 500, 200);
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -1079,6 +1083,7 @@ function chadRoute() {
             textFont('Courier New', 20);
             textBox(2, "Chad: Hey! You're " + playerName + ", right? I'm Chad. "
                 + "You sounded really smart in lecture today. What's up?");
+            image(boychar2, x, 200);
             chad111.show();
             chad111.position(x, opt1y);
             chad111.mousePressed(() => {
@@ -1099,6 +1104,7 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
+            image(boychar2, x, 200);
             textFont('Courier New', 20);
             textBox(2, "Chad: Oh, it was cool, I guess. I didn't actually pay attention. "
                 + "Anyways, I have to go. We should talk about other stuff in the future, "
@@ -1132,6 +1138,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: I'd be down to talk! I gotta go to class, but "
                 + "you should totally text me later. Can I send you my IG handle?");
             // increase charisma/attractiveness
@@ -1192,6 +1199,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: I thought you looked familiar. You're " + playerName + ", right? I didn't know you were "
                 + "interested in this stuff?");
 
@@ -1216,6 +1224,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: No way, really?! We should honestly share ideas. Can we talk about it on IG? "
                 + "It'd be cool if we can connect outside meetings, and we can keep each other in the loop "
                 + "for future meetings. ");
@@ -1250,6 +1259,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: I think I saw you, too. I guess you're not here for the club, then? "
                 + "That's cool, I'll just listen to the meeting.");
             // increase smarts, decrease charisma
@@ -1524,6 +1534,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: Good to see you again! I honestly had fun yesterday. I didn't expect us "
                 + "to have this much in common. It's hard being a business major. I've been swamped with work lately, "
                 + "but it was worth spending time with you. ");
@@ -1560,6 +1571,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: You're right.");
             okChad.show();
             okChad.mousePressed(() => {
@@ -1680,6 +1692,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: Yeah, they have. It's been cool having someone to tackle the work with.");
             okChad.show();
             okChad.mousePressed(() => {
@@ -1719,6 +1732,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: A party? That sounds like a great way to unwind. Sure, I'm in. ");
             okChad.show();
             okChad.mousePressed(() => {
@@ -1801,6 +1815,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
+            image(boychar2, x, 200);
             textBox(2, "Chad: They're just study sessions, you know? Nothing special.");
             okChad.show();
             okChad.mousePressed(() => {
@@ -1839,6 +1854,7 @@ function chadRoute() {
             textBox(0);
             fill(0);
             textAlign(LEFT);
+            image(boychar2, x, 200);
             textFont('Courier New', 20);
             textBox(2, "Chad: Yeah, well, I'm not really into all that stuff. ");
             okChad.show();
