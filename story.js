@@ -610,7 +610,7 @@ function chooseChar() {
     girlBtn.position(485, 450);
     girlBtn.show();
     // neuBtn = createButton("Non-binary");
-    neuBtn.position(685, 450);
+    neuBtn.position(660, 450);
     neuBtn.show();
 }
 
