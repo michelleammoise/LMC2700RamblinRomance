@@ -104,7 +104,7 @@ function preload() {
     diningHall = loadImage("./assets/dininghall.jpg");
     crossland = loadImage("./assets/crossland.jpeg");
     badParty = loadImage("./assets/badparty.jpg");
-    goodParty = loadImage("./assets/fratparty.jpeg");
+    goodParty = loadImage("./assets/goodparty.jpg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -150,104 +150,168 @@ function buttonSetup() {
     startBtn.style('font-family', 'Comic Sans MS, cursive, sans-serif'); // Cartoony font
     startBtn.style('box-shadow', '3px 3px 5px 0px rgba(0,0,0,0.5)'); // Soft shadow for a cartoony effect
   
+    let nextBtnStyle = `
+    background-color: #FFD9EB ; 
+    color:  ; 
+    font-size: 18px; // Adjusted font size for a smaller button
+    padding: 10px 20px; // Adjusted padding for a smaller button
+    border: none; 
+    cursor: pointer; 
+    border-radius: 10px; // Adjusted border-radius for a smaller button
+    font-family: 'Comic Sans MS, cursive, sans-serif'; 
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);`
+    ;
+
+    // Button 1
     nextBtn = createButton("Next");
     nextBtn.hide();
+    styleButton(nextBtn, nextBtnStyle);
+
     nextBtn.mousePressed(() => {
         nextBtn.remove();
         sceneCount = 3;
-    })
+    });
 
+    // Button 2
     nextBtn2 = createButton("Next");
     nextBtn2.hide();
+    styleButton(nextBtn2, nextBtnStyle);
 
+    // Button 3
     nextBtn3 = createButton("Next");
     nextBtn3.hide();
+    styleButton(nextBtn3, nextBtnStyle);
+    let buttonStyle = `
+        background-color: #FFD9EB; 
+        font-size: 16px; // Adjusted font size
+        padding: 8px 16px; // Adjusted padding
+        border: none; 
+        cursor: pointer; 
+        border-radius: 8px; // Adjusted border-radius
+        font-family: 'Comic Sans MS, cursive, sans-serif'; 
+        box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+    `;
 
+    // Non-binary button
     neuBtn = createButton("Non-binary");
     neuBtn.hide();
-    neuBtn.mousePressed(() => {
-        // remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
-        sceneCount = 7;
-    });
+    styleAndRemoveButton(neuBtn, buttonStyle, 7);
 
+    // Boy button
     boyBtn = createButton("Boy");
     boyBtn.hide();
-    boyBtn.mousePressed(() => {
-        // remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
-        sceneCount = 6; // chad route
-    });
+    styleAndRemoveButton(boyBtn, buttonStyle, 6);
 
+    // Girl button
     girlBtn = createButton("Girl");
     girlBtn.hide();
-    girlBtn.mousePressed(() => {
-        // remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
-        sceneCount = 5;
-    });
+    styleAndRemoveButton(girlBtn, buttonStyle, 5);
 
+    // Other function calls (e.g., chadButtons(), jordanButtons(), statsButtons(), oliviaButtons())
     chadButtons();
     jordanButtons();
     statsButtons();
     oliviaButtons();
-
-
-
 }
 
+function styleAndRemoveButton(button, style, sceneNumber) {
+    button.style(style);
+    button.mousePressed(() => {
+        // Remove buttons
+        neuBtn.remove();
+        boyBtn.remove();
+        girlBtn.remove();
+        sceneCount = sceneNumber;
+    });
+}
+
+function styleButton(button, style) {
+    button.style(style);
+}
 
 function statsButtons() {
     let x = width / 2;
+
+    // Styling for the buttons with a very light pink color
+    let buttonStyle = `
+        background-color: #FFD9EB; // Very light pink color
+        color: #FFFFFF; 
+        font-size: 18px; // Adjusted font size for a slightly larger button
+        padding: 10px 20px; // Adjusted padding for a slightly larger button
+        border: none; 
+        cursor: pointer; 
+        border-radius: 10px; // Adjusted border-radius for a slightly larger button
+        font-family: 'Comic Sans MS, cursive, sans-serif'; 
+        box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+    `;
+
     getName = createInput();
     getName.hide();
+
+    // Adjusted y-offset for even higher positioning
+    let yOffset = 40;
+
+    // Button 1
     aero = createButton("Aerospace Engineering");
     aero.hide();
-    aero.position(x - 20, 200);
+    styleAndPositionButton(aero, buttonStyle, x, 150, yOffset);
+
     aero.mousePressed(() => {
         hideStats();
         major = "Aerospace Engineering";
         sceneCount = 4;
-    })
+    });
+
+    // Button 2
     lmc = createButton("Literature/Media/Communications");
     lmc.hide();
-    lmc.position(x - 40, 250);
+    styleAndPositionButton(lmc, buttonStyle, x, 200, yOffset);
+
     lmc.mousePressed(() => {
         hideStats();
         major = "Literature/Media/Communications";
         sceneCount = 4;
-    })
+    });
+
+    // Button 3
     biomed = createButton("Biomedical Engineering");
     biomed.hide();
-    biomed.position(x - 20, 300);
+    styleAndPositionButton(biomed, buttonStyle, x, 250, yOffset);
+
     biomed.mousePressed(() => {
         hideStats();
         major = "Biomedical Engineering";
         sceneCount = 4;
-    })
+    });
+
+    // Button 4
     business = createButton("Business");
     business.hide();
-    business.position(x + 3, 350);
+    styleAndPositionButton(business, buttonStyle, x, 300, yOffset);
+
     business.mousePressed(() => {
         hideStats();
         major = "Business";
         sceneCount = 4;
-    })
+    });
+
+    // Button 5
     cs = createButton("Computer Science");
     cs.hide();
-    cs.position(x - 10, 400);
+    styleAndPositionButton(cs, buttonStyle, x, 350, yOffset);
+
     cs.mousePressed(() => {
         hideStats();
         major = "Computer Science";
         sceneCount = 4;
-    })
+    });
 }
+
+function styleAndPositionButton(button, style, x, y, yOffset) {
+    button.style(style);
+    button.position(x - button.width / 2, y + yOffset);
+}
+
 
 function setStats() {
     switch (major) {
@@ -315,60 +379,65 @@ function oliviaButtons() {
     olivia22.hide()
     olivia23 = createButton("Tell Her How Pretty She Is");
     olivia23.hide()
+
+    olivia31 = createButton("Participate in a Class Study Session");
+    olivia31.hide()
+    olivia32 = createButton("Attend an Aerospace Seminar Together");
+    olivia32.hide()
+    olivia33 = createButton("Help Her with a Challenging Calculus Concept");
+    olivia33.hide()
 }
 
 function jordanButtons() {
-   //jordanButtons();
-   neu11 = createButton("Get Political");
-   neu11.hide();
-   neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
-   neu12.hide();
-   neu13 = createButton("Request Their Instagram Directly");
-   neu13.hide();
+    //jordanButtons();
+    neu11 = createButton("Get Political");
+    neu11.hide();
+    neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
+    neu12.hide();
+    neu13 = createButton("Request Their Instagram Directly");
+    neu13.hide();
 
-   neu21 = createButton("Collaborate on a Neuroscience Assignment");
-   neu21.hide();
-   neu22 = createButton("Invite Them to a Science Seminar");
-   neu22.hide();
-   neu23 = createButton("Attend a Consciousness Discussion With Them");
-   neu23.hide();
+    neu21 = createButton("Collaborate on a Neuroscience Assignment");
+    neu21.hide();
+    neu22 = createButton("Invite Them to a Science Seminar");
+    neu22.hide();
+    neu23 = createButton("Attend a Consciousness Discussion With Them");
+    neu23.hide();
 
-   neu31 = createButton("Wanna Participate in a Neuroscience Workshop With me at Emory Tomorrow?");
-   neu31.hide();
-   neu32 = createButton("Wanna Join a Healthcare Related Volunteer Oppurtunity With me Tomorrow?");
-   neu32.hide();
-   neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
-   neu33.hide();
+    neu31 = createButton("Wanna Participate in a Neuroscience Workshop With me at Emory Tomorrow?");
+    neu31.hide();
+    neu32 = createButton("Wanna Join a Healthcare Related Volunteer Oppurtunity With me Tomorrow?");
+    neu32.hide();
+    neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
+    neu33.hide();
 
-   neu41 = createButton("Approach them now");
-   neu41.hide();
-   neu42 = createButton("Meet them at after your shared lecture class later today");
-   neu42.hide();
-   neu43 = createButton("Look at them cutely");
-   neu43.hide();
+    neu41 = createButton("Approach them now");
+    neu41.hide();
+    neu42 = createButton("Meet them at after your shared lecture class later today");
+    neu42.hide();
+    neu43 = createButton("Look at them cutely");
+    neu43.hide();
 
-   neu51 = createButton("How did you feel about the reading today?");
-   neu51.hide();
-   neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
-   neu52.hide();
-   neu53 = createButton("What are you up to today?");
-   neu53.hide();
+    neu51 = createButton("How did you feel about the reading today?");
+    neu51.hide();
+    neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
+    neu52.hide();
+    neu53 = createButton("What are you up to today?");
+    neu53.hide();
 
-   neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
-   neu61.hide();
-   neu62 = createButton(" ");
-   neu62.hide();
-   neu63 = createButton(" ");
-   neu63.hide();
+    neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
+    neu61.hide();
+    neu62 = createButton(" ");
+    neu62.hide();
+    neu63 = createButton(" ");
+    neu63.hide();
 
-   neu71 = createButton("Offer to help them with their research");
-   neu71.hide();
-   neu72 = createButton("Attend the Brainwaves event togethor!");
-   neu72.hide();
-   neu73 = createButton(" ");
-   neu73.hide();
-
-   neuchar2.resize(200, 200);
+    neu71 = createButton("Offer to help them with their research");
+    neu71.hide();
+    neu72 = createButton("Attend the Brainwaves event togethor!");
+    neu72.hide();
+    neu73 = createButton(" ");
+    neu73.hide();
 }
 function chadButtons() {
     okChad = createButton("Ok");
@@ -455,7 +524,7 @@ function titleScreen() {
 }
 
 function information() {
-    background('#FF69B4'); // pink background
+    background('#D95394'); // pink background
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
@@ -480,11 +549,11 @@ function information() {
 
 
 function userInputs() {
-    background('#FF69B4'); // pink background
+    background('#D95394'); // pink background
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
-    
+
     // Centered text
     text("First, type your name, then select a major. ", width / 2, 50);
     text("Some majors are more likely to romance a partner, so choose wisely! ", width / 2, 75);
@@ -499,7 +568,7 @@ function userInputs() {
     getName.size(textBoxWidth, textBoxHeight);
     getName.position(textBoxX, textBoxY);
     textAlign(CENTER);
-    
+
     // Default playerName if the input is empty
     if (playerName === "") {
         playerName = "Player";
@@ -1036,7 +1105,7 @@ function oliviaRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 42;
+                oliviaScene = 48;
             });
             break;
         case 42:
@@ -1097,6 +1166,234 @@ function oliviaRoute() {
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 oliviaScene = 48;
+            });
+            break;
+        case 48:
+            background(culcStairs);
+            textBox(0, "Day 3:\n After yesterday, you want to try getting closer with Olivia. You wonder, would she like to hang out more in a group setting or alone?");
+            olivia31.position(200, 200);
+            olivia31.show();
+            olivia31.size(100, 100);
+
+            olivia32.position(400, 200);
+            olivia32.show();
+            olivia32.size(100, 100);
+
+            olivia33.position(600, 200);
+            olivia33.show();
+            olivia33.size(100, 100);
+
+
+            olivia31.mousePressed(() => {
+                // remove buttons
+                olivia31.remove();
+                olivia32.remove();
+                olivia33.remove();
+                oliviaScene = 49;
+            });
+            olivia32.mousePressed(() => {
+                // remove buttons
+                olivia31.remove();
+                olivia32.remove();
+                olivia33.remove();
+                oliviaScene = 53;
+            });
+            olivia33.mousePressed(() => {
+                // remove buttons
+                olivia31.remove();
+                olivia32.remove();
+                olivia33.remove();
+                oliviaScene = 59;
+            });
+            break;
+        case 49:
+            background(crossland);
+            textBox(0, "Hey Olivia, I was thinking about tackling that calculus assignment together. What do you say we gather a few folks and make it a study session?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 50;
+            });
+            break;
+        case 50:
+            background(crossland);
+            textBox(0, "Hmm, a study session? That could work.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 51;
+            });
+            break;
+        case 51:
+            background(crossland);
+            textBox(0, "Great! The more, the merrier, right? We can conquer the mysteries of calculus as a team.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 52;
+            });
+            break;
+        case 52:
+            background(crossland);
+            textBox(0, "[Smirking] Sounds like a plan. Let's make sure no calculus problem goes unsolved.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 68;
+            });
+            break;
+        case 53:
+            background(crossland);
+            textBox(0, "Hey Olivia, you know there's this aerospace seminar happening on campus soon?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 54;
+            });
+            break;
+        case 54:
+            background(crossland);
+            textBox(0, "Really? I had no idea.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 55;
+            });
+            break;
+        case 55:
+            background(crossland);
+            textBox(0, "Yeah, thought it might be cool to check it out. Interested?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 56;
+            });
+            break;
+        case 56:
+            background(crossland);
+            textBox(0, "[Casually] Aerospace, huh? Sure, why not? I'm up for some out-of-this-world knowledge.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 57;
+            });
+            break;
+        case 57:
+            background(crossland);
+            textBox(0, "Perfect! We'll be like aerospace explorers, minus the spacesuits. What do you say?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 58;
+            });
+            break;
+        case 58:
+            background(crossland);
+            textBox(0, "[Smiling] Sounds interesting. Let's do it.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 68;
+            });
+            break;
+        case 59:
+            background(crossland);
+            textBox(0, "Yo Olivia! I saw you staring down that calculus problem like it owed you money.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 60;
+            });
+            break;
+        case 60:
+            background(crossland);
+            textBox(0, "Ugh, don't even get me started. I'm convinced these numbers are playing mind games with me.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 61;
+            });
+            break;
+        case 61:
+            background(crossland);
+            textBox(0, "(Chuckles) Mind games, huh? Well, what if I told you I'm the unofficial mind game champion around here.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 62;
+            });
+            break;
+        case 62:
+            background(crossland);
+            textBox(0, "You’re actually good at this?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 63;
+            });
+            break;
+        case 63:
+            background(crossland);
+            textBox(0, "Yeah, I used to be a tutor.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 64;
+            });
+            break;
+        case 64:
+            background(crossland);
+            textBox(0, "That’s…nice");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 65;
+            });
+            break;
+        case 65:
+            background(crossland);
+            textBox(0, "By the way, that’s an integral not a derivative.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 66;
+            });
+            break;
+        case 66:
+            background(crossland);
+            textBox(0, "OH, thanks. You should help me out more.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 67;
+            });
+            break;
+        case 68:
+            background(dorm);
+            textBox(0, "Day 4: You suggest studying together at Olivia's dorm. It's a more personal and relaxed setting. You order some food, play some background music, and focus on your studies while also getting to spend quality time together.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 67;
             });
             break;
     }
@@ -1455,14 +1752,14 @@ function chadRoute() {
                 + "That's cool, I'll just listen to the meeting.");
             okChad.show();
             okChad.mousePressed(() => {
-            // increase smarts, decrease charisma
-            intellect++;
-            rizz -= 2;
-            console.log("Pr");
-            okChad.hide();
-            chadScene = 1222;
-        });
-        break;
+                // increase smarts, decrease charisma
+                intellect++;
+                rizz--;
+                console.log("Pr");
+                okChad.hide();
+                chadScene = 1222;
+            });
+            break;
         case 1222:
             // background(0); // change background to Klaus
             textBox(0);
@@ -2132,7 +2429,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "BAD ENDING: You did not successfully get Chad to go with you. He did not "
-            + "resonate with some of your actions. Or maybe he didn't like your major. Better luck next time.");
+                + "resonate with some of your actions. Or maybe he didn't like your major. Better luck next time.");
             // maybe add restart button
             break;
         case 888:
@@ -2142,13 +2439,14 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "GOOD ENDING: You and Chad went to the frat party and had fun! He sees the both "
-            + "of you together in the future. This is just the beginning of a beautiful relationship. ");
-            // maybe add restart button
+                + "of you together in the future. This is just the beginning of a beautiful relationship. ");
+        // maybe add restart button
         default:
     }
 }
 
 function neuRoute() {
+    //neuScene = 0;
     switch (neuScene) {
         case 0:
             background(culcsteps);
@@ -2156,7 +2454,6 @@ function neuRoute() {
                 "They are also an active member of the Brainwaves Society!");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 1;
@@ -2170,7 +2467,6 @@ function neuRoute() {
             neu41.position(200, 200);
             neu41.show();
             neu41.size(100, 100);
-            //image(neuchar2, 60, 200);
 
             neu42.position(400, 200);
             neu42.show();
@@ -2283,18 +2579,15 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                intellect += 1;
-                attraction -= 2;
                 neuScene = 13;
             });
             break;
         case 13:
             background(scheller);
-            textBox(3, "Jordan was a little weirded out about your conversation. When you asked to follow them on Instagram " +
-            "they reluctantly entered their username.");
+            textBox(3, "Jordan was a little weirded out about your conversation. When you requested to follow them on Instagram " +
+                "they reluctantly entered their username.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            //image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 21;
@@ -2305,11 +2598,8 @@ function neuRoute() {
             textBox(3, "You joined the Brainwaves Society and appraoched them after your first meeting the same day.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            //image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                attraction += 1;
-                intellect += 2;
                 neuScene = 15;
             });
             break;
@@ -2318,7 +2608,6 @@ function neuRoute() {
             textBox(3, "\"Hey Jordan, can't believe I'm seeing you again today. Must be fate.\" They laughed at your joke and agreed.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 16;
@@ -2329,7 +2618,6 @@ function neuRoute() {
             textBox(3, "\"So it was really great talking to you today! Can I get your Instagram so I can keep up with club events?\" They gave you their username and immediately requested to follow you back ;)");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 21;
@@ -2340,10 +2628,8 @@ function neuRoute() {
             textBox(3, "\"Hey Jordan, I've been seeing a lot lately. Can I get your Instagram?\" You ask earnestly");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                attraction += 1;
                 neuScene = 19;
             });
             break;
@@ -2352,7 +2638,6 @@ function neuRoute() {
             textBox(3, "\"Yeah, of course. You must also be really interested in neuroscience.\" They laugh in response while putting in their Instagram username.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 20;
@@ -2363,7 +2648,6 @@ function neuRoute() {
             textBox(3, "\"Yeah something like that haha.\" Props to you for being bold, truly. Let's keep these good vibes going shall we.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
                 neuScene = 21;
@@ -2413,11 +2697,8 @@ function neuRoute() {
             textBox(3, "They respond: It was really interesting! I've been wanting to talk to someone about it!")
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                intellect += 1;
-                attraction += 1;
                 neuScene = 25;
             });
             break;
@@ -2426,11 +2707,8 @@ function neuRoute() {
             textBox(3, "They respond: Yeah I love reading and talking about new research that's published. Send me the article!")
             nextBtn2.position(60, 550);
             nextBtn2.show();
-            image(neuchar2, 60, 200);
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                attraction += 2;
-                intellect += 2;
                 neuScene = 25;
             });
             break;
@@ -2441,7 +2719,6 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                intellect += 1;
                 neuScene = 25;
             });
             break;
@@ -2533,8 +2810,6 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
-                attraction += 1;
-                intellect += 1;
                 neuScene = 34;
             });
             neu22.mousePressed(() => {
@@ -2542,8 +2817,6 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
-                attraction += 2;
-                intellect += 2;
                 neuScene = 35;
             });
             neu23.mousePressed(() => {
@@ -2551,65 +2824,50 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
-                attraction -= 1;
-                intellect += 1;
                 neuScene = 36;
             });
             break;
         case 34:
             background(culcsteps);
-            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research. " +
-            "However has your effort this week paid off?")
+            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research.")
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                if (attraction >= 5 && intellect >= 4) {
-                    neuScene = 43;
-                } else {
-                    neuScene = 44;
-                }
+                neuScene = 44;
             });
             break;
         case 35:
             background(culcsteps);
             textBox(3, "The lecture, unfortunately, was not that interesting. Even Jordan, the science aficionado, had trouble staying awake. However, " +
-                "they leaned on your shoulder for most of it so take it as a win. However has your effort this week paid off?");
+                "they leaned on your shoulder for most of it so take it as a win.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                if (attraction >= 5 && intellect >= 4) {
-                    neuScene = 43;
-                } else {
-                    neuScene = 44;
-                }
+                neuScene = 44;
             });
             break;
         case 36:
             background(culcsteps);
-            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward. " +
-            "However has your effort this week paid off?");
+            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                if (attraction >= 6 && intellect >= 5) {
-                    neuScene = 43;
-                } else {
-                    neuScene = 44;
-                }
+                neuScene = 44;
             });
             break;
         case 43: // Good Ending
-            background(goodParty);
-            textBox(3, "It did! Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship!");
+            background(schoolPhoto);
+            textBox(3, "Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship, if you could " +
+                "only see Cupid now.");
             break;
         case 44: // Neutral Ending
-            background(badParty);
-            textBox(3, "It did not. Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
+            background(schoolPhoto);
+            textBox(3, "Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
         case 45: // Bad Ending
-            background(dorm);
+            background(schoolPhoto);
             textBox(3, "Thank god you didn't go to the Chi Phi party at all. Jordan told everyone about your awful romantic skills, you have become " +
                 "the laughing stock of GT. Cupid is weaping.");
             break;
