@@ -95,6 +95,7 @@ function preload() {
     dorm = loadImage("./assets/dorm.jpg");
     klaus = loadImage("./assets/klaus.jpg");
     diningHall = loadImage("./assets/dininghall.jpg");
+    crossland = loadImage("./assets/crossland.jpeg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -179,6 +180,200 @@ function buttonSetup() {
 
 }
 
+
+
+function statsButtons() {
+    let x = width / 2;
+    getName = createInput();
+    getName.hide();
+    aero = createButton("Aerospace Engineering");
+    aero.hide();
+    aero.position(x, 200);
+    aero.mousePressed(() => {
+        hideStats();
+        major = "Aerospace Engineering";
+        sceneCount = 4;
+    })
+    lmc = createButton("Literature/Media/Communications");
+    lmc.hide();
+    lmc.position(x, 250);
+    lmc.mousePressed(() => {
+        hideStats();
+        major = "Literature/Media/Communications";
+        sceneCount = 4;
+    })
+    biomed = createButton("Biomedical Engineering");
+    biomed.hide();
+    biomed.position(x, 300);
+    biomed.mousePressed(() => {
+        hideStats();
+        major = "Biomedical Engineering";
+        sceneCount = 4;
+    })
+    business = createButton("Business");
+    business.hide();
+    business.position(x, 350);
+    business.mousePressed(() => {
+        hideStats();
+        major = "Business";
+        sceneCount = 4;
+    })
+    cs = createButton("Computer Science");
+    cs.hide();
+    cs.position(x, 400);
+    cs.mousePressed(() => {
+        hideStats();
+        major = "Computer Science";
+        sceneCount = 4;
+    })
+}
+
+function setStats() {
+    switch (major) {
+        case ("Aerospace Engineering"):
+            intellect = 9;
+            rizz = 2;
+            attraction = 4;
+            break;
+        case ("Business"):
+            intellect = 1;
+            rizz = 7;
+            attraction = 8;
+            break;
+        case ("Computer Science"):
+            intellect = 5;
+            rizz = 0;
+            attraction = 4;
+            break;
+        case ("Literature/Media/Communications"):
+            intellect = 6;
+            rizz = 8;
+            attraction = 7;
+            break;
+        case ("Biomedical Engineering"):
+            intellect = 10;
+            rizz = 4;
+            attraction = 7;
+            break;
+        default:
+            // secret god mode
+            intellect = 10;
+            rizz = 10;
+            attraction = 10;
+    }
+}
+function hideStats() {
+    aero.hide();
+    lmc.hide();
+    biomed.hide();
+    business.hide();
+    cs.hide();
+}
+
+function showStats() {
+    aero.show();
+    lmc.show();
+    biomed.show();
+    business.show();
+    cs.show();
+}
+
+function statsButtons() {
+    let x = width / 2;
+    getName = createInput();
+    getName.hide();
+    aero = createButton("Aerospace Engineering");
+    aero.hide();
+    aero.position(x, 200);
+    aero.mousePressed(() => {
+        hideStats();
+        major = "Aerospace Engineering";
+        sceneCount = 4;
+    })
+    lmc = createButton("Literature/Media/Communications");
+    lmc.hide();
+    lmc.position(x, 250);
+    lmc.mousePressed(() => {
+        hideStats();
+        major = "Literature/Media/Communications";
+        sceneCount = 4;
+    })
+    biomed = createButton("Biomedical Engineering");
+    biomed.hide();
+    biomed.position(x, 300);
+    biomed.mousePressed(() => {
+        hideStats();
+        major = "Biomedical Engineering";
+        sceneCount = 4;
+    })
+    business = createButton("Business");
+    business.hide();
+    business.position(x, 350);
+    business.mousePressed(() => {
+        hideStats();
+        major = "Business";
+        sceneCount = 4;
+    })
+    cs = createButton("Computer Science");
+    cs.hide();
+    cs.position(x, 400);
+    cs.mousePressed(() => {
+        hideStats();
+        major = "Computer Science";
+        sceneCount = 4;
+    })
+}
+
+function setStats() {
+    switch (major) {
+        case ("Aerospace Engineering"):
+            intellect = 9;
+            rizz = 2;
+            attraction = 4;
+            break;
+        case ("Business"):
+            intellect = 1;
+            rizz = 7;
+            attraction = 8;
+            break;
+        case ("Computer Science"):
+            intellect = 5;
+            rizz = 0;
+            attraction = 4;
+            break;
+        case ("Literature/Media/Communications"):
+            intellect = 6;
+            rizz = 8;
+            attraction = 7;
+            break;
+        case ("Biomedical Engineering"):
+            intellect = 10;
+            rizz = 4;
+            attraction = 7;
+            break;
+        default:
+            // secret god mode
+            intellect = 10;
+            rizz = 10;
+            attraction = 10;
+    }
+}
+function hideStats() {
+    aero.hide();
+    lmc.hide();
+    biomed.hide();
+    business.hide();
+    cs.hide();
+}
+
+function showStats() {
+    aero.show();
+    lmc.show();
+    biomed.show();
+    business.show();
+    cs.show();
+}
+
 function oliviaButtons() {
     olivia11 = createButton("Approach Her After Class and Ask for Instagram");
     olivia11.hide()
@@ -187,11 +382,13 @@ function oliviaButtons() {
     olivia13 = createButton("Invite Her to a Nerdy Worms Club Event and Request Her Instagram");
     olivia13.hide()
 
-    olivia21 = createButton("Collaborate on a Calculus Assignment");
-    olivia21.hide()
+    olivia211 = createButton("Approach Her and Ask to Collaborate on a Calculus Assignment");
+    olivia211.hide()
+    olivia212 = createButton("Leave Her Alone -- She Looks Focused, Better Not to Bother Her");
+    olivia212.hide()
     olivia22 = createButton("Attend the Hangar Session Together");
     olivia22.hide()
-    olivia23 = createButton("Ask Her Out for Coffee");
+    olivia23 = createButton("Tell Her How Pretty She Is");
     olivia23.hide()
 }
 
@@ -388,56 +585,74 @@ function showStats() {
     cs.show();
 }
 
+function oliviaButtons() {
+    olivia11 = createButton("Approach Her After Class and Ask for Instagram");
+    olivia11.hide()
+    olivia12 = createButton("Join the Aero-Philosophy Symposium Meeting and Get to Know Her");
+    olivia12.hide()
+    olivia13 = createButton("Invite Her to a Nerdy Worms Club Event and Request Her Instagram");
+    olivia13.hide()
+
+    olivia211 = createButton("Approach Her and Ask to Collaborate on a Calculus Assignment");
+    olivia211.hide()
+    olivia212 = createButton("Leave Her Alone -- She Looks Focused, Better Not to Bother Her");
+    olivia212.hide()
+    olivia22 = createButton("Attend the Hangar Session Together");
+    olivia22.hide()
+    olivia23 = createButton("Tell Her How Pretty She Is");
+    olivia23.hide()
+}
+
 function jordanButtons() {
-    //jordanButtons();
-    neu11 = createButton("Get Political");
-    neu11.hide();
-    neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
-    neu12.hide();
-    neu13 = createButton("Request Their Instagram Directly");
-    neu13.hide();
+   //jordanButtons();
+   neu11 = createButton("Get Political");
+   neu11.hide();
+   neu12 = createButton("Attend a Brainwaves Society Event and Get to Know Them");
+   neu12.hide();
+   neu13 = createButton("Request Their Instagram Directly");
+   neu13.hide();
 
-    neu21 = createButton("Collaborate on a Neuroscience Assignment");
-    neu21.hide();
-    neu22 = createButton("Invite Them to a Science Seminar");
-    neu22.hide();
-    neu23 = createButton("Attend a Consciousness Discussion With Them");
-    neu23.hide();
+   neu21 = createButton("Collaborate on a Neuroscience Assignment");
+   neu21.hide();
+   neu22 = createButton("Invite Them to a Science Seminar");
+   neu22.hide();
+   neu23 = createButton("Attend a Consciousness Discussion With Them");
+   neu23.hide();
 
-    neu31 = createButton("Participate in a Neuroscience workshop");
-    neu31.hide();
-    neu32 = createButton("Join a Healthcare Related Volunteer Oppurtunity");
-    neu32.hide();
-    neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
-    neu33.hide();
+   neu31 = createButton("Wanna Participate in a Neuroscience Workshop With me at Emory Tomorrow?");
+   neu31.hide();
+   neu32 = createButton("Wanna Join a Healthcare Related Volunteer Oppurtunity With me Tomorrow?");
+   neu32.hide();
+   neu33 = createButton("Ask for Help Understanding a Neuroscience Related Concept");
+   neu33.hide();
 
-    neu41 = createButton("Approach them now");
-    neu41.hide();
-    neu42 = createButton("Meet them at a club meeting later today");
-    neu42.hide();
-    neu43 = createButton("Look at them cutely");
-    neu43.hide();
+   neu41 = createButton("Approach them now");
+   neu41.hide();
+   neu42 = createButton("Meet them at after your shared lecture class later today");
+   neu42.hide();
+   neu43 = createButton("Look at them cutely");
+   neu43.hide();
 
-    neu51 = createButton("How did you feel about the reading today?");
-    neu51.hide();
-    neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
-    neu52.hide();
-    neu53 = createButton("What are you up to today?");
-    neu53.hide();
+   neu51 = createButton("How did you feel about the reading today?");
+   neu51.hide();
+   neu52 = createButton("Hi! I know you are interested in neuro research, I wanted to talk to about this article I read.");
+   neu52.hide();
+   neu53 = createButton("What are you up to today?");
+   neu53.hide();
 
-    neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
-    neu61.hide();
-    neu62 = createButton(" ");
-    neu62.hide();
-    neu63 = createButton(" ");
-    neu63.hide();
+   neu61 = createButton("I saw you in the hallway today and wanted to meet you here!");
+   neu61.hide();
+   neu62 = createButton(" ");
+   neu62.hide();
+   neu63 = createButton(" ");
+   neu63.hide();
 
-    neu71 = createButton("Offer to help them with their research");
-    neu71.hide();
-    neu72 = createButton("Attend the Brainwaves event togethor!");
-    neu72.hide();
-    neu73 = createButton(" ");
-    neu73.hide();
+   neu71 = createButton("Offer to help them with their research");
+   neu71.hide();
+   neu72 = createButton("Attend the Brainwaves event togethor!");
+   neu72.hide();
+   neu73 = createButton(" ");
+   neu73.hide();
 }
 function chadButtons() {
     okChad = createButton("Ok");
@@ -521,18 +736,6 @@ function titleScreen() {
     text("Ramblin' Romance", width / 2, 200);
     noStroke();
 
-
-    /*
-    // for start "button" design
-    fill(252, 174, 200);
-    stroke(255);
-    square(width / 2, height / 2, 100, 5);
-    textFont('Courier New', 20);
-    textAlign(CENTER, CENTER);
-    fill(0);
-    text("START", width / 2, height / 2);
-    noStroke();
-    */
 }
 
 function information() {
@@ -651,7 +854,7 @@ function oliviaRoute() {
     switch (oliviaScene) {
         case 0:
             background(schoolPhoto);
-            textBox(1, "You picked Olivia Thompson! They are a 2nd year Aerospace major. When she's not immersed in aerospace engineering, you'll find her at the hangar, perfecting aircraft designs or engaging in high-flying discussions with peers. Olivia is a member of the Aero-Philosophy Symposium and the Nerdy Worms club.");
+            textBox(1, "You picked Olivia Thompson! She is a 2nd year Aerospace major. When she's not immersed in aerospace engineering, you'll find her at the hangar, perfecting aircraft designs or engaging in high-flying discussions with peers. Olivia is a member of the Aero-Philosophy Symposium and the Nerdy Worms club.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -661,7 +864,7 @@ function oliviaRoute() {
             break;
         case 1:
             background(culcsteps);
-            textBox(0, "After a friendly and interesting conversation about finding derivatives in your shared calculus class, you feel that you want to get closer to Olivia. How are you going about it?");
+            textBox(0, "Day 1:\nAfter a friendly and interesting conversation about finding derivatives in your shared calculus class, you feel that you want to get closer to Olivia. How are you going about it?");
 
 
             olivia11.position(200, 200);
@@ -699,6 +902,7 @@ function oliviaRoute() {
                 oliviaScene = 14;
             });
             break;
+        // day 1 choice 1
         case 2:
             background(culcsteps);
             textBox(0, "Hello, Olivia!");
@@ -761,6 +965,7 @@ function oliviaRoute() {
                 oliviaScene = 8;
             });
             break;
+        // day 1 choice 2
         case 8:
             background(culcStairs);
             textBox(0, "[Casually strolls into the Aero-Philosophy Symposium meeting, spotting Olivia engrossed in the discussion]\nMind if I snag a spot? Aerospace and philosophy sound like a wild combo.");
@@ -818,10 +1023,10 @@ function oliviaRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 9;
+                oliviaScene = 25;
             });
             break;
-        // choice 13
+        // day 1 choice 3
         case 14:
             background(culcsteps);
             textBox(0, "So, there's this Nerdy Worms club event happening. Thought you might be interested.");
@@ -912,7 +1117,256 @@ function oliviaRoute() {
                 oliviaScene = 25;
             });
             break;
+        case 25:
+            background(dorm);
+            textBox(0, "Day 2:\n It's a new day, with new opportunities! As you're lying in bed this morning, you think about what you could do today. Oh. You should get started on your calculus homework, sigh. Time to head to the library.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 26;
+            });
+            break;
+        case 26:
+            background(crossland);
+            textBox(0, "As you stroll around the library, who do you see but... Olivia? Oh, and she's working on what appears to be the calculus assignment!");
+            olivia211.position(200, 200);
+            olivia211.show();
+            olivia211.size(100, 100);
 
+            olivia212.position(600, 200);
+            olivia212.show();
+            olivia212.size(100, 100);
+
+
+            olivia211.mousePressed(() => {
+                // remove buttons
+                olivia211.remove();
+                olivia212.remove();
+                oliviaScene = 27;
+            });
+            olivia212.mousePressed(() => {
+                // remove buttons
+                olivia211.remove();
+                olivia212.remove();
+                oliviaScene = 48;
+            });
+            break;
+        case 27:
+            background(crossland);
+            textBox(0, "Hey Olivia! Calculus, huh? The joy of derivatives and integrals.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 28;
+            });
+            break;
+        case 28:
+            background(crossland);
+            textBox(1, "[Laughs] Yeah, joyous indeed. Trying to make sense of all this.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 29;
+            });
+            break;
+        case 29:
+            background(crossland);
+            textBox(0, "Mind if I join the struggle? Two heads are better than one, right?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 30;
+            });
+            break;
+        case 30:
+            background(crossland);
+            textBox(1, "[Smiling] Sure, why not? Let's tackle this beast together.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 31;
+            });
+            break;
+        case 31:
+            background(crossland);
+            textBox(0, "[Collaborate on the calculus assignment, sharing laughs and solving equations]\nWho knew calculus could be this amusing?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 32;
+            });
+            break;
+        case 32:
+            background(crossland);
+            textBox(1, "[Grinning] Maybe it's the company making it enjoyable.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 33;
+            });
+            break;
+        case 33:
+            background(crossland);
+            textBox(0, "[Hmm, the vibes seem good... should you invite her to the next hangar session so you both can design planes together? Or maybe it's time to be more bold.]");
+            olivia22.position(200, 200);
+            olivia22.show();
+            olivia22.size(100, 100);
+
+            olivia23.position(600, 200);
+            olivia23.show();
+            olivia23.size(100, 100);
+
+
+            olivia22.mousePressed(() => {
+                // remove buttons
+                olivia22.remove();
+                olivia23.remove();
+                oliviaScene = 34;
+            });
+            olivia23.mousePressed(() => {
+                // remove buttons
+                olivia22.remove();
+                olivia23.remove();
+                oliviaScene = 42;
+            });
+            break;
+        case 34:
+            background(crossland);
+            textBox(0, "Hey Olivia, have you heard about the hangar session? They're letting students unleash their inner aerospace engineers.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 35;
+            });
+            break;
+        case 35:
+            background(crossland);
+            textBox(1, "Hangar session? What's that all about?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 36;
+            });
+            break;
+        case 37:
+            background(crossland);
+            textBox(0, "Oh, just a chance to dive into aircraft designs, play with some cool engineering stuff. Thought it could be fun.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 38;
+            });
+            break;
+        case 38:
+            background(crossland);
+            textBox(0, "[Attend the hangar session, working on aircraft designs, sharing insights]\nWho knew wingspans and aerodynamics could be this fascinating, right?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 39;
+            });
+            break;
+        case 39:
+            background(crossland);
+            textBox(0, "[Smiling] Definitely more interesting than I expected.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 40;
+            });
+            break;
+        case 40:
+            background(crossland);
+            textBox(0, "[As the session wraps up]\nSo, turns out we make a pretty good aircraft design team.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 41;
+            });
+            break;
+        case 41:
+            background(crossland);
+            textBox(1, "[Teasingly] Top-notch engineers, right?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 42;
+            });
+            break;
+        case 42:
+            background(crossland);
+            textBox(0, "[That’s a bit too…bold]\n Olivia, I've been meaning to tell you something.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 43;
+            });
+            break;
+        case 43:
+            background(crossland);
+            textBox(1, "(Raises an eyebrow) What is it?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 44;
+            });
+            break;
+        case 44:
+            background(crossland);
+            textBox(0, "You're like a rare constellation in the vast cosmic expanse of this university. Your radiance outshines even the brightest stars.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 45;
+            });
+            break;
+        case 45:
+            background(crossland);
+            textBox(1, "(Uncomfortable) Uh, thanks?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 46;
+            });
+            break;
+        case 46:
+            background(crossland);
+            textBox(1, "No, really. It's like your beauty has its own gravitational pull, and I'm helplessly drawn towards it.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 47;
+            });
+            break;
+        case 47:
+            background(crossland);
+            textBox(1, "[Clearly annoyed] Are you done?");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 48;
+            });
+            break;
     }
 }
 
@@ -1797,7 +2251,7 @@ function chadRoute() {
             });
             break;
         case 421:
-           // background(1); // change background to dorm
+            // background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1810,7 +2264,7 @@ function chadRoute() {
             });
             break;
         case 422:
-      //      background(1); // change background to dorm
+            //      background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1824,7 +2278,7 @@ function chadRoute() {
             });
             break;
         case 423:
-     //       background(1); // change background to dorm
+            //       background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1837,7 +2291,7 @@ function chadRoute() {
             });
             break;
         case 424:
-       //     background(1); // change background to dorm
+            //     background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1850,7 +2304,7 @@ function chadRoute() {
             });
             break;
         case 425:
-      //      background(1); // change background to dorm
+            //      background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1864,7 +2318,7 @@ function chadRoute() {
             });
             break;
         case 426:
-      //      background(1); // change background to dorm
+            //      background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1877,7 +2331,7 @@ function chadRoute() {
             });
             break;
         case 427:
-   //         background(1); // change background to dorm
+            //         background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1890,7 +2344,7 @@ function chadRoute() {
             });
             break;
         case 428:
-    //        background(1); // change background to dorm
+            //        background(1); // change background to dorm
             textBox(0);
             fill(0);
             textAlign(LEFT);
@@ -1996,10 +2450,10 @@ function neuRoute() {
             });
             break;
         case 11:
-            background(culcsteps);
+            background(scheller);
             textBox(3, "Later that day: you approach them at after the neuroscience lecture, " +
                 "express your interest in neuroscience. After an interesting conversation you wish to keep the " +
-                "conversation going.");
+                "conversation going. What do you want to do?");
 
             neu11.position(200, 200);
             neu11.show();
@@ -2025,30 +2479,30 @@ function neuRoute() {
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 13;
+                neuScene = 14;
             });
             neu13.mousePressed(() => {
                 // remove buttons
                 neu11.remove();
                 neu12.remove();
                 neu13.remove();
-                neuScene = 14;
+                neuScene = 18;
             });
             break;
         case 12:
             background(culcsteps);
-            textBox(3, "Quick question, why? You still got their Instagram somehow.");
+            textBox(3, "Quick question, why?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 21;
+                neuScene = 13;
             });
             break;
         case 13:
-            background(culcsteps);
-            textBox(3, "After joining the Brainwaves Society, and after attending your first meeting later the same day " +
-                " you approach Jordan and ask them for their instagram. Just so you can keep up Brainwave activies of course. ;)");
+            background(scheller);
+            textBox(3, "Jordan was a little weirded out about your conversation. When you requested to follow them on Instagram " +
+            "they reluctantly entered their username.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
@@ -2058,7 +2512,57 @@ function neuRoute() {
             break;
         case 14:
             background(culcsteps);
-            textBox(3, "Props to you for being bold, let's keep these good vibes going.");
+            textBox(3, "You joined the Brainwaves Society and appraoched them after your first meeting the same day.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 15;
+            });
+            break;
+        case 15:
+            background(klaus);
+            textBox(3, "\"Hey Jordan, can't believe I'm seeing you again today. Must be fate.\" They laughed at your joke and agreed.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 16;
+            });
+            break;
+        case 16:
+            background(klaus);
+            textBox(3, "\"So it was really great talking to you today! Can I get your Instagram so I can keep up with club events?\" They gave you their username and immediately requested to follow you back ;)");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 21;
+            });
+            break;
+        case 18:
+            background(scheller);
+            textBox(3, "\"Hey Jordan, I've been seeing a lot lately. Can I get your Instagram?\" You ask earnestly");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 19;
+            });
+            break;
+        case 19:
+            background(scheller);
+            textBox(3, "\"Yeah, of course. You must also be really interested in neuroscience.\" They laugh in response while putting in their Instagram username.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                neuScene = 20;
+            });
+            break;
+        case 20:
+            background(scheller);
+            textBox(3, "\"Yeah something like that haha.\" Props to you for being bold, truly. Let's keep these good vibes going shall we.");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
