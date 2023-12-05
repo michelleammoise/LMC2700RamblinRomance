@@ -113,6 +113,8 @@ function preload() {
     neuchar2 = loadImage("./assets/2djordan2.png");
     boychar2 = loadImage("./assets/2dboy2.png");
     girlchar2 = loadImage("./assets/2dgirl2.png");
+
+    buzz = loadImage("./assets/buzz.png");
 }
 
 // setup
@@ -130,15 +132,15 @@ function setup() {
 
 function buttonSetup() {
     startBtn = createButton("START");
-  
+
     // Adjusted position to center the button
     startBtn.position(width / 2 - startBtn.width / 2, height / 2 - startBtn.height / 2);
-  
+
     startBtn.mousePressed(() => {
       startBtn.hide();
       sceneCount = 2;
     });
-  
+
     // Styling the button in a more cartoony way
     startBtn.style('background-color', '#FF69B4'); // Pink background
     startBtn.style('color', '#FFFFFF'); // White text
@@ -149,7 +151,7 @@ function buttonSetup() {
     startBtn.style('border-radius', '20px'); // Rounded corners for a cartoony look
     startBtn.style('font-family', 'Comic Sans MS, cursive, sans-serif'); // Cartoony font
     startBtn.style('box-shadow', '3px 3px 5px 0px rgba(0,0,0,0.5)'); // Soft shadow for a cartoony effect
-  
+
     let nextBtnStyle = `
     background-color: #FFD9EB ; 
     color:  ; 
@@ -160,7 +162,7 @@ function buttonSetup() {
     border-radius: 10px; // Adjusted border-radius for a smaller button
     font-family: 'Comic Sans MS, cursive, sans-serif'; 
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);`
-    ;
+        ;
 
     // Button 1
     nextBtn = createButton("Next");
@@ -1393,7 +1395,115 @@ function oliviaRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 67;
+                // if bad, go to "420", else go to "410" for good ending
+                console.log("Attract: " + attraction);
+                console.log("Rizz: " + rizz);
+                console.log("Intellect: " + intellect);
+                if (rizz > 6 && attraction > 4) {
+                    oliviaScene = 69;
+                } else {
+                    oliviaScene = 69;
+                }
+            });
+            break;
+        case 69:
+            background(dorm);
+            textBox(0, "[The dorm room is cozy, dimly lit, with the soft hum of study materials in the background. Olivia and you are sitting on the bed, surrounded by textbooks and notes. Olivia is meticulously going through her aerospace engineering notes, and you are flipping through your calculus book.]");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 70;
+            });
+            break;
+        case 71:
+            background(dorm);
+            textBox(0, "This study session has been surprisingly productive.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 72;
+            });
+            break;
+        case 71:
+            background(dorm);
+            textBox(0, "This study session has been surprisingly productive.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 72;
+            });
+            break;
+        case 72:
+            background(dorm);
+            textBox(1, "Yeah, and it's been nice having company. Makes calculus a little less daunting.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 73;
+            });
+            break;
+        case 73:
+            background(dorm);
+            textBox(0, "[There's a brief pause as you both share a smile.]\nI've really enjoyed these past few days, Olivia. The hangar, the discussions, even our study sessions.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 74;
+            });
+            break;
+        case 74:
+            background(dorm);
+            textBox(1, "Me too. It's been a different kind of excitement, you know? Sharing the things I love with someone who gets it.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 75;
+            });
+            break;
+        case 75:
+            background(dorm);
+            textBox(0, "[You both lean in slightly, feeling the connection deepen, and share a tender kiss, the warmth of the moment enveloping both of you.]");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 76;
+            });
+            break;
+        case 76:
+            background(dorm);
+            textBox(1, "[Smiling] That was unexpected but definitely a pleasant surprise.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 77;
+            });
+            break;
+        case 77:
+            background(dorm);
+            textBox(0, "Sometimes, the best things are.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 78;
+            });
+            break;
+        case 78:
+            background(dorm);
+            textBox(0, "[You both return to your study materials, but there's a newfound warmth and closeness that lingers in the air, turning the study session into a heartwarming memory.]");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 79;
             });
             break;
     }
