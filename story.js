@@ -105,6 +105,7 @@ function preload() {
     crossland = loadImage("./assets/crossland.jpeg");
     badParty = loadImage("./assets/badparty.jpg");
     goodParty = loadImage("./assets/fratparty.jpeg");
+    charBG = loadImage("./assets/charBG.png");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -586,7 +587,7 @@ function chooseChar() {
     getName.hide();
     setStats();
 
-    background(0); // black background
+    background(charBG); // background
     fill(255); // text color
     textAlign(CENTER);
     textFont('Courier New', 20);
