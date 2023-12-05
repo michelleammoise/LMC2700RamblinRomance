@@ -96,6 +96,8 @@ function preload() {
     klaus = loadImage("./assets/klaus.jpg");
     diningHall = loadImage("./assets/dininghall.jpg");
     crossland = loadImage("./assets/crossland.jpeg");
+    badParty = loadImage("./assets/badparty.jpg");
+    goodParty = loadImage("./assets/goodparty.jpg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -1474,11 +1476,14 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
-                // if bad, go to "410", else go to "420" for good ending
-                if (rizz > 8 && attraction > 5) {
-                    chadScene = 420;
-                } else {
+                // if bad, go to "420", else go to "410" for good ending
+                console.log("Attract: " + attraction);
+                console.log("Rizz: " + rizz);
+                console.log("Intellect: " + intellect);
+                if (rizz > 6 && attraction > 4) {
                     chadScene = 410;
+                } else {
+                    chadScene = 420;
                 }
             });
             break;
@@ -2232,7 +2237,7 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
-                chadScene = 2000000;
+                chadScene = 888;
                 // good ending
             });
             break;
@@ -2355,9 +2360,28 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
-                chadScene = 10000; // change to bad ending
+                chadScene = 666; // change to bad ending
             });
             break;
+        case 666:
+            background(badParty);
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "BAD ENDING: You did not successfully get Chad to go with you. He did not "
+            + "resonate with some of your actions. Or maybe he didn't like your major. Better luck next time.");
+            // maybe add restart button
+            break;
+        case 888:
+            background(goodParty);
+            textBox(0);
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "GOOD ENDING: You and Chad went to the frat party and had fun! He sees the both "
+            + "of you together in the future. This is just the beginning of a beautiful relationship. ");
+            // maybe add restart button
         default:
     }
 }
