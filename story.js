@@ -1403,7 +1403,7 @@ function oliviaRoute() {
                 if (rizz > 6 && attraction > 4) {
                     oliviaScene = 69;
                 } else {
-                    oliviaScene = 69;
+                    oliviaScene = 79;
                 }
             });
             break;
@@ -1499,13 +1499,111 @@ function oliviaRoute() {
             break;
         case 78:
             background(dorm);
-            textBox(0, "[You both return to your study materials, but there's a newfound warmth and closeness that lingers in the air, turning the study session into a heartwarming memory.]");
+            textBox(0, "Good Ending: \n[You both return to your study materials, but there's a newfound warmth and closeness that lingers in the air, turning the study session into a heartwarming memory.]");
+            break;
+        case 79:
+            background(dorm);
+            textBox(0, "[The dorm room feels tense and awkward, with scattered textbooks and an uncomfortable silence between you and Olivia. Olivia is focused on her aerospace engineering notes, and you attempt to flip through your calculus book, but the atmosphere is heavy.]");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                oliviaScene = 79;
+                oliviaScene = 80;
             });
+            break;
+        case 80:
+            background(dorm);
+            textBox(0, "This study session feels... different.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 81;
+            });
+            break;
+        case 81:
+            background(dorm);
+            textBox(1, "Yeah, it does.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 82;
+            });
+            break;
+        case 82:
+            background(dorm);
+            textBox(0, "[There's an uneasy pause as you both avoid eye contact.]\nI thought we had something, Olivia.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 83;
+            });
+            break;
+        case 83:
+            background(dorm);
+            textBox(1, "Did we? I mean, we've been spending time together, but...");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 84;
+            });
+            break;
+        case 84:
+            background(dorm);
+            textBox(0, "[The hesitation in Olivia's voice hangs in the air.]\nI thought there was a connection. Maybe I misread things.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 85;
+            });
+            break;
+        case 85:
+            background(dorm);
+            textBox(1, "[Olivia looks uncomfortable, shifting in her seat.]\nLook, I appreciate the time we spent together, but I think it's better if we focus on our studies.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 86;
+            });
+            break;
+        case 86:
+            background(dorm);
+            textBox(0, "[You feel a sinking feeling in your chest.]\nYeah, maybe you're right.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 87;
+            });
+            break;
+        case 87:
+            background(dorm);
+            textBox(1, "[An awkward silence settles in, punctuated only by the sound of turning pages.]\nI think we should just stick to being classmates.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 88;
+            });
+            break;
+        case 88:
+            background(dorm);
+            textBox(1, "[The words linger, and the room feels colder than before.]\nSure, classmates it is.");
+            nextBtn2.position(60, 550);
+            nextBtn2.show();
+            nextBtn2.mousePressed(() => {
+                nextBtn2.hide();
+                oliviaScene = 89;
+            });
+            break;
+        case 89:
+            background(dorm);
+            textBox(1, "Bad Ending: [The study session continues, but the connection you thought was there begins to fade. As you leave Olivia's dorm, there's a palpable sense of disappointment, and what could have been remains unexplored.]");
             break;
     }
 }
@@ -1939,7 +2037,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n"
-            + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n");
+                + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n");
             okChad.show();
             okChad.mousePressed(() => {
                 intellect++;
@@ -2016,7 +2114,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "Innovative Yellow Jackets happens to be hosting an event with a famous model teaching students confidence and how to model."
-            + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
+                + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
             chad2130.show();
             chad2130.position(x, opt1y);
             chad2130.mousePressed(() => {
@@ -2129,7 +2227,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You help him lift the bar right before it falls onto him. He thanks you and compliments your spotting abilities. "
-            + "You guys end up having a productive workout together and agreed to workout again in the future. ");
+                + "You guys end up having a productive workout together and agreed to workout again in the future. ");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -2147,7 +2245,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "He almost drops the bar on himself. He gets up and says he's fine, although he's a little irritated. "
-            + "Regardless, the rest of the workout went better and you guys agreed to workout again soon.");
+                + "Regardless, the rest of the workout went better and you guys agreed to workout again soon.");
             okChad.show();
             okChad.mousePressed(() => {
                 console.log("Pressed");
@@ -2218,7 +2316,7 @@ function chadRoute() {
                 + "work together. You agree. "); // may want to expand conversation
             okChad.show();
             okChad.mousePressed(() => {
-            // increase charisma and attractiveness
+                // increase charisma and attractiveness
                 rizz += 3;
                 attraction += 3;
                 okChad.hide();
