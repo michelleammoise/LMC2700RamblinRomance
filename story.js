@@ -1276,10 +1276,11 @@ function chadRoute() {
                 + "That night, you found Chad's Instagram account on your feed "
                 + "and followed him.");
             // increase smartness, decrease charisma
-            intellect++;
-            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
+                console.log("Pressed");
+                intellect++;
+                rizz--;
                 okChad.hide();
                 chadScene = 2;
             });
@@ -1293,10 +1294,11 @@ function chadRoute() {
             textBox(2, "Chad: I'd be down to talk! I gotta go to class, but "
                 + "you should totally text me later. Can I send you my IG handle?");
             // increase charisma/attractiveness
-            rizz++;
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
+                console.log("Pressed");
+                rizz++;
+                attraction++;
                 okChad.hide();
                 chadScene = 1122;
             })
@@ -1394,12 +1396,12 @@ function chadRoute() {
             textBox(0, "You guys share Instagram accounts. For the rest of the meeting, you both are "
                 + "actively involved in the conversation. Afterwards, you continue texting Chad through "
                 + "the evening.");
-
-            // increase smartness and charisma
-            rizz++;
-            intellect++;
             okChad.show();
             okChad.mousePressed(() => {
+                // increase smartness and charisma
+                rizz++;
+                intellect++;
+                console.log("Pressed");
                 okChad.hide();
                 chadScene = 2;
             });
@@ -1413,15 +1415,16 @@ function chadRoute() {
             image(boychar2, x, 200);
             textBox(2, "Chad: I think I saw you, too. I guess you're not here for the club, then? "
                 + "That's cool, I'll just listen to the meeting.");
+            okChad.show();
+            okChad.mousePressed(() => {
             // increase smarts, decrease charisma
             intellect++;
             rizz--;
-            okChad.show();
-            okChad.mousePressed(() => {
-                okChad.hide();
-                chadScene = 1222;
-            });
-            break;
+            console.log("Pr");
+            okChad.hide();
+            chadScene = 1222;
+        });
+        break;
         case 1222:
             // background(0); // change background to Klaus
             textBox(0);
@@ -1446,11 +1449,12 @@ function chadRoute() {
             textBox(0, "You turn your head to the side, smile, and glance over to his eyes. "
                 + "Chad grins, uncomfortably, as he walks past you. He doesn't know you enough "
                 + "to reciprocate those feelings. ");
-            // increase attractiveness, decrease charisma
-            attraction++;
-            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
+                // increase attractiveness, decrease charisma
+                attraction++;
+                rizz--;
+                console.log("Pressed");
                 okChad.hide();
                 chadScene = 1301;
             })
@@ -1476,10 +1480,10 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n" + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n" + "You decide to ask him about his interests.");
-            intellect++;
-
             okChad.show();
             okChad.mousePressed(() => {
+                intellect++;
+                console.log("Press");
                 okChad.hide();
                 chadScene = 2111;
             });
@@ -1534,10 +1538,11 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "The two of you coincidentally pick up the pencil at the same time. You guys make eye contact and blush. You would have thought they were working on chemistry the way they were bonding. You guys finish studying and said your goodbyes. You guys agreed to meet up again soon.");
-            rizz++;
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
+                rizz++;
+                attraction++;
+                console.log("Press");
                 okChad.hide();
                 chadScene = 3;
             });
@@ -1607,10 +1612,11 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You wing it and do the walk. You trip and fall. Chad helps you up and you guys laugh it off and continue to enjoy the event together. You guys agreed to meet up again soon.");
-            attraction++;
-            rizz--;
             okChad.show();
             okChad.mousePressed(() => {
+                attraction++;
+                rizz--;
+                console.log("Press");
                 okChad.hide();
                 chadScene = 3;
             });
@@ -1622,11 +1628,12 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You ask Chad for help. He whispers the sequence to you and you do the walk perfectly, which caught his attention. You guys agreed to meet up again soon after all the fun.");
-            rizz++;
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
+                rizz++;
+                attraction++;
+                console.log("Pressed");
                 chadScene = 3;
             });
             break;
@@ -1659,11 +1666,12 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You help him lift the bar. He thanks you and blushes. You guys end up having a productive workout together. You guys agreed to workout again soon.");
-            attraction++;
-            rizz++;
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 3;
+                attraction++;
+                rizz++;
+                console.log("Pressed");
             });
             break;
         case 2132: // invite to gym
@@ -1673,8 +1681,9 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "He almost drops the bar on himself. He gets up and says he's fine. The rest of the workout went well and you guys agreed to workout again soon.");
-            attraction--;
             okChad.mousePressed(() => {
+                console.log("Pressed");
+                attraction--;
                 okChad.hide();
                 chadScene = 3;
             });
@@ -1739,11 +1748,11 @@ function chadRoute() {
             textBox(0, "Both of you blush. You guys spend of the rest of the hour talking about everything "
                 + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
                 + "work together. You agree. "); // may want to expand conversation
-            // increase charisma and attractiveness
-            rizz++;
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
+            // increase charisma and attractiveness
+                rizz++;
+                attraction++;
                 okChad.hide();
                 chadScene = 4;
             });
@@ -1757,10 +1766,10 @@ function chadRoute() {
             textBox(0, "He blushes. You guys spend of the rest of the hour talking about everything "
                 + "from business to school. As the conversation ends, Chad invites you to his dorm tomorrow to "
                 + "work together. You agree. ");
-            // increase attractiveness
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
+                // increase attractiveness
+                attraction++;
                 okChad.hide();
                 chadScene = 4; // also may want to expand story
             });
@@ -1774,11 +1783,11 @@ function chadRoute() {
             textBox(0, "You tell him how he shouldn't be complaining as a business major, since it's "
                 + "one of the easiest majors out there. You also state how your major is harder and yet "
                 + "you can still handle it. ");
-            // increase smartness, deduct charisma
-            intellect += 2;
-            rizz -= 2;
             okChad.show();
             okChad.mousePressed(() => {
+                // increase smartness, deduct charisma
+                intellect += 2;
+                rizz -= 2;
                 okChad.hide();
                 chadScene = 331;
             });
