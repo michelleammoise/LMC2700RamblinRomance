@@ -104,7 +104,7 @@ function preload() {
     diningHall = loadImage("./assets/dininghall.jpg");
     crossland = loadImage("./assets/crossland.jpeg");
     badParty = loadImage("./assets/badparty.jpg");
-    goodParty = loadImage("./assets/goodparty.jpg");
+    goodParty = loadImage("./assets/fratparty.jpeg");
 
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -135,7 +135,7 @@ function buttonSetup() {
     startBtn.position(width / 2 - startBtn.width / 2, height / 2 - startBtn.height / 2);
   
     startBtn.mousePressed(() => {
-      startBtn.remove();
+      startBtn.hide();
       sceneCount = 2;
     });
   
@@ -168,7 +168,7 @@ function buttonSetup() {
     styleButton(nextBtn, nextBtnStyle);
 
     nextBtn.mousePressed(() => {
-        nextBtn.remove();
+        nextBtn.hide();
         sceneCount = 3;
     });
 
@@ -218,9 +218,9 @@ function styleAndRemoveButton(button, style, sceneNumber) {
     button.style(style);
     button.mousePressed(() => {
         // Remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
+        neuBtn.hide();
+        boyBtn.hide();
+        girlBtn.hide();
         sceneCount = sceneNumber;
     });
 }
@@ -1950,9 +1950,9 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             textBox(0, "You see Chad raise his hand. He gets called on and he does the walk perfectly. You guys continue to enjoy the event together. You guys agreed to meet up again soon.");
-            attraction++;
             okChad.show();
             okChad.mousePressed(() => {
+                attraction++;
                 okChad.hide();
                 chadScene = 3;
             });
@@ -2089,7 +2089,7 @@ function chadRoute() {
             textAlign(LEFT);
             textFont('Courier New', 20);
             image(boychar2, x, 200);
-            textBox(2, "Chad: You're right.");
+            textBox(2, "Chad: Maybe so.");
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
@@ -2428,9 +2428,17 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "BAD ENDING: You did not successfully get Chad to go with you. He did not "
-                + "resonate with some of your actions. Or maybe he didn't like your major. Better luck next time.");
+            textBox(0, "BAD ENDING: You did not successfully get Chad to go with you to the party. He did not "
+                + "resonate with some of your actions. Or maybe he didn't like your major. "
+                + "The party was awkward, and people noted that you were alone. Better luck next time.");
             // maybe add restart button
+            okChad.show();
+            okChad.mousePressed(() => {
+                sceneCount = 1;
+                chadScene = 0;
+                okChad.hide();
+                startBtn.show();
+            });
             break;
         case 888:
             background(goodParty);
@@ -2441,6 +2449,14 @@ function chadRoute() {
             textBox(0, "GOOD ENDING: You and Chad went to the frat party and had fun! He sees the both "
                 + "of you together in the future. This is just the beginning of a beautiful relationship. ");
         // maybe add restart button
+            okChad.show();
+            okChad.mousePressed(() => {
+                sceneCount = 1;
+                chadScene = 0;
+                okChad.hide();
+                startBtn.show();
+            });
+            break;
         default:
     }
 }
