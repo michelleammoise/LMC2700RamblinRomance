@@ -123,13 +123,26 @@ function setup() {
 
 function buttonSetup() {
     startBtn = createButton("START");
-    startBtn.position(width / 2, height / 2);
+  
+    // Adjusted position to center the button
+    startBtn.position(width / 2 - startBtn.width / 2, height / 2 - startBtn.height / 2);
+  
     startBtn.mousePressed(() => {
-        startBtn.remove();
-        sceneCount = 2;
-    })
-    startBtn.style('background-color: pink');
-
+      startBtn.remove();
+      sceneCount = 2;
+    });
+  
+    // Styling the button in a more cartoony way
+    startBtn.style('background-color', '#FF69B4'); // Pink background
+    startBtn.style('color', '#FFFFFF'); // White text
+    startBtn.style('font-size', '24px'); // Larger font size
+    startBtn.style('padding', '15px 30px'); // Padding for a larger button
+    startBtn.style('border', 'none'); // No border for a cleaner look
+    startBtn.style('cursor', 'pointer'); // Show pointer on hover
+    startBtn.style('border-radius', '20px'); // Rounded corners for a cartoony look
+    startBtn.style('font-family', 'Comic Sans MS, cursive, sans-serif'); // Cartoony font
+    startBtn.style('box-shadow', '3px 3px 5px 0px rgba(0,0,0,0.5)'); // Soft shadow for a cartoony effect
+  
     nextBtn = createButton("Next");
     nextBtn.hide();
     nextBtn.mousePressed(() => {
