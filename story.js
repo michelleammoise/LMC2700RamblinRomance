@@ -11,6 +11,7 @@ let cs;
 let intellect;
 let rizz;
 let attraction;
+let mySound;
 
 let boychar2;
 
@@ -92,7 +93,7 @@ let neu73;
 // load assets
 function preload() {
     fancy = loadFont("font3.otf")
-
+    mySound = loadSound("The Most Romantic Piano Music (Faure _ Romance).mp3");
     schoolPhoto = loadImage("./assets/techTower.jpeg");
     culcStairs = loadImage("./assets/culcStairs.png");
     stuCenter = loadImage("./assets/jlstucen.jpeg");
@@ -119,14 +120,13 @@ function preload() {
 
 // setup
 function setup() {
-    getAudioContext().suspend();
     rectMode(CENTER);
     createCanvas(1000, 600);
     sceneCount = 1;
     oliviaScene = 0;
     chadScene = 0; // change to 0 when added exposition scene
     neuScene = 0;
-
+    mySound.play();
     buttonSetup();
 }
 
