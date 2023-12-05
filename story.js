@@ -127,7 +127,10 @@ function setup() {
     oliviaScene = 0;
     chadScene = 0; // change to 0 when added exposition scene
     neuScene = 0;
-    mySound.loop();
+    userStartAudio().then(function () {
+        console.log("Starting audio loop...");
+        mySound.loop();
+    });
     buttonSetup();
 }
 
