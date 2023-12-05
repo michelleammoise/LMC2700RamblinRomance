@@ -144,8 +144,8 @@ function buttonSetup() {
     startBtn.style('box-shadow', '3px 3px 5px 0px rgba(0,0,0,0.5)'); // Soft shadow for a cartoony effect
   
     let nextBtnStyle = `
-    background-color: #FF69B4; 
-    color: #FFFFFF; 
+    background-color: #FFD9EB ; 
+    color:  ; 
     font-size: 18px; // Adjusted font size for a smaller button
     padding: 10px 20px; // Adjusted padding for a smaller button
     border: none; 
@@ -174,45 +174,50 @@ function buttonSetup() {
     nextBtn3 = createButton("Next");
     nextBtn3.hide();
     styleButton(nextBtn3, nextBtnStyle);
+    let buttonStyle = `
+        background-color: #FFD9EB; 
+        font-size: 16px; // Adjusted font size
+        padding: 8px 16px; // Adjusted padding
+        border: none; 
+        cursor: pointer; 
+        border-radius: 8px; // Adjusted border-radius
+        font-family: 'Comic Sans MS, cursive, sans-serif'; 
+        box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+    `;
 
+    // Non-binary button
     neuBtn = createButton("Non-binary");
     neuBtn.hide();
-    neuBtn.mousePressed(() => {
-        // remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
-        sceneCount = 7;
-    });
+    styleAndRemoveButton(neuBtn, buttonStyle, 7);
 
+    // Boy button
     boyBtn = createButton("Boy");
     boyBtn.hide();
-    boyBtn.mousePressed(() => {
-        // remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
-        sceneCount = 6; // chad route
-    });
+    styleAndRemoveButton(boyBtn, buttonStyle, 6);
 
+    // Girl button
     girlBtn = createButton("Girl");
     girlBtn.hide();
-    girlBtn.mousePressed(() => {
-        // remove buttons
-        neuBtn.remove();
-        boyBtn.remove();
-        girlBtn.remove();
-        sceneCount = 5;
-    });
+    styleAndRemoveButton(girlBtn, buttonStyle, 5);
 
+    // Other function calls (e.g., chadButtons(), jordanButtons(), statsButtons(), oliviaButtons())
     chadButtons();
     jordanButtons();
     statsButtons();
     oliviaButtons();
-
-
-
 }
+
+function styleAndRemoveButton(button, style, sceneNumber) {
+    button.style(style);
+    button.mousePressed(() => {
+        // Remove buttons
+        neuBtn.remove();
+        boyBtn.remove();
+        girlBtn.remove();
+        sceneCount = sceneNumber;
+    });
+}
+
 function styleButton(button, style) {
     button.style(style);
 }
