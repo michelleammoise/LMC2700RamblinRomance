@@ -48,6 +48,12 @@ let chad112;
 let chad121;
 let chad122;
 
+let chad211;
+let chad212;
+let chad213;
+let chad2130;
+let chad2140;
+
 let chad311;
 let chad312;
 let chad313;
@@ -93,6 +99,7 @@ function preload() {
     culcsteps = loadImage("./assets/culcsteps.png");
     scheller = loadImage("./assets/scheller.jpeg");
     dorm = loadImage("./assets/dorm.jpg");
+    crc = loadImage("./assets/crc.jpeg");
     klaus = loadImage("./assets/klaus.jpg");
     diningHall = loadImage("./assets/dininghall.jpg");
     crossland = loadImage("./assets/crossland.jpeg");
@@ -395,8 +402,8 @@ function chadButtons() {
     chad23 = createButton("Invite him to workout at the CRC");
     chad23.hide();
 
-    chad211 = createButton("Pick up pencil and papers for him");
-    chad212 = createButton("Let him pick up his own stuff");
+    chad212 = createButton("Pick up pencil and papers for him");
+    chad211 = createButton("Let him pick up his own stuff");
     chad211.hide();
     chad212.hide();
 
@@ -411,12 +418,12 @@ function chadButtons() {
     chad216.hide();
 
     chad217 = createButton("Help spot Chad at the benchpress");
-    chad218 = createButton("Ask Chad to spot you at the benchpress");
+    chad218 = createButton("Let Chad push through");
     chad217.hide();
     chad218.hide();
 
     //day 3 buttons
-    chad311 = createButton("\"I can really see ourselves being closer in the future\".");
+    chad311 = createButton("\"I can really see ourselves being closer in the future.\"");
     chad311.hide();
     chad312 = createButton("Agree and smile");
     chad312.hide();
@@ -1216,7 +1223,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(1, "Not much. Got a lame business assignment, but I might go to a club event or gym later.");
+            textBox(1, "Chad: Not much. Got a lame business assignment, but I might go to a club event or gym later.");
 
             chad21.show();
             chad21.position(x, opt1y);
@@ -1224,7 +1231,7 @@ function chadRoute() {
                 chad21.hide();
                 chad22.hide();
                 chad23.hide();
-                chadScene = 211;
+                chadScene = 210; // study with him
             });
 
             chad22.show();
@@ -1233,7 +1240,7 @@ function chadRoute() {
                 chad21.hide();
                 chad22.hide();
                 chad23.hide();
-                chadScene = 212;
+                chadScene = 220;
             });
 
             chad23.show();
@@ -1328,7 +1335,7 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 console.log("Pressed");
-                rizz++;
+                rizz += 2;
                 attraction++;
                 okChad.hide();
                 chadScene = 1122;
@@ -1450,7 +1457,7 @@ function chadRoute() {
             okChad.mousePressed(() => {
             // increase smarts, decrease charisma
             intellect++;
-            rizz--;
+            rizz -= 2;
             console.log("Pr");
             okChad.hide();
             chadScene = 1222;
@@ -1504,13 +1511,27 @@ function chadRoute() {
                 chadScene = 2;
             });
             break;
+        case 210:
+            background(dorm); // change background to dorm?
+            textBox(0); // probably make 0 be narrator
+            fill(0);
+            textAlign(LEFT);
+            textFont('Courier New', 20);
+            textBox(0, "You asked if he wanted to study together at the student center. He agrees to meet you there.");
+            okChad.show();
+            okChad.mousePressed(() => {
+                okChad.hide();
+                chadScene = 211;
+            })
+            break;
         case 211: // offer to help on homework
             background(stuCenter);
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n" + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n" + "You decide to ask him about his interests.");
+            textBox(0, "While studying helping Chad with his homework, you guys get to know each other better.\n"
+            + "You are hoping to get to know him better, but he seems to be more focused on the homework.\n");
             okChad.show();
             okChad.mousePressed(() => {
                 intellect++;
@@ -1528,19 +1549,19 @@ function chadRoute() {
             textBox(0, "It seems like he dropped his pencil in between you two. Should you let him pick it up or should you pick it up for him?");
             chad211.show();
             chad211.position(x, opt1y);
-            chad211.mousePressed(() => {
+            chad211.mousePressed(() => { // let him do it
                 chad211.hide();
                 chad212.hide();
                 chadScene = 2112;
             });
             chad212.show();
             chad212.position(x, opt2y);
-            chad212.mousePressed(() => {
+            chad212.mousePressed(() => { // both pick it up
                 chad211.hide();
                 chad212.hide();
                 chadScene = 2113;
             });
-            break;
+            /*
             chad213.show();
             chad213.position(x, opt2y);
             chad213.mousePressed(() => {
@@ -1548,6 +1569,7 @@ function chadRoute() {
                 chad212.hide();
                 chadScene = 2113;
             });
+            */
             break;
         case 2112: //hw help
             background(stuCenter);
@@ -1559,6 +1581,7 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
+                rizz--;
                 chadScene = 3;
             });
             break;
@@ -1572,19 +1595,20 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 rizz++;
-                attraction++;
+                attraction += 2;
                 console.log("Press");
                 okChad.hide();
                 chadScene = 3;
             });
-            break
-        case 212: // attend club event
+            break;
+        case 220: // attend club event
             background(scheller);
             textBox(0); // probably make 0 be narrator
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "Innovative Yellow Jackets happens to be hosting an event with a famous model teaching students confidence and how to model." + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
+            textBox(0, "Innovative Yellow Jackets happens to be hosting an event with a famous model teaching students confidence and how to model."
+            + " She asks the crowd for volunteers. Should you volunteer to impress Chad or leave it to someone else?");
             chad2130.show();
             chad2130.position(x, opt1y);
             chad2130.mousePressed(() => {
@@ -1674,7 +1698,7 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "After going back to your dorm, Chad meets you at the gym. While doing the bench press, you notice Chad struggling to lift the bar. Should you help him or let him struggle?");
+            textBox(0, "You both agree to workout at the gym. While doing the bench press, you notice Chad struggling to lift the bar. Should you help him or let him struggle?");
             chad217.show();
             chad217.position(x, opt1y);
             chad217.mousePressed(() => {
@@ -1696,13 +1720,16 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "You help him lift the bar. He thanks you and blushes. You guys end up having a productive workout together. You guys agreed to workout again soon.");
+            textBox(0, "You help him lift the bar right before it falls onto him. He thanks you and compliments your spotting abilities. "
+            + "You guys end up having a productive workout together and agreed to workout again in the future. ");
+            okChad.show();
             okChad.mousePressed(() => {
                 okChad.hide();
                 chadScene = 3;
                 attraction++;
                 rizz++;
                 console.log("Pressed");
+                chadScene = 4;
             });
             break;
         case 2132: // invite to gym
@@ -1711,7 +1738,9 @@ function chadRoute() {
             fill(0);
             textAlign(LEFT);
             textFont('Courier New', 20);
-            textBox(0, "He almost drops the bar on himself. He gets up and says he's fine. The rest of the workout went well and you guys agreed to workout again soon.");
+            textBox(0, "He almost drops the bar on himself. He gets up and says he's fine, although he's a little irritated. "
+            + "Regardless, the rest of the workout went better and you guys agreed to workout again soon.");
+            okChad.show();
             okChad.mousePressed(() => {
                 console.log("Pressed");
                 attraction--;
@@ -1782,8 +1811,8 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
             // increase charisma and attractiveness
-                rizz++;
-                attraction++;
+                rizz += 3;
+                attraction += 3;
                 okChad.hide();
                 chadScene = 4;
             });
@@ -1800,7 +1829,8 @@ function chadRoute() {
             okChad.show();
             okChad.mousePressed(() => {
                 // increase attractiveness
-                attraction++;
+                rizz += 2;
+                attraction += 3;
                 okChad.hide();
                 chadScene = 4; // also may want to expand story
             });
