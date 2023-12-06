@@ -2702,7 +2702,6 @@ function chadRoute() {
 }
 
 function neuRoute() {
-    //neuScene = 0;
     switch (neuScene) {
         case 0:
             background(culcsteps);
@@ -2846,6 +2845,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction -= 1;
+                intellect -= 1;
                 neuScene = 21;
             });
             break;
@@ -2876,6 +2877,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 2;
+                intellect += 2;
                 neuScene = 21;
             });
             break;
@@ -2906,6 +2909,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 1;
+                intellect += 1;
                 neuScene = 21;
             });
             break;
@@ -2955,6 +2960,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 1;
+                intellect += 1;
                 neuScene = 25;
             });
             break;
@@ -2965,6 +2972,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 2;
+                intellect += 2;
                 neuScene = 25;
             });
             break;
@@ -2975,6 +2984,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction -= 1
+                intellect -= 1;
                 neuScene = 25;
             });
             break;
@@ -3022,6 +3033,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 2;
+                intellect += 2;
                 neuScene = 33;
             });
             break;
@@ -3032,6 +3045,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                attraction += 1;
+                intellect += 1;
                 neuScene = 33;
             });
             break;
@@ -3042,6 +3057,8 @@ function neuRoute() {
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
+                intellect += 1;
+                attraction += 1;
                 neuScene = 33;
             });
             break;
@@ -3066,6 +3083,8 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
+                attraction += 1;
+                intellect += 1;
                 neuScene = 34;
             });
             neu22.mousePressed(() => {
@@ -3073,6 +3092,8 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
+                attraction += 2;
+                intellect += 2;
                 neuScene = 35;
             });
             neu23.mousePressed(() => {
@@ -3080,50 +3101,63 @@ function neuRoute() {
                 neu21.remove();
                 neu22.remove();
                 neu23.remove();
+                attraction -= 1;
+                intellect += 1;
                 neuScene = 36;
             });
             break;
         case 34:
             background(culcsteps);
-            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research.")
+            textBox(3, "You had such a great day collaborating. Jordan was able to learn more about your leadership side as you took charge regarding the research. However did all yout effort this week pay off?")
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 44;
+                if (attraction >= 6 && intellect >= 5) {
+                    neuScene = 43;
+                } else {
+                    neuScene = 44;
+                }
             });
             break;
         case 35:
             background(culcsteps);
             textBox(3, "The lecture, unfortunately, was not that interesting. Even Jordan, the science aficionado, had trouble staying awake. However, " +
-                "they leaned on your shoulder for most of it so take it as a win.");
+                "they leaned on your shoulder for most of it so take it as a win. However did all yout effort this week pay off?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 44;
+                if (attraction >= 6 && intellect >= 5) {
+                    neuScene = 43;
+                } else {
+                    neuScene = 44;
+                }
             });
             break;
         case 36:
             background(culcsteps);
-            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward.");
+            textBox(3, "The conciousness discussion was so fascinating, you almost missed how uncomfortable Jordan felt because their ex was also there. Awkward. However did all yout effort this week pay off?");
             nextBtn2.position(60, 550);
             nextBtn2.show();
             nextBtn2.mousePressed(() => {
                 nextBtn2.hide();
-                neuScene = 44;
+                if (attraction >= 7 && intellect >= 6) {
+                    neuScene = 43;
+                } else {
+                    neuScene = 44;
+                }
             });
             break;
         case 43: // Good Ending
-            background(schoolPhoto);
-            textBox(3, "Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship, if you could " +
-                "only see Cupid now.");
+            background(goodParty);
+            textBox(3, "It did! Jordan went with you to the party, your mission was a success! Congratulations on your new budding relationship!");
             break;
         case 44: // Neutral Ending
-            background(schoolPhoto);
-            textBox(3, "Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
+            background(badParty);
+            textBox(3, "It did not. Can't believe you fumbled this badly. Now look at you, alone at the party. Tragic indeed, better luck next time though.");
         case 45: // Bad Ending
-            background(schoolPhoto);
+            background(dorm);
             textBox(3, "Thank god you didn't go to the Chi Phi party at all. Jordan told everyone about your awful romantic skills, you have become " +
                 "the laughing stock of GT. Cupid is weaping.");
             break;
