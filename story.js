@@ -108,7 +108,7 @@ function preload() {
     badParty = loadImage("./assets/badparty.jpg");
     goodParty = loadImage("./assets/fratparty.jpeg");
     charBG = loadImage("./assets/charBG.png");
-    titleFont= loadFont("assets/Kanit-Bold.ttf") 
+    titleFont= loadFont("assets/Kanit-Bold.ttf")
     bodyFont = loadFont("assets/CrimsonPro-VariableFont_wght.ttf")
     boyChar = loadImage("./assets/3dboy.png");
     girlChar = loadImage("./assets/3dgirl.png");
@@ -159,14 +159,14 @@ function buttonSetup() {
     startBtn.style('box-shadow', '3px 3px 5px 0px rgba(0,0,0,0.5)'); // Soft shadow for a cartoony effect
 
     let nextBtnStyle = `
-    background-color: #FFD9EB ; 
-    color:  ; 
+    background-color: #FFD9EB ;
+    color:  ;
     font-size: 18px; // Adjusted font size for a smaller button
     padding: 10px 20px; // Adjusted padding for a smaller button
-    border: none; 
-    cursor: pointer; 
+    border: none;
+    cursor: pointer;
     border-radius: 10px; // Adjusted border-radius for a smaller button
-    font-family: 'Comic Sans MS, cursive, sans-serif'; 
+    font-family: 'Comic Sans MS, cursive, sans-serif';
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);`
         ;
 
@@ -190,13 +190,13 @@ function buttonSetup() {
     nextBtn3.hide();
     styleButton(nextBtn3, nextBtnStyle);
     let buttonStyle = `
-        background-color: #FFD9EB; 
+        background-color: #FFD9EB;
         font-size: 16px; // Adjusted font size
         padding: 8px 16px; // Adjusted padding
-        border: none; 
-        cursor: pointer; 
+        border: none;
+        cursor: pointer;
         border-radius: 8px; // Adjusted border-radius
-        font-family: 'Comic Sans MS, cursive, sans-serif'; 
+        font-family: 'Comic Sans MS, cursive, sans-serif';
         box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
     `;
 
@@ -243,13 +243,13 @@ function statsButtons() {
     // Styling for the buttons with a very light pink color
     let buttonStyle = `
         background-color: #FFD9EB; // Very light pink color
-        color: #FFFFFF; 
+        color: #FFFFFF;
         font-size: 18px; // Adjusted font size for a slightly larger button
         padding: 10px 20px; // Adjusted padding for a slightly larger button
-        border: none; 
-        cursor: pointer; 
+        border: none;
+        cursor: pointer;
         border-radius: 10px; // Adjusted border-radius for a slightly larger button
-        font-family: 'Comic Sans MS, cursive, sans-serif'; 
+        font-family: 'Comic Sans MS, cursive, sans-serif';
         box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
     `;
 
@@ -596,8 +596,7 @@ function chooseChar() {
     fill(255); // text color
     textAlign(CENTER);
     textFont('bodyFont', 20);
-    text("Select character", width / 2, 50);
-    text("\nHi " + playerName + "!", width / 2, 50);
+    text("Select your love interest", width / 2, 50);
     text("\nHi " + playerName + "!", width / 2, 50);
 
     boychar2.resize(200, 200);
